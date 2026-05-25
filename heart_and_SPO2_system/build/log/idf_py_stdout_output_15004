@@ -1,0 +1,209 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0xe (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 24 2026 17:52:11[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (24) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0aa28h ( 43560) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=0001aa50 vaddr=40800000 size=055c8h ( 21960) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=1744ch ( 95308) map[0m
+[0;32mI (115) esp_image: segment 3: paddr=00037474 vaddr=408055c8 size=06a94h ( 27284) load[0m
+[0;32mI (122) esp_image: segment 4: paddr=0003df10 vaddr=4080c060 size=0194ch (  6476) load[0m
+[0;32mI (127) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (127) boot: Disabling RNG early entropy source...[0m
+[0;32mI (141) cpu_start: Unicore app[0m
+[0;32mI (149) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (149) cpu_start: Pro cpu start user code[0m
+[0;32mI (150) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (151) app_init: Application information:[0m
+[0;32mI (155) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (160) app_init: App version:      c2fdac9[0m
+[0;32mI (164) app_init: Compile time:     Apr 24 2026 17:51:04[0m
+[0;32mI (169) app_init: ELF file SHA256:  0af76381b...[0m
+[0;32mI (174) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (178) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (182) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (186) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (190) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (196) heap_init: At 4080E940 len 0006DCD0 (439 KiB): RAM[0m
+[0;32mI (201) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (206) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (212) spi_flash: detected chip: generic[0m
+[0;32mI (215) spi_flash: flash io: dio[0m
+[0;33mW (218) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (231) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (237) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (243) coexist: coex firmware version: 7260f71[0m
+[0;32mI (248) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (252) main_task: Started on CPU0[0m
+[0;32mI (252) main_task: Calling app_main()[0m
+[0;32mI (262) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;33mW (262) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (262) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (272) MAIN_APP: Khởi tạo thất bại lần 1. Thử lại sau 1 giây... (Hãy kiểm tra/ấn chặt lại dây nối)[0m
+[0;33mW (1282) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (1282) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (1292) MAIN_APP: Khởi tạo cảm biến thành công sau 2 lần thử![0m
+[0;32mI (1292) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (1292) main_task: Returned from app_main()[0m
+RED:10709,IR:9353
+RED:14948,IR:12960
+RED:23360,IR:19350
+RED:35813,IR:28896
+RED:37113,IR:29152
+RED:36949,IR:28144
+RED:37212,IR:28195
+RED:39822,IR:30229
+RED:47470,IR:36468
+RED:66250,IR:53456
+RED:89817,IR:87133
+RED:103036,IR:118096
+RED:105309,IR:122624
+RED:106405,IR:125175
+RED:107377,IR:127614
+RED:107755,IR:128867
+RED:107844,IR:129633
+RED:108036,IR:130453
+RED:108234,IR:131287
+RED:108389,IR:131970
+RED:108457,IR:132309
+RED:108447,IR:132439
+RED:108400,IR:132496
+RED:108339,IR:132525
+RED:108187,IR:132282
+RED:107793,IR:131423
+RED:107518,IR:130770
+RED:107495,IR:130756
+RED:107508,IR:130911
+RED:107497,IR:130971
+RED:107503,IR:131050
+RED:107520,IR:131132
+RED:107510,IR:131129
+RED:107475,IR:131096
+RED:107457,IR:131084
+RED:107465,IR:131141
+RED:107474,IR:131190
+RED:107476,IR:131245
+RED:107487,IR:131297
+RED:107493,IR:131321
+RED:107492,IR:131340
+RED:107502,IR:131379
+RED:107502,IR:131400
+RED:107493,IR:131430
+RED:107496,IR:131480
+RED:107509,IR:131557
+RED:107407,IR:131319
+RED:107052,IR:130387
+RED:106819,IR:129751
+RED:106826,IR:129787
+RED:106912,IR:130034
+RED:106966,IR:130208
+RED:107023,IR:130392
+RED:107074,IR:130564
+RED:107075,IR:130565
+RED:106972,IR:130209
+RED:106691,IR:129175
+RED:107480,IR:130816
+RED:87549,IR:89923
+RED:17430,IR:13802
+RED:3445,IR:3399
+RED:1544,IR:1585
+RED:1133,IR:1143
+RED:885,IR:888
+RED:752,IR:743
+RED:680,IR:668
+RED:642,IR:623
+RED:617,IR:606
+RED:611,IR:584
+RED:608,IR:579
+RED:603,IR:576
+RED:595,IR:582
+RED:586,IR:569
+RED:585,IR:556
+RED:580,IR:550
+RED:573,IR:535
+RED:563,IR:531
+RED:562,IR:525
+RED:554,IR:512
+RED:550,IR:519
+RED:544,IR:513
+RED:545,IR:512
+RED:549,IR:509
+RED:545,IR:508
+RED:544,IR:513
+RED:544,IR:507
+RED:541,IR:511
+RED:544,IR:505
+RED:546,IR:506
+RED:547,IR:506
+RED:535,IR:505
+RED:547,IR:507
+RED:540,IR:509
+RED:545,IR:505
+RED:543,IR:513
+RED:544,IR:506
+RED:546,IR:506
+RED:540,IR:506
+RED:534,IR:501
+RED:536,IR:506
+RED:543,IR:508
+RED:545,IR:511
+RED:545,IR:511
+RED:547,IR:511
+RED:544,IR:507
+RED:546,IR:514
+RED:544,IR:508
+RED:550,IR:497
+RED:547,IR:513
+RED:544,IR:507
+RED:541,IR:509
+RED:547,IR:507
+RED:544,IR:504
+RED:542,IR:503
+RED:551,IR:512
+RED:544,IR:506
+RED:552,IR:510
+RED:549,IR:512
+RED:546,IR:503
+RED:553,IR:504
+RED:544,IR:505
+RED:546,IR:505
+RED:545,IR:510
+RED:547,IR:508
+RED:547,IR:506
+[0;32mI (6322) MAIN_APP: Nhiệt độ chip hiện tại: 32.56 °C[0m
+RED:550,IR:510
+RED:552,IR:509
+RED:553,IR:509
+RED:556,IR:508
+RED:549,IR:508
+RED:549,IR:507
+RED:551,IR:508
+RED:554,IR:504
+RED:550,IR:508
+RED:553,IR:506
+RED:548,IR:510
+RED:552,IR:504
+RED:548,IR:505
+RED:550,IR:511
+RED:549,IR:507
+RED:551,IR:508
+RED:551,IR:509

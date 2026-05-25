@@ -1,0 +1,189 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 24 2026 17:52:11[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (24) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a050h ( 41040) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=0001a078 vaddr=40800000 size=05fa0h ( 24480) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15580h ( 87424) map[0m
+[0;32mI (114) esp_image: segment 3: paddr=000355a8 vaddr=40805fa0 size=05fach ( 24492) load[0m
+[0;32mI (120) esp_image: segment 4: paddr=0003b55c vaddr=4080bf50 size=0194ch (  6476) load[0m
+[0;32mI (125) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (125) boot: Disabling RNG early entropy source...[0m
+[0;32mI (139) cpu_start: Unicore app[0m
+[0;32mI (148) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (148) cpu_start: Pro cpu start user code[0m
+[0;32mI (148) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (150) app_init: Application information:[0m
+[0;32mI (154) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (159) app_init: App version:      c2fdac9[0m
+[0;32mI (163) app_init: Compile time:     Apr 24 2026 17:51:04[0m
+[0;32mI (168) app_init: ELF file SHA256:  bcdda5a5d...[0m
+[0;32mI (172) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (177) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (180) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (184) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (188) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (194) heap_init: At 4080E820 len 0006DDF0 (439 KiB): RAM[0m
+[0;32mI (200) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (205) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (211) spi_flash: detected chip: generic[0m
+[0;32mI (214) spi_flash: flash io: dio[0m
+[0;33mW (217) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (229) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (235) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (242) coexist: coex firmware version: 7260f71[0m
+[0;32mI (246) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (250) main_task: Started on CPU0[0m
+[0;32mI (250) main_task: Calling app_main()[0m
+[0;32mI (260) I2C_SCAN: Bắt đầu quét thiết bị trên Bus I2C...[0m
+[1;31mE (310) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (310) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (360) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (360) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (410) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (420) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (470) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (470) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (520) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (520) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (570) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (570) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (620) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (620) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (680) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (680) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (730) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (730) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (780) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (780) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (830) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (830) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (890) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (890) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (940) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (940) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (990) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (990) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1040) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1040) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1100) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1100) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1150) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1150) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1200) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1200) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1250) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1250) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1310) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1310) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1360) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1360) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1410) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1410) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1460) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1460) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1520) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1520) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1570) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1570) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1620) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1620) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1670) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1670) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1730) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1730) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1780) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1780) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1830) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1830) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1880) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1880) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1940) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1940) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (1990) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (1990) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2040) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2040) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2090) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2090) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2150) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2150) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2200) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2200) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2250) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2250) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2300) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2300) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2350) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2350) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2410) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2410) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2460) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2460) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2510) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2510) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2560) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2560) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2620) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2620) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2670) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2670) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2720) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2720) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2770) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2770) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2830) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2830) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2880) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2880) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2930) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2930) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (2980) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (2980) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3040) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3040) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3090) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3090) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3140) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3140) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3190) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3190) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3250) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3250) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3300) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3300) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3350) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3350) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3400) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3400) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3460) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3460) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3510) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3510) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3560) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3560) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3610) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3610) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[0;32mI (3620) I2C_SCAN: === FOUND ===> Tìm thấy thiết bị I2C tại địa chỉ: 0x41[0m
+[0;32mI (3630) I2C_SCAN: Kết thúc quá trình quét bus.[0m
+[0;32mI (3630) main_task: Returned from app_main()[0m

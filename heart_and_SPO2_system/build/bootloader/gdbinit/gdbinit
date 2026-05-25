@@ -1,0 +1,2 @@
+source D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/bootloader/gdbinit/symbols
+source D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/bootloader/gdbinit/connect
