@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -9,6 +10,7 @@
 
 // Include driver của bạn
 #include "MAX30102.h"
+#include "ppg_algorithm.h"
 
 static const char *TAG = "MAIN_APP";
 
@@ -45,6 +47,10 @@ void max30102_processing_task(void *pvParameters)
     uint8_t samples_read = 0;
     uint8_t status1 = 0, status2 = 0;
 
+    // biến cấu trúc cụ bộ dùng để nhận kết quả đầu ra của thuật toán xử lý tín hiệu PPG
+    ppg_result_t ppg_result;
+
+
     ESP_LOGI(TAG, "Task xử lý MAX30102 bắt đầu hoạt động...");
 
     while (1) {
@@ -61,8 +67,19 @@ void max30102_processing_task(void *pvParameters)
                 esp_err_t err = max30102_read_samples(max30102_dev, sample_buffer, 32, &samples_read);
                 if (err == ESP_OK && samples_read > 0) {
                     for (int i = 0; i < samples_read; i++) {
-                        // In ra màn hình dữ liệu dạng Serial Plotter để vẽ đồ thị
+                        // In ra màn hình dữ liệu thô dạng Serial Plotter để vẽ đồ thị
                         printf("RED:%ld,IR:%ld\n", sample_buffer[i].red, sample_buffer[i].ir);
+                        // Gửi mẫu vào thuật toán xử lý tín hiệu PPG để tính toán HR và SpO2
+                        // hàm trả về true nếu tích đủ 400 mẫu để tính toán, chu kỳ tính toán sẽ là 4 giây nếu sample_rate là 100 SPs, chu kỳ gối đầu là 2 giây 
+                        if(ppg_algorithm_process_sample(sample_buffer[i].red, sample_buffer[i].ir, &ppg_result)) {
+                            // Nếu có kết quả mới sau mỗi 400 mẫu, in ra màn hình log 
+                            if(ppg_result.valid){
+                                ESP_LOGI(TAG, "HR: %f bpm, Spo2: %.1f%%", ppg_result.heart_rate, ppg_result.spo2);
+                                // gửi kết quả này 
+                            }else{
+                                ESP_LOGW(TAG, "Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều!");
+                            }
+                        }
                     }
                 }
             }
@@ -100,7 +117,7 @@ void app_main(void)
 {
     
     ESP_LOGI(TAG, "Đang khởi tạo hệ thống...");
-
+    ppg_algorithm_init(); // Khởi tạo thuật toán xử lý tín hiệu PPG trước khi bắt đầu lấy mẫu từ cảm biến
     // --------------------------------------------
     // BƯỚC 1: Cấu hình Bus I2C Master (Driver mới)
     // --------------------------------------------
@@ -145,7 +162,7 @@ void app_main(void)
             break;
         }
 
-        retry_count++;
+        retry_count ++;
         ESP_LOGW(TAG, "Khởi tạo thất bại lần %d. Thử lại sau 1 giây... (Hãy kiểm tra/ấn chặt lại dây nối)", retry_count);
         vTaskDelay(pdMS_TO_TICKS(1000)); // Đợi 1 giây rồi thử lại
     }
@@ -179,6 +196,4 @@ void app_main(void)
     xTaskCreate(max30102_processing_task, "max30102_task", 4096, &max30102_device, 10, &max30102_task_handle);    
     // Task đo nhiệt độ chạy nền tĩnh lặng (Priority 2)
     xTaskCreate(temperature_task, "temp_task", 4096, &max30102_device, 2, NULL);
-    
-   
 }

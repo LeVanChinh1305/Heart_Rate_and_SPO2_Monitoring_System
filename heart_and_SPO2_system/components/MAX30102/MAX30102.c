@@ -145,8 +145,8 @@ esp_err_t max30102_set_mode(max30102_dev_t *dev, uint8_t mode)
 esp_err_t max30102_init(max30102_dev_t *dev, i2c_master_bus_handle_t i2c_bus_handle, const max30102_config_t *config)
 {
     if(dev == NULL || config == NULL) return ESP_ERR_INVALID_ARG;
-    memset(dev, 0, sizeof(max30102_dev_t));
-    memcpy(&dev->config, config, sizeof(max30102_config_t));
+    memset(dev, 0, sizeof(max30102_dev_t));// Đảm bảo khởi tạo sạch sẽ cấu trúc thiết bị
+    memcpy(&dev->config, config, sizeof(max30102_config_t));// Lưu cấu hình vào cấu trúc thiết bị để có thể truy cập sau này nếu cần
 
     // 1. Đăng ký thiết bị I2C con vào Bus
     i2c_device_config_t dev_cfg = {

@@ -1,0 +1,1659 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0xe (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 24 2026 17:52:11[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (24) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0abc8h ( 43976) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=0001abf0 vaddr=40800000 size=05428h ( 21544) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=17cb4h ( 97460) map[0m
+[0;32mI (116) esp_image: segment 3: paddr=00037cdc vaddr=40805428 size=06c34h ( 27700) load[0m
+[0;32mI (122) esp_image: segment 4: paddr=0003e918 vaddr=4080c060 size=0194ch (  6476) load[0m
+[0;32mI (127) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (141) cpu_start: Unicore app[0m
+[0;32mI (150) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (150) cpu_start: Pro cpu start user code[0m
+[0;32mI (150) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (152) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (161) app_init: App version:      df12168-dirty[0m
+[0;32mI (165) app_init: Compile time:     May 26 2026 18:06:06[0m
+[0;32mI (170) app_init: ELF file SHA256:  27aa1f0cc...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (179) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (183) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (187) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (191) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (197) heap_init: At 4080F5D0 len 0006D040 (436 KiB): RAM[0m
+[0;32mI (202) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (207) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (213) spi_flash: detected chip: generic[0m
+[0;32mI (216) spi_flash: flash io: dio[0m
+[0;33mW (219) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (232) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (238) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (244) coexist: coex firmware version: 7260f71[0m
+[0;32mI (249) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (253) main_task: Started on CPU0[0m
+[0;32mI (253) main_task: Calling app_main()[0m
+[0;32mI (263) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;33mW (263) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (263) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (273) MAIN_APP: Khởi tạo thất bại lần 1. Thử lại sau 1 giây... (Hãy kiểm tra/ấn chặt lại dây nối)[0m
+[0;33mW (1283) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (1283) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (1293) MAIN_APP: Khởi tạo cảm biến thành công sau 2 lần thử![0m
+[0;32mI (1293) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (1293) main_task: Returned from app_main()[0m
+RED:511,IR:567
+RED:512,IR:566
+RED:510,IR:573
+RED:511,IR:566
+RED:507,IR:581
+RED:511,IR:590
+RED:515,IR:602
+RED:512,IR:589
+RED:511,IR:592
+RED:516,IR:573
+RED:510,IR:567
+RED:517,IR:563
+RED:529,IR:559
+RED:539,IR:561
+RED:545,IR:557
+RED:546,IR:561
+RED:533,IR:560
+RED:528,IR:555
+RED:518,IR:556
+RED:511,IR:559
+RED:513,IR:559
+RED:505,IR:552
+RED:512,IR:558
+RED:512,IR:553
+RED:512,IR:559
+RED:511,IR:559
+RED:509,IR:555
+RED:505,IR:560
+RED:510,IR:557
+RED:505,IR:563
+RED:515,IR:554
+RED:508,IR:561
+RED:501,IR:558
+RED:507,IR:558
+RED:510,IR:557
+RED:508,IR:553
+RED:517,IR:561
+RED:509,IR:564
+RED:511,IR:557
+RED:509,IR:558
+RED:514,IR:567
+RED:499,IR:560
+RED:511,IR:557
+RED:510,IR:560
+RED:510,IR:570
+RED:509,IR:563
+RED:509,IR:563
+RED:515,IR:565
+RED:507,IR:566
+RED:510,IR:554
+RED:509,IR:556
+RED:508,IR:564
+RED:511,IR:557
+RED:507,IR:560
+RED:506,IR:557
+RED:514,IR:537
+RED:511,IR:526
+RED:510,IR:524
+RED:506,IR:535
+RED:504,IR:554
+RED:506,IR:564
+RED:505,IR:573
+RED:503,IR:577
+RED:498,IR:585
+RED:480,IR:599
+RED:476,IR:608
+RED:501,IR:625
+RED:546,IR:677
+RED:613,IR:753
+RED:671,IR:825
+RED:691,IR:849
+RED:699,IR:861
+RED:748,IR:932
+RED:881,IR:1083
+RED:1081,IR:1257
+RED:1408,IR:1489
+RED:1922,IR:1729
+RED:2359,IR:1994
+RED:5368,IR:4812
+RED:19530,IR:19173
+RED:44256,IR:48219
+RED:51307,IR:56763
+RED:87393,IR:91300
+RED:101610,IR:110621
+RED:105309,IR:117445
+[0;32mI (4683) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106964,IR:121418
+[0;32mI (4723) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108417,IR:123927
+[0;32mI (4763) PPG_DEBUG: Mẫu này dùng được[0m
+RED:109418,IR:125786
+[0;32mI (4803) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110027,IR:126997
+[0;32mI (4843) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110413,IR:127748
+[0;32mI (4883) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110843,IR:128622
+[0;32mI (4923) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111189,IR:129321
+[0;32mI (4963) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111384,IR:129716
+[0;32mI (5003) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111535,IR:130036
+[0;32mI (5043) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111693,IR:130400
+[0;32mI (5083) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111772,IR:130585
+[0;32mI (5123) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111656,IR:130283
+[0;32mI (5163) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111132,IR:128899
+[0;32mI (5203) PPG_DEBUG: Mẫu này dùng được[0m
+RED:109017,IR:125206
+[0;32mI (5243) PPG_DEBUG: Mẫu này dùng được[0m
+RED:49026,IR:55146
+RED:1516,IR:1747
+RED:657,IR:852
+RED:524,IR:691
+RED:487,IR:614
+RED:460,IR:581
+RED:466,IR:561
+RED:451,IR:536
+RED:449,IR:529
+RED:441,IR:523
+RED:447,IR:520
+RED:449,IR:522
+RED:443,IR:520
+RED:449,IR:524
+RED:451,IR:515
+RED:445,IR:513
+RED:450,IR:519
+RED:445,IR:517
+RED:445,IR:524
+RED:445,IR:516
+RED:444,IR:515
+RED:440,IR:518
+RED:449,IR:517
+RED:447,IR:516
+RED:447,IR:517
+RED:439,IR:522
+[0;32mI (6323) MAIN_APP: Nhiệt độ chip hiện tại: 32.19 °C[0m
+RED:448,IR:522
+RED:448,IR:518
+RED:447,IR:522
+RED:447,IR:521
+RED:443,IR:521
+RED:448,IR:518
+RED:443,IR:504
+RED:449,IR:492
+RED:447,IR:484
+RED:442,IR:491
+RED:442,IR:508
+RED:442,IR:516
+RED:446,IR:518
+RED:447,IR:520
+RED:434,IR:514
+RED:425,IR:521
+RED:406,IR:512
+RED:410,IR:521
+RED:421,IR:521
+RED:437,IR:519
+RED:446,IR:522
+RED:445,IR:521
+RED:451,IR:517
+RED:443,IR:511
+RED:449,IR:512
+RED:443,IR:518
+RED:444,IR:519
+RED:446,IR:524
+RED:452,IR:518
+RED:453,IR:517
+RED:444,IR:517
+RED:443,IR:517
+RED:443,IR:529
+RED:446,IR:544
+RED:449,IR:566
+RED:447,IR:583
+RED:458,IR:604
+RED:484,IR:645
+RED:572,IR:782
+RED:963,IR:1280
+RED:2005,IR:2491
+RED:3305,IR:3926
+RED:4489,IR:5225
+RED:6087,IR:6977
+RED:9194,IR:10330
+RED:11643,IR:12945
+RED:13020,IR:14495
+RED:12759,IR:14273
+RED:12425,IR:13816
+RED:15903,IR:17051
+RED:25400,IR:23962
+RED:51242,IR:40564
+RED:99742,IR:96559
+RED:105972,IR:118782
+[0;32mI (8443) PPG_DEBUG: Mẫu này dùng được[0m
+RED:102777,IR:113246
+RED:47295,IR:39011
+RED:3524,IR:3834
+RED:1576,IR:1925
+RED:1122,IR:1437
+RED:949,IR:1243
+RED:878,IR:1163
+RED:853,IR:1127
+RED:848,IR:1112
+RED:876,IR:1151
+RED:946,IR:1224
+RED:1027,IR:1310
+RED:1114,IR:1388
+RED:1224,IR:1507
+RED:1387,IR:1668
+RED:1603,IR:1880
+RED:1853,IR:2122
+RED:2022,IR:2297
+RED:2236,IR:2478
+RED:2496,IR:2739
+RED:2905,IR:3097
+RED:3577,IR:3680
+RED:5388,IR:5140
+RED:15037,IR:11789
+RED:65867,IR:62817
+RED:105812,IR:119873
+[0;32mI (9483) PPG_DEBUG: Mẫu này dùng được[0m
+RED:109378,IR:128071
+[0;32mI (9523) PPG_DEBUG: Mẫu này dùng được[0m
+RED:109863,IR:128457
+[0;32mI (9563) PPG_DEBUG: Mẫu này dùng được[0m
+RED:109929,IR:128367
+[0;32mI (9603) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110097,IR:128761
+[0;32mI (9643) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110298,IR:129328
+[0;32mI (9683) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110492,IR:129906
+[0;32mI (9723) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110662,IR:130383
+[0;32mI (9763) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110731,IR:130612
+[0;32mI (9803) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110749,IR:130720
+[0;32mI (9843) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110797,IR:130851
+[0;32mI (9883) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110884,IR:131075
+[0;32mI (9923) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110988,IR:131489
+[0;32mI (9963) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111123,IR:131861
+[0;32mI (10003) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111265,IR:132173
+[0;32mI (10043) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111344,IR:132410
+[0;32mI (10083) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111417,IR:132605
+[0;32mI (10123) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111538,IR:132754
+[0;32mI (10163) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107660,IR:125708
+[0;32mI (10203) PPG_DEBUG: Mẫu này dùng được[0m
+RED:64703,IR:54745
+RED:15736,IR:12362
+RED:7280,IR:6574
+RED:5448,IR:5211
+RED:4900,IR:4801
+RED:4692,IR:4633
+RED:5014,IR:4903
+RED:5526,IR:5368
+RED:6391,IR:6112
+RED:7422,IR:7016
+RED:7850,IR:7357
+RED:8126,IR:7561
+RED:8584,IR:7974
+RED:9202,IR:8506
+RED:10257,IR:9392
+RED:11551,IR:10418
+RED:12656,IR:11367
+RED:13918,IR:12454
+RED:15299,IR:13552
+RED:18086,IR:15723
+RED:21998,IR:18834
+RED:25965,IR:21938
+RED:27723,IR:23219
+RED:28040,IR:23392
+RED:27574,IR:23012
+RED:26068,IR:21722
+RED:24721,IR:20700
+RED:22313,IR:18854
+[0;32mI (11353) MAIN_APP: Nhiệt độ chip hiện tại: 32.25 °C[0m
+RED:17101,IR:14877
+RED:11973,IR:10895
+RED:6389,IR:6328
+RED:3397,IR:3684
+RED:1956,IR:2325
+RED:1263,IR:1607
+RED:950,IR:1274
+RED:814,IR:1123
+RED:747,IR:1069
+RED:728,IR:1035
+RED:694,IR:1004
+RED:692,IR:996
+RED:688,IR:989
+RED:683,IR:991
+RED:685,IR:991
+RED:690,IR:993
+RED:702,IR:1016
+RED:742,IR:1050
+RED:784,IR:1103
+RED:789,IR:1112
+RED:781,IR:1091
+RED:757,IR:1076
+RED:740,IR:1039
+RED:721,IR:1028
+RED:711,IR:1022
+RED:704,IR:1011
+RED:700,IR:997
+RED:697,IR:1002
+RED:711,IR:1007
+RED:718,IR:1027
+RED:731,IR:1033
+RED:739,IR:1046
+RED:756,IR:1072
+RED:793,IR:1111
+RED:850,IR:1169
+RED:915,IR:1251
+RED:1075,IR:1440
+RED:1901,IR:2305
+RED:5997,IR:5765
+RED:22253,IR:16069
+RED:53065,IR:38097
+RED:62395,IR:50874
+RED:91930,IR:97648
+RED:104629,IR:122870
+[0;32mI (13083) PPG_DEBUG: Mẫu này dùng được[0m
+RED:105929,IR:125386
+[0;32mI (13123) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106584,IR:126507
+[0;32mI (13163) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106509,IR:126131
+[0;32mI (13203) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106353,IR:125438
+[0;32mI (13243) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106435,IR:125678
+[0;32mI (13283) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106677,IR:126508
+[0;32mI (13323) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106965,IR:127296
+[0;32mI (13363) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107112,IR:127678
+[0;32mI (13403) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107129,IR:127764
+[0;32mI (13443) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107154,IR:127736
+[0;32mI (13493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107198,IR:127696
+[0;32mI (13533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107289,IR:127915
+[0;32mI (13573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107397,IR:128195
+[0;32mI (13613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107478,IR:128367
+[0;32mI (13653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107554,IR:128551
+[0;32mI (13693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107616,IR:128701
+[0;32mI (13733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107660,IR:128791
+[0;32mI (13773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107724,IR:128924
+[0;32mI (13813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107794,IR:129104
+[0;32mI (13853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107731,IR:128920
+[0;32mI (13893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107414,IR:127965
+[0;32mI (13933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107080,IR:126986
+[0;32mI (13973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106971,IR:126627
+[0;32mI (14013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107024,IR:126756
+[0;32mI (14053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107156,IR:127108
+[0;32mI (14093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107286,IR:127457
+[0;32mI (14133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107345,IR:127577
+[0;32mI (14173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107332,IR:127552
+[0;32mI (14213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107342,IR:127552
+[0;32mI (14253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107408,IR:127699
+[0;32mI (14293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107494,IR:127946
+[0;32mI (14333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107573,IR:128174
+[0;32mI (14373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107641,IR:128358
+[0;32mI (14413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107725,IR:128582
+[0;32mI (14453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107791,IR:128721
+[0;32mI (14493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107838,IR:128870
+[0;32mI (14533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107918,IR:129060
+[0;32mI (14573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107947,IR:129100
+[0;32mI (14613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107740,IR:128492
+[0;32mI (14653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107404,IR:127424
+[0;32mI (14693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107225,IR:126791
+[0;32mI (14733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107282,IR:126843
+[0;32mI (14773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107367,IR:127071
+[0;32mI (14813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107455,IR:127312
+[0;32mI (14853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107486,IR:127418
+[0;32mI (14893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107438,IR:127318
+[0;32mI (14933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107414,IR:127164
+[0;32mI (14973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107418,IR:127139
+[0;32mI (15013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107546,IR:127429
+[0;32mI (15053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107664,IR:127678
+[0;32mI (15093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107712,IR:127814
+[0;32mI (15133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107779,IR:127998
+[0;32mI (15173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107846,IR:128188
+[0;32mI (15213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107887,IR:128281
+[0;32mI (15253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107925,IR:128393
+[0;32mI (15293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107973,IR:128533
+[0;32mI (15333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108034,IR:128680
+[0;32mI (15373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107877,IR:128282
+[0;32mI (15413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107424,IR:126974
+[0;32mI (15453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106993,IR:125718
+[0;32mI (15493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106934,IR:125558
+[0;32mI (15533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107077,IR:125957
+[0;32mI (15573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107217,IR:126352
+[0;32mI (15613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107349,IR:126746
+[0;32mI (15653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107404,IR:126899
+[0;32mI (15693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107359,IR:126800
+[0;32mI (15733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107381,IR:126837
+[0;32mI (15773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107450,IR:127037
+[0;32mI (15813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107529,IR:127263
+[0;32mI (15853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107621,IR:127545
+[0;32mI (15893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107727,IR:127846
+[0;32mI (15933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107784,IR:128020
+[0;32mI (15973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107827,IR:128177
+[0;32mI (16013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107885,IR:128362
+[0;32mI (16053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107958,IR:128553
+[0;32mI (16093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107995,IR:128684
+[0;32mI (16133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107812,IR:128177
+[0;32mI (16173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107372,IR:126962
+[0;32mI (16213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107026,IR:125955
+[0;32mI (16253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106986,IR:125858
+[0;32mI (16293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107107,IR:126220
+[0;32mI (16333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107262,IR:126655
+[0;32mI (16373) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (16383) MAIN_APP: Nhiệt độ chip hiện tại: 32.69 °C[0m
+RED:107372,IR:126952
+[0;32mI (16413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107360,IR:126955
+[0;32mI (16453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107341,IR:126920
+[0;32mI (16493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107363,IR:126965
+[0;32mI (16533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107418,IR:127128
+[0;32mI (16573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107513,IR:127367
+[0;32mI (16613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107605,IR:127644
+[0;32mI (16653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107684,IR:127853
+[0;32mI (16693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107742,IR:128037
+[0;32mI (16733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107802,IR:128189
+[0;32mI (16773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107843,IR:128313
+[0;32mI (16813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107889,IR:128477
+[0;32mI (16853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107913,IR:128524
+[0;32mI (16893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107660,IR:127838
+[0;32mI (16933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107191,IR:126504
+[0;32mI (16973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106865,IR:125579
+[0;32mI (17013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106879,IR:125597
+[0;32mI (17053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106991,IR:125962
+[0;32mI (17093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107152,IR:126404
+[0;32mI (17133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107258,IR:126691
+[0;32mI (17173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107264,IR:126708
+[0;32mI (17213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107255,IR:126710
+[0;32mI (17253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107331,IR:126934
+[0;32mI (17293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107422,IR:127173
+[0;32mI (17333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107502,IR:127414
+[0;32mI (17373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107582,IR:127659
+[0;32mI (17413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107669,IR:127876
+[0;32mI (17453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107711,IR:127975
+[0;32mI (17493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107751,IR:128079
+[0;32mI (17533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107793,IR:128237
+[0;32mI (17573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107852,IR:128392
+[0;32mI (17613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107904,IR:128548
+[0;32mI (17653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107769,IR:128185
+[0;32mI (17693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107406,IR:127165
+[0;32mI (17733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107080,IR:126282
+[0;32mI (17773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107033,IR:126119
+[0;32mI (17813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107115,IR:126388
+[0;32mI (17853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107229,IR:126701
+[0;32mI (17893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107354,IR:127059
+[0;32mI (17933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107393,IR:127160
+[0;32mI (17973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107376,IR:127151
+[0;32mI (18013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107401,IR:127230
+[0;32mI (18053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107460,IR:127414
+[0;32mI (18093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107546,IR:127664
+[0;32mI (18133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107652,IR:127929
+[0;32mI (18173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107728,IR:128161
+[0;32mI (18213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107792,IR:128358
+[0;32mI (18253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107867,IR:128567
+[0;32mI (18293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107943,IR:128760
+[0;32mI (18333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108006,IR:128961
+[0;32mI (18373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108090,IR:129184
+[0;32mI (18413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108028,IR:129018
+[0;32mI (18453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107757,IR:128350
+[0;32mI (18493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107542,IR:127761
+[0;32mI (18533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107401,IR:127396
+[0;32mI (18573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106764,IR:126118
+[0;32mI (18613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:92053,IR:91715
+RED:64726,IR:51024
+RED:61599,IR:50698
+RED:100513,IR:106878
+RED:105209,IR:119144
+[0;32mI (18813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:105868,IR:120657
+[0;32mI (18853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:105577,IR:120000
+[0;32mI (18893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:105773,IR:120523
+[0;32mI (18933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106198,IR:121543
+[0;32mI (18973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106547,IR:122462
+[0;32mI (19013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106918,IR:123394
+[0;32mI (19053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107221,IR:124100
+[0;32mI (19093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107384,IR:124488
+[0;32mI (19133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107508,IR:124814
+[0;32mI (19173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107406,IR:124651
+[0;32mI (19213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107080,IR:123862
+[0;32mI (19253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106877,IR:123369
+[0;32mI (19293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106907,IR:123419
+[0;32mI (19333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107043,IR:123759
+[0;32mI (19373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107176,IR:124079
+[0;32mI (19413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107284,IR:124373
+[0;32mI (19453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107309,IR:124466
+[0;32mI (19493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107306,IR:124493
+[0;32mI (19533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107341,IR:124575
+[0;32mI (19573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107413,IR:124772
+[0;32mI (19613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107503,IR:125006
+[0;32mI (19653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107585,IR:125210
+[0;32mI (19693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107660,IR:125411
+[0;32mI (19733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107722,IR:125576
+[0;32mI (19773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107774,IR:125734
+[0;32mI (19813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107837,IR:125869
+[0;32mI (19853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107906,IR:126049
+[0;32mI (19893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107951,IR:126159
+[0;32mI (19933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107701,IR:125607
+[0;32mI (19973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107403,IR:124901
+[0;32mI (20013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107307,IR:124660
+[0;32mI (20053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107381,IR:124795
+[0;32mI (20093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107474,IR:125034
+[0;32mI (20133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107578,IR:125314
+[0;32mI (20173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107668,IR:125539
+[0;32mI (20213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107664,IR:125554
+[0;32mI (20253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107640,IR:125515
+[0;32mI (20293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107664,IR:125589
+[0;32mI (20333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107745,IR:125758
+[0;32mI (20373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107841,IR:125953
+[0;32mI (20413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107896,IR:126092
+[0;32mI (20453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107951,IR:126222
+[0;32mI (20493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108027,IR:126388
+[0;32mI (20533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108088,IR:126533
+[0;32mI (20573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108146,IR:126652
+[0;32mI (20613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108193,IR:126783
+[0;32mI (20653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108133,IR:126656
+[0;32mI (20693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107831,IR:125940
+[0;32mI (20733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107580,IR:125332
+[0;32mI (20773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107517,IR:125170
+[0;32mI (20813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107585,IR:125305
+[0;32mI (20853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107655,IR:125490
+[0;32mI (20893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107745,IR:125711
+[0;32mI (20933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107772,IR:125786
+[0;32mI (20973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107751,IR:125725
+[0;32mI (21013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107753,IR:125730
+[0;32mI (21053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107799,IR:125828
+[0;32mI (21093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107852,IR:125961
+[0;32mI (21133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107921,IR:126121
+[0;32mI (21173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107977,IR:126267
+[0;32mI (21213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108028,IR:126410
+[0;32mI (21253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108054,IR:126495
+[0;32mI (21293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108078,IR:126581
+[0;32mI (21333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108117,IR:126683
+[0;32mI (21373) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (21413) MAIN_APP: Nhiệt độ chip hiện tại: 33.25 °C[0m
+RED:107984,IR:126407
+[0;32mI (21413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107678,IR:125695
+[0;32mI (21453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107481,IR:125220
+[0;32mI (21493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107459,IR:125135
+[0;32mI (21533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107529,IR:125318
+[0;32mI (21573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107598,IR:125518
+[0;32mI (21613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107655,IR:125680
+[0;32mI (21653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107647,IR:125703
+[0;32mI (21693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107620,IR:125634
+[0;32mI (21733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107630,IR:125671
+[0;32mI (21773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107679,IR:125811
+[0;32mI (21813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107755,IR:126027
+[0;32mI (21853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107823,IR:126217
+[0;32mI (21893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107883,IR:126369
+[0;32mI (21933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107938,IR:126508
+[0;32mI (21973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107980,IR:126623
+[0;32mI (22013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108024,IR:126744
+[0;32mI (22053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:108048,IR:126790
+[0;32mI (22093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107817,IR:126296
+[0;32mI (22133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107473,IR:125463
+[0;32mI (22173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107292,IR:124977
+[0;32mI (22213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107299,IR:124969
+[0;32mI (22253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107384,IR:125175
+[0;32mI (22293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107494,IR:125418
+[0;32mI (22333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107570,IR:125611
+[0;32mI (22373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107566,IR:125599
+[0;32mI (22413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107520,IR:125510
+[0;32mI (22453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107508,IR:125500
+[0;32mI (22493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107546,IR:125613
+[0;32mI (22533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107611,IR:125757
+[0;32mI (22573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107664,IR:125892
+[0;32mI (22613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107701,IR:126006
+[0;32mI (22653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107730,IR:126093
+[0;32mI (22693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107754,IR:126184
+[0;32mI (22733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107802,IR:126295
+[0;32mI (22773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107873,IR:126487
+[0;32mI (22813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107876,IR:126511
+[0;32mI (22853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107578,IR:125822
+[0;32mI (22893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107247,IR:124987
+[0;32mI (22933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107111,IR:124620
+[0;32mI (22973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107178,IR:124741
+[0;32mI (23013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107282,IR:124987
+[0;32mI (23053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107408,IR:125284
+[0;32mI (23093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107475,IR:125440
+[0;32mI (23133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107455,IR:125412
+[0;32mI (23173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107457,IR:125376
+[0;32mI (23213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107489,IR:125461
+[0;32mI (23253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107536,IR:125600
+[0;32mI (23293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107605,IR:125761
+[0;32mI (23333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107665,IR:125899
+[0;32mI (23373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107694,IR:126003
+[0;32mI (23413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107721,IR:126078
+[0;32mI (23453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107755,IR:126156
+[0;32mI (23493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107796,IR:126287
+[0;32mI (23533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107773,IR:126238
+[0;32mI (23573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107445,IR:125487
+[0;32mI (23613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107104,IR:124615
+[0;32mI (23653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106957,IR:124251
+[0;32mI (23693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107013,IR:124359
+[0;32mI (23733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107117,IR:124585
+[0;32mI (23773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107236,IR:124896
+[0;32mI (23813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107269,IR:124991
+[0;32mI (23853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107248,IR:124925
+[0;32mI (23893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107235,IR:124913
+[0;32mI (23933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107288,IR:125025
+[0;32mI (23973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107368,IR:125221
+[0;32mI (24013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107453,IR:125424
+[0;32mI (24053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107500,IR:125549
+[0;32mI (24093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107530,IR:125647
+[0;32mI (24133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107572,IR:125722
+[0;32mI (24173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107612,IR:125837
+[0;32mI (24213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107661,IR:125947
+[0;32mI (24253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107424,IR:125387
+[0;32mI (24293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107007,IR:124336
+[0;32mI (24333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106762,IR:123654
+[0;32mI (24373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106757,IR:123602
+[0;32mI (24413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106859,IR:123824
+[0;32mI (24453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106974,IR:124103
+[0;32mI (24493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107075,IR:124308
+[0;32mI (24533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107085,IR:124318
+[0;32mI (24573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107057,IR:124267
+[0;32mI (24613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107073,IR:124303
+[0;32mI (24653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107149,IR:124462
+[0;32mI (24693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107254,IR:124671
+[0;32mI (24733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107331,IR:124853
+[0;32mI (24773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107406,IR:125020
+[0;32mI (24813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107458,IR:125162
+[0;32mI (24853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107510,IR:125265
+[0;32mI (24893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107565,IR:125366
+[0;32mI (24933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107620,IR:125483
+[0;32mI (24973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107403,IR:124958
+[0;32mI (25013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106929,IR:123784
+[0;32mI (25053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106625,IR:122950
+[0;32mI (25093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106590,IR:122804
+[0;32mI (25133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106686,IR:122996
+[0;32mI (25173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106801,IR:123261
+[0;32mI (25213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106913,IR:123516
+[0;32mI (25253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106919,IR:123535
+[0;32mI (25293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106893,IR:123459
+[0;32mI (25333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106903,IR:123451
+[0;32mI (25373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106936,IR:123517
+[0;32mI (25413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106999,IR:123620
+[0;32mI (25453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107099,IR:123804
+[0;32mI (25493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107191,IR:123974
+[0;32mI (25533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107257,IR:124095
+[0;32mI (25573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107318,IR:124237
+[0;32mI (25613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107391,IR:124398
+[0;32mI (25653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107413,IR:124429
+[0;32mI (25693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107082,IR:123640
+[0;32mI (25733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106664,IR:122561
+[0;32mI (25773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106504,IR:122107
+[0;32mI (25813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106558,IR:122248
+[0;32mI (25853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106693,IR:122552
+[0;32mI (25893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106824,IR:122916
+[0;32mI (25933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106901,IR:123078
+[0;32mI (25973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106867,IR:123006
+[0;32mI (26013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106865,IR:122942
+[0;32mI (26053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106915,IR:123051
+[0;32mI (26093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107011,IR:123256
+[0;32mI (26133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107106,IR:123506
+[0;32mI (26173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107220,IR:123777
+[0;32mI (26213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107340,IR:124045
+[0;32mI (26253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107428,IR:124241
+[0;32mI (26293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107514,IR:124420
+[0;32mI (26333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107604,IR:124625
+[0;32mI (26373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107605,IR:124579
+[0;32mI (26413) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (26443) MAIN_APP: Nhiệt độ chip hiện tại: 33.44 °C[0m
+RED:107195,IR:123620
+[0;32mI (26453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106748,IR:122476
+[0;32mI (26493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106600,IR:122075
+[0;32mI (26533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106698,IR:122295
+[0;32mI (26573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106863,IR:122685
+[0;32mI (26613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107011,IR:123053
+[0;32mI (26653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107091,IR:123236
+[0;32mI (26693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107076,IR:123212
+[0;32mI (26733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107068,IR:123190
+[0;32mI (26773) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (26773) R_DEBUG: R=0.436 | RED_AC=6261.7 RED_DC=107421.1 | IR_AC=16688.2 IR_DC=124949.7[0m
+[0;32mI (26773) PPG_DEBUG: Thực tế: BPM = 0.0, SpO2 = 99.5% | Đếm được 2 đỉnh[0m
+[0;33mW (26783) MAIN_APP: Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều![0m
+RED:107141,IR:123328
+[0;32mI (26813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107237,IR:123574
+[0;32mI (26853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107353,IR:123847
+[0;32mI (26893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107461,IR:124102
+[0;32mI (26933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107552,IR:124316
+[0;32mI (26973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107627,IR:124492
+[0;32mI (27013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107682,IR:124627
+[0;32mI (27053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107758,IR:124804
+[0;32mI (27093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107829,IR:124950
+[0;32mI (27133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107564,IR:124343
+[0;32mI (27173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107077,IR:123126
+[0;32mI (27213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106792,IR:122415
+[0;32mI (27253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106803,IR:122405
+[0;32mI (27293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:106925,IR:122702
+[0;32mI (27333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107065,IR:123046
+[0;32mI (27373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107193,IR:123334
+[0;32mI (27413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107199,IR:123365
+[0;32mI (27453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107172,IR:123286
+[0;32mI (27493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107201,IR:123334
+[0;32mI (27533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107266,IR:123510
+[0;32mI (27573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107368,IR:123751
+[0;32mI (27613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107476,IR:124007
+[0;32mI (27653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107547,IR:124187
+[0;32mI (27693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107537,IR:124187
+[0;32mI (27733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107154,IR:123384
+[0;32mI (27773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:102478,IR:108839
+RED:71671,IR:59399
+RED:27337,IR:23359
+RED:11342,IR:10776
+RED:7345,IR:7335
+RED:6347,IR:6427
+RED:6148,IR:6278
+RED:6208,IR:6351
+RED:6269,IR:6452
+RED:6848,IR:7035
+RED:8982,IR:8960
+RED:10464,IR:10248
+RED:11341,IR:11021
+RED:12966,IR:12427
+RED:15469,IR:14480
+RED:16673,IR:15391
+RED:16448,IR:15250
+RED:16857,IR:15595
+RED:16425,IR:15318
+RED:16534,IR:15471
+RED:17453,IR:16238
+RED:19880,IR:18173
+RED:21072,IR:19099
+RED:21875,IR:19743
+RED:21799,IR:19715
+RED:22011,IR:19954
+RED:23341,IR:21070
+RED:25264,IR:22627
+RED:27595,IR:24503
+RED:29143,IR:25655
+RED:28947,IR:25516
+RED:29234,IR:25765
+RED:29922,IR:26299
+RED:30749,IR:26945
+RED:32504,IR:28386
+RED:35872,IR:31485
+RED:38464,IR:33665
+RED:41017,IR:35738
+RED:42196,IR:36472
+RED:45503,IR:37736
+RED:55776,IR:44135
+RED:66580,IR:51918
+RED:67648,IR:53078
+RED:80626,IR:65951
+RED:96377,IR:97852
+RED:102437,IR:108648
+RED:107981,IR:118915
+[0;32mI (29653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:110323,IR:123706
+[0;32mI (29693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111292,IR:125870
+[0;32mI (29733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112004,IR:127455
+[0;32mI (29773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112612,IR:128849
+[0;32mI (29813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113287,IR:130634
+[0;32mI (29853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113995,IR:132510
+[0;32mI (29893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114419,IR:133596
+[0;32mI (29933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114724,IR:134176
+[0;32mI (29973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:115022,IR:134492
+[0;32mI (30013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:115048,IR:134585
+[0;32mI (30053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114945,IR:134329
+[0;32mI (30093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114304,IR:132884
+[0;32mI (30133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113800,IR:131724
+[0;32mI (30173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113675,IR:131429
+[0;32mI (30213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113776,IR:131645
+[0;32mI (30253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113947,IR:132049
+[0;32mI (30293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114142,IR:132467
+[0;32mI (30333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114202,IR:132595
+[0;32mI (30373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114135,IR:132461
+[0;32mI (30413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114086,IR:132353
+[0;32mI (30453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114137,IR:132466
+[0;32mI (30493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114236,IR:132706
+[0;32mI (30533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114350,IR:132985
+[0;32mI (30573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114442,IR:133202
+[0;32mI (30613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114522,IR:133376
+[0;32mI (30653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114573,IR:133519
+[0;32mI (30693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114643,IR:133664
+[0;32mI (30733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114701,IR:133814
+[0;32mI (30773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114478,IR:133349
+[0;32mI (30813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114041,IR:132354
+[0;32mI (30853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113799,IR:131777
+[0;32mI (30893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113782,IR:131734
+[0;32mI (30933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113890,IR:131964
+[0;32mI (30973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114023,IR:132281
+[0;32mI (31013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114149,IR:132564
+[0;32mI (31053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114147,IR:132572
+[0;32mI (31093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114114,IR:132512
+[0;32mI (31133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114131,IR:132549
+[0;32mI (31173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114191,IR:132704
+[0;32mI (31213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114291,IR:132930
+[0;32mI (31253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114389,IR:133176
+[0;32mI (31293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114476,IR:133388
+[0;32mI (31333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114550,IR:133560
+[0;32mI (31373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114598,IR:133676
+[0;32mI (31413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114640,IR:133800
+[0;32mI (31453) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (31473) MAIN_APP: Nhiệt độ chip hiện tại: 33.69 °C[0m
+RED:114712,IR:133970
+[0;32mI (31493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114718,IR:133976
+[0;32mI (31533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114333,IR:133101
+[0;32mI (31573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113914,IR:132109
+[0;32mI (31613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113742,IR:131648
+[0;32mI (31653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113768,IR:131688
+[0;32mI (31693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113883,IR:131937
+[0;32mI (31733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114032,IR:132267
+[0;32mI (31773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114115,IR:132464
+[0;32mI (31813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114090,IR:132438
+[0;32mI (31853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114069,IR:132400
+[0;32mI (31893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114089,IR:132479
+[0;32mI (31933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114170,IR:132679
+[0;32mI (31973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114276,IR:132930
+[0;32mI (32013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114363,IR:133185
+[0;32mI (32053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114439,IR:133392
+[0;32mI (32093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114499,IR:133554
+[0;32mI (32133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114553,IR:133687
+[0;32mI (32173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114623,IR:133863
+[0;32mI (32213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114663,IR:133987
+[0;32mI (32253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114413,IR:133428
+[0;32mI (32293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113951,IR:132344
+[0;32mI (32333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113669,IR:131627
+[0;32mI (32373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113636,IR:131503
+[0;32mI (32413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113724,IR:131707
+[0;32mI (32453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113869,IR:132030
+[0;32mI (32493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113979,IR:132308
+[0;32mI (32533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113982,IR:132339
+[0;32mI (32573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113953,IR:132251
+[0;32mI (32613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113963,IR:132282
+[0;32mI (32653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114027,IR:132448
+[0;32mI (32693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114126,IR:132687
+[0;32mI (32733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114215,IR:132925
+[0;32mI (32773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114300,IR:133129
+[0;32mI (32813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114351,IR:133295
+[0;32mI (32853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114402,IR:133418
+[0;32mI (32893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114438,IR:133505
+[0;32mI (32933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114488,IR:133657
+[0;32mI (32973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114541,IR:133783
+[0;32mI (33013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114266,IR:133127
+[0;32mI (33053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113786,IR:131992
+[0;32mI (33093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113504,IR:131293
+[0;32mI (33133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113470,IR:131181
+[0;32mI (33173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113565,IR:131421
+[0;32mI (33213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113724,IR:131758
+[0;32mI (33253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113804,IR:131990
+[0;32mI (33293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113775,IR:131937
+[0;32mI (33333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113744,IR:131856
+[0;32mI (33373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113746,IR:131880
+[0;32mI (33413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113804,IR:132054
+[0;32mI (33453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113895,IR:132281
+[0;32mI (33493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113988,IR:132504
+[0;32mI (33533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114069,IR:132716
+[0;32mI (33573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114141,IR:132896
+[0;32mI (33613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114185,IR:133019
+[0;32mI (33653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114242,IR:133162
+[0;32mI (33693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114294,IR:133285
+[0;32mI (33733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114098,IR:132852
+[0;32mI (33773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113639,IR:131737
+[0;32mI (33813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113277,IR:130873
+[0;32mI (33853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113191,IR:130634
+[0;32mI (33893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113271,IR:130815
+[0;32mI (33933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113412,IR:131142
+[0;32mI (33973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113538,IR:131467
+[0;32mI (34013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113567,IR:131554
+[0;32mI (34053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113531,IR:131470
+[0;32mI (34093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113520,IR:131488
+[0;32mI (34133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113576,IR:131653
+[0;32mI (34173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113659,IR:131870
+[0;32mI (34213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113734,IR:132094
+[0;32mI (34253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113815,IR:132287
+[0;32mI (34293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113870,IR:132450
+[0;32mI (34333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113928,IR:132590
+[0;32mI (34373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113960,IR:132688
+[0;32mI (34413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113993,IR:132824
+[0;32mI (34453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:114068,IR:132994
+[0;32mI (34493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113975,IR:132806
+[0;32mI (34533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113501,IR:131673
+[0;32mI (34573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113077,IR:130604
+[0;32mI (34613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112897,IR:130147
+[0;32mI (34653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112938,IR:130219
+[0;32mI (34693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113050,IR:130483
+[0;32mI (34733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113178,IR:130809
+[0;32mI (34773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113232,IR:130928
+[0;32mI (34813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113205,IR:130878
+[0;32mI (34853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113190,IR:130857
+[0;32mI (34893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113245,IR:130953
+[0;32mI (34933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113324,IR:131169
+[0;32mI (34973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113428,IR:131445
+[0;32mI (35013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113517,IR:131682
+[0;32mI (35053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113597,IR:131873
+[0;32mI (35093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113659,IR:132034
+[0;32mI (35133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113708,IR:132181
+[0;32mI (35173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113776,IR:132340
+[0;32mI (35213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113834,IR:132498
+[0;32mI (35253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113725,IR:132248
+[0;32mI (35293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113244,IR:131106
+[0;32mI (35333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112812,IR:130021
+[0;32mI (35373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112637,IR:129601
+[0;32mI (35413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112715,IR:129757
+[0;32mI (35453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112862,IR:130094
+[0;32mI (35493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113020,IR:130453
+[0;32mI (35533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113069,IR:130591
+[0;32mI (35573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113039,IR:130531
+[0;32mI (35613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113033,IR:130547
+[0;32mI (35653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113099,IR:130698
+[0;32mI (35693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113210,IR:130970
+[0;32mI (35733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113334,IR:131291
+[0;32mI (35773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113433,IR:131535
+[0;32mI (35813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113512,IR:131720
+[0;32mI (35853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113560,IR:131867
+[0;32mI (35893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113622,IR:132020
+[0;32mI (35933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113695,IR:132185
+[0;32mI (35973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113642,IR:132116
+[0;32mI (36013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113235,IR:131125
+[0;32mI (36053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112775,IR:129982
+[0;32mI (36093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112546,IR:129432
+[0;32mI (36133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112548,IR:129421
+[0;32mI (36173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112646,IR:129623
+[0;32mI (36213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112810,IR:130056
+[0;32mI (36253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112910,IR:130304
+[0;32mI (36293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112904,IR:130318
+[0;32mI (36333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112909,IR:130313
+[0;32mI (36373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112960,IR:130463
+[0;32mI (36413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113080,IR:130726
+[0;32mI (36453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113196,IR:131028
+[0;32mI (36493) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (36503) MAIN_APP: Nhiệt độ chip hiện tại: 33.75 °C[0m
+RED:113309,IR:131314
+[0;32mI (36533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113418,IR:131550
+[0;32mI (36573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113488,IR:131722
+[0;32mI (36613) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113542,IR:131882
+[0;32mI (36653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113630,IR:132076
+[0;32mI (36693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113686,IR:132229
+[0;32mI (36733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113410,IR:131615
+[0;32mI (36773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112869,IR:130314
+[0;32mI (36813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112477,IR:129319
+[0;32mI (36853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112349,IR:128983
+[0;32mI (36893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112355,IR:128968
+[0;32mI (36933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112506,IR:129317
+[0;32mI (36973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112681,IR:129758
+[0;32mI (37013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112751,IR:129925
+[0;32mI (37053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112737,IR:129921
+[0;32mI (37093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112755,IR:129983
+[0;32mI (37133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112852,IR:130192
+[0;32mI (37173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112968,IR:130505
+[0;32mI (37213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113105,IR:130848
+[0;32mI (37253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113224,IR:131139
+[0;32mI (37293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113322,IR:131384
+[0;32mI (37333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113394,IR:131576
+[0;32mI (37373) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113462,IR:131756
+[0;32mI (37413) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113553,IR:131962
+[0;32mI (37453) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113533,IR:131944
+[0;32mI (37493) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113103,IR:130914
+[0;32mI (37533) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112599,IR:129653
+[0;32mI (37573) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112314,IR:128929
+[0;32mI (37613) PPG_DEBUG: Mẫu này dùng được[0m
+[0;32mI (37613) R_DEBUG: R=0.557 | RED_AC=11281.0 RED_DC=113692.5 | IR_AC=23475.0 IR_DC=131856.8[0m
+[0;32mI (37623) PPG_DEBUG: Thực tế: BPM = 0.0, SpO2 = 97.8% | Đếm được 1 đỉnh[0m
+[0;33mW (37623) MAIN_APP: Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều![0m
+RED:112251,IR:128705
+[0;32mI (37653) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112341,IR:128926
+[0;32mI (37693) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112549,IR:129440
+[0;32mI (37733) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112681,IR:129772
+[0;32mI (37773) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112693,IR:129825
+[0;32mI (37813) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112679,IR:129817
+[0;32mI (37853) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112727,IR:129929
+[0;32mI (37893) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112840,IR:130180
+[0;32mI (37933) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112966,IR:130513
+[0;32mI (37973) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113077,IR:130836
+[0;32mI (38013) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113167,IR:131077
+[0;32mI (38053) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113235,IR:131255
+[0;32mI (38093) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113297,IR:131438
+[0;32mI (38133) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113382,IR:131668
+[0;32mI (38173) PPG_DEBUG: Mẫu này dùng được[0m
+RED:113368,IR:131635
+[0;32mI (38213) PPG_DEBUG: Mẫu này dùng được[0m
+RED:112892,IR:130491
+[0;32mI (38253) PPG_DEBUG: Mẫu này dùng được[0m
+RED:111856,IR:127891
+[0;32mI (38293) PPG_DEBUG: Mẫu này dùng được[0m
+RED:107744,IR:119188
+[0;32mI (38333) PPG_DEBUG: Mẫu này dùng được[0m
+RED:87607,IR:76866
+RED:22241,IR:20281
+RED:7397,IR:7830
+RED:3408,IR:3921
+RED:1744,IR:2145
+RED:966,IR:1246
+RED:647,IR:878
+RED:581,IR:760
+RED:571,IR:709
+RED:567,IR:679
+RED:544,IR:650
+RED:509,IR:619
+RED:480,IR:602
+RED:474,IR:602
+RED:466,IR:598
+RED:470,IR:599
+RED:465,IR:593
+RED:465,IR:597
+RED:456,IR:593
+RED:466,IR:587
+RED:463,IR:590
+RED:462,IR:592
+RED:462,IR:583
+RED:464,IR:584
+RED:462,IR:597
+RED:467,IR:584
+RED:460,IR:591
+RED:462,IR:588
+RED:461,IR:593
+RED:458,IR:587
+RED:455,IR:585
+RED:460,IR:587
+RED:468,IR:589
+RED:455,IR:586
+RED:463,IR:578
+RED:459,IR:584
+RED:458,IR:581

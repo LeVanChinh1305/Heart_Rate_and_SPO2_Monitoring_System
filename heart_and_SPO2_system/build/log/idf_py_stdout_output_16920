@@ -1,0 +1,18 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\esp-idf\esptool_py && D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5840 bytes. 0x27c0 bytes (31%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/ppg_algorithm/CMakeFiles/__idf_ppg_algorithm.dir/ppg_algorithm.c.obj
+[5/9] Linking C static library esp-idf\ppg_algorithm\libppg_algorithm.a
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable heart_and_SPO2_system.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.11.dev1
+Creating esp32c6 image...
+Merged 1 ELF section
+Successfully created esp32c6 image.
+Generated D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/heart_and_SPO2_system.bin
+[9/9] C:\Windows\system32\cmd.exe /C "cd /D D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\esp-idf\esptool_py && D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/partition_table/partition-table.bin D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/heart_and_SPO2_system.bin"
+heart_and_SPO2_system.bin binary size 0x302c0 bytes. Smallest app partition is 0x100000 bytes. 0xcfd40 bytes (81%) free.

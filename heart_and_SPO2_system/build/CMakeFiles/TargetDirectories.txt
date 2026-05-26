@@ -845,6 +845,13 @@ D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/es
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MAX30102/CMakeFiles/install.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MAX30102/CMakeFiles/install/local.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MAX30102/CMakeFiles/install/strip.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/__idf_ppg_algorithm.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/edit_cache.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/rebuild_cache.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/list_install_components.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/install.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/install/local.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/CMakeFiles/install/strip.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/CMakeFiles/__idf_main.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/CMakeFiles/edit_cache.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

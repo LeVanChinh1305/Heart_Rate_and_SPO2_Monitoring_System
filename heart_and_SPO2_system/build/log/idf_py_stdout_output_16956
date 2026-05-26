@@ -1,0 +1,556 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0xe (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 24 2026 17:52:11[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (24) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0abf0h ( 44016) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=0001ac18 vaddr=40800000 size=05400h ( 21504) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=17b4ch ( 97100) map[0m
+[0;32mI (116) esp_image: segment 3: paddr=00037b74 vaddr=40805400 size=06c5ch ( 27740) load[0m
+[0;32mI (122) esp_image: segment 4: paddr=0003e7d8 vaddr=4080c060 size=0194ch (  6476) load[0m
+[0;32mI (127) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (141) cpu_start: Unicore app[0m
+[0;32mI (149) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (150) cpu_start: Pro cpu start user code[0m
+[0;32mI (150) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (152) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (161) app_init: App version:      df12168-dirty[0m
+[0;32mI (165) app_init: Compile time:     May 26 2026 16:24:24[0m
+[0;32mI (170) app_init: ELF file SHA256:  1363d5977...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (179) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (183) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (187) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (191) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (197) heap_init: At 4080EE00 len 0006D810 (438 KiB): RAM[0m
+[0;32mI (202) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (207) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (213) spi_flash: detected chip: generic[0m
+[0;32mI (216) spi_flash: flash io: dio[0m
+[0;33mW (219) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (231) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (238) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (244) coexist: coex firmware version: 7260f71[0m
+[0;32mI (248) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (253) main_task: Started on CPU0[0m
+[0;32mI (253) main_task: Calling app_main()[0m
+[0;32mI (263) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;33mW (263) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (263) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (273) MAIN_APP: Khởi tạo thất bại lần 1. Thử lại sau 1 giây... (Hãy kiểm tra/ấn chặt lại dây nối)[0m
+[0;33mW (1283) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (1283) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (1293) MAIN_APP: Khởi tạo cảm biến thành công sau 2 lần thử![0m
+[0;32mI (1293) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (1293) main_task: Returned from app_main()[0m
+RED:451,IR:2121
+[0;33mW (1323) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 451, IR: 2121[0m
+RED:458,IR:4082
+[0;33mW (1363) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 458, IR: 4082[0m
+RED:455,IR:5796
+[0;33mW (1403) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 455, IR: 5796[0m
+RED:460,IR:5900
+[0;33mW (1443) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 460, IR: 5900[0m
+RED:458,IR:4046
+[0;33mW (1483) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 458, IR: 4046[0m
+RED:469,IR:1921
+[0;33mW (1523) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 469, IR: 1921[0m
+RED:678,IR:672
+[0;33mW (1563) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 678, IR: 672[0m
+RED:1576,IR:418
+[0;33mW (1603) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 1576, IR: 418[0m
+RED:3423,IR:395
+[0;33mW (1643) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 3423, IR: 395[0m
+RED:5422,IR:373
+[0;33mW (1683) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 5422, IR: 373[0m
+RED:5959,IR:346
+[0;33mW (1723) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 5959, IR: 346[0m
+RED:4516,IR:322
+[0;33mW (1763) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 4516, IR: 322[0m
+RED:2292,IR:278
+[0;33mW (1803) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 2292, IR: 278[0m
+RED:765,IR:247
+[0;33mW (1843) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 765, IR: 247[0m
+RED:337,IR:216
+[0;33mW (1883) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 337, IR: 216[0m
+RED:306,IR:190
+[0;33mW (1923) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 306, IR: 190[0m
+RED:285,IR:177
+[0;33mW (1963) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 285, IR: 177[0m
+RED:264,IR:185
+[0;33mW (2003) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 264, IR: 185[0m
+RED:234,IR:199
+[0;33mW (2043) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 234, IR: 199[0m
+RED:199,IR:225
+[0;33mW (2083) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 199, IR: 225[0m
+RED:161,IR:252
+[0;33mW (2123) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 161, IR: 252[0m
+RED:139,IR:267
+[0;33mW (2163) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 139, IR: 267[0m
+RED:105,IR:287
+[0;33mW (2203) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 105, IR: 287[0m
+RED:95,IR:301
+[0;33mW (2243) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 95, IR: 301[0m
+RED:83,IR:320
+[0;33mW (2283) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 83, IR: 320[0m
+RED:100,IR:343
+[0;33mW (2323) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 100, IR: 343[0m
+RED:119,IR:351
+[0;33mW (2363) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 119, IR: 351[0m
+RED:148,IR:364
+[0;33mW (2403) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 148, IR: 364[0m
+RED:168,IR:379
+[0;33mW (2443) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 168, IR: 379[0m
+RED:192,IR:392
+[0;33mW (2483) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 192, IR: 392[0m
+RED:204,IR:402
+[0;33mW (2523) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 204, IR: 402[0m
+RED:223,IR:414
+[0;33mW (2563) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 223, IR: 414[0m
+RED:240,IR:425
+[0;33mW (2603) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 240, IR: 425[0m
+RED:256,IR:430
+[0;33mW (2643) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 256, IR: 430[0m
+RED:270,IR:443
+[0;33mW (2683) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 270, IR: 443[0m
+RED:285,IR:467
+[0;33mW (2723) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 285, IR: 467[0m
+RED:297,IR:511
+[0;33mW (2763) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 297, IR: 511[0m
+RED:311,IR:581
+[0;33mW (2803) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 311, IR: 581[0m
+RED:317,IR:636
+[0;33mW (2843) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 317, IR: 636[0m
+RED:326,IR:686
+[0;33mW (2883) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 326, IR: 686[0m
+RED:338,IR:713
+[0;33mW (2923) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 338, IR: 713[0m
+RED:341,IR:741
+[0;33mW (2963) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 341, IR: 741[0m
+RED:362,IR:714
+[0;33mW (3003) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 362, IR: 714[0m
+RED:409,IR:238
+[0;33mW (3043) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 409, IR: 238[0m
+RED:465,IR:0
+[0;33mW (3083) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 465, IR: 0[0m
+RED:539,IR:0
+[0;33mW (3123) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 539, IR: 0[0m
+RED:581,IR:0
+[0;33mW (3163) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 581, IR: 0[0m
+RED:618,IR:0
+[0;33mW (3203) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 618, IR: 0[0m
+RED:634,IR:0
+[0;33mW (3243) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 634, IR: 0[0m
+RED:632,IR:373
+[0;33mW (3283) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 632, IR: 373[0m
+RED:318,IR:537
+[0;33mW (3323) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 318, IR: 537[0m
+RED:0,IR:549
+[0;33mW (3363) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 549[0m
+RED:0,IR:553
+[0;33mW (3403) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 553[0m
+RED:0,IR:549
+[0;33mW (3443) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 549[0m
+RED:0,IR:549
+[0;33mW (3483) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 549[0m
+RED:0,IR:551
+[0;33mW (3523) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 551[0m
+RED:204,IR:551
+[0;33mW (3563) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 204, IR: 551[0m
+RED:444,IR:555
+[0;33mW (3603) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 444, IR: 555[0m
+RED:453,IR:551
+[0;33mW (3643) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 453, IR: 551[0m
+RED:455,IR:549
+[0;33mW (3683) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 455, IR: 549[0m
+RED:458,IR:548
+[0;33mW (3723) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 458, IR: 548[0m
+RED:459,IR:555
+[0;33mW (3763) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 459, IR: 555[0m
+RED:462,IR:555
+[0;33mW (3803) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 462, IR: 555[0m
+RED:464,IR:551
+[0;33mW (3843) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 464, IR: 551[0m
+RED:460,IR:582
+[0;33mW (3883) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 460, IR: 582[0m
+RED:457,IR:907
+[0;33mW (3923) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 457, IR: 907[0m
+RED:459,IR:2116
+[0;33mW (3963) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 459, IR: 2116[0m
+RED:463,IR:4167
+[0;33mW (4003) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 463, IR: 4167[0m
+RED:462,IR:5828
+[0;33mW (4043) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 462, IR: 5828[0m
+RED:459,IR:5863
+[0;33mW (4083) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 459, IR: 5863[0m
+RED:462,IR:3956
+[0;33mW (4123) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 462, IR: 3956[0m
+RED:476,IR:1825
+[0;33mW (4163) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 476, IR: 1825[0m
+RED:711,IR:568
+[0;33mW (4203) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 711, IR: 568[0m
+RED:1677,IR:417
+[0;33mW (4243) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 1677, IR: 417[0m
+RED:3667,IR:397
+[0;33mW (4283) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 3667, IR: 397[0m
+RED:5544,IR:369
+[0;33mW (4323) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 5544, IR: 369[0m
+RED:5876,IR:343
+[0;33mW (4363) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 5876, IR: 343[0m
+RED:4170,IR:314
+[0;33mW (4403) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 4170, IR: 314[0m
+RED:2018,IR:279
+[0;33mW (4443) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 2018, IR: 279[0m
+RED:599,IR:240
+[0;33mW (4483) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 599, IR: 240[0m
+RED:327,IR:220
+[0;33mW (4523) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 327, IR: 220[0m
+RED:306,IR:180
+[0;33mW (4563) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 306, IR: 180[0m
+RED:284,IR:181
+[0;33mW (4603) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 284, IR: 181[0m
+RED:255,IR:191
+[0;33mW (4643) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 255, IR: 191[0m
+RED:227,IR:211
+[0;33mW (4683) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 227, IR: 211[0m
+RED:209,IR:246
+[0;33mW (4723) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 209, IR: 246[0m
+RED:193,IR:281
+[0;33mW (4763) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 193, IR: 281[0m
+RED:184,IR:341
+[0;33mW (4803) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 184, IR: 341[0m
+RED:200,IR:404
+[0;33mW (4843) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 200, IR: 404[0m
+RED:244,IR:504
+[0;33mW (4883) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 244, IR: 504[0m
+RED:314,IR:559
+[0;33mW (4923) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 314, IR: 559[0m
+RED:374,IR:589
+[0;33mW (4963) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 374, IR: 589[0m
+RED:457,IR:623
+[0;33mW (5003) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 457, IR: 623[0m
+RED:610,IR:712
+[0;33mW (5043) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 610, IR: 712[0m
+RED:950,IR:966
+[0;33mW (5083) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 950, IR: 966[0m
+RED:1752,IR:1579
+[0;33mW (5123) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 1752, IR: 1579[0m
+RED:3669,IR:2966
+[0;33mW (5163) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 3669, IR: 2966[0m
+RED:8506,IR:6947
+[0;33mW (5203) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 8506, IR: 6947[0m
+RED:16221,IR:14255
+[0;33mW (5243) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 16221, IR: 14255[0m
+RED:22544,IR:19680
+[0;33mW (5283) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 22544, IR: 19680[0m
+RED:31033,IR:27329
+RED:53980,IR:45739
+RED:81056,IR:67688
+RED:87647,IR:91149
+RED:97160,IR:111627
+RED:100688,IR:118316
+RED:100391,IR:117044
+RED:99787,IR:115546
+RED:101154,IR:118937
+RED:102150,IR:121304
+RED:102444,IR:121963
+RED:102506,IR:121969
+RED:102130,IR:120895
+RED:101755,IR:120062
+RED:102140,IR:121107
+RED:102537,IR:122059
+RED:102549,IR:122082
+RED:102220,IR:121425
+RED:102546,IR:122270
+RED:102837,IR:123009
+RED:102840,IR:123001
+RED:103193,IR:123816
+RED:103522,IR:124476
+RED:102839,IR:122654
+RED:101198,IR:118608
+[0;32mI (6323) MAIN_APP: Nhiệt độ chip hiện tại: 32.88 °C[0m
+RED:100899,IR:118164
+RED:101676,IR:120041
+RED:102233,IR:121399
+RED:102746,IR:122565
+RED:102637,IR:122227
+RED:101899,IR:120453
+RED:101936,IR:120641
+RED:102268,IR:121484
+RED:102417,IR:122005
+RED:102435,IR:122252
+RED:102741,IR:122972
+RED:102845,IR:123012
+RED:102349,IR:121636
+RED:101861,IR:120431
+RED:102088,IR:120985
+RED:102399,IR:121660
+RED:102427,IR:121789
+RED:102723,IR:122681
+RED:102710,IR:122774
+RED:102038,IR:121225
+RED:101169,IR:119139
+RED:100867,IR:118490
+RED:100880,IR:118536
+RED:101073,IR:119028
+RED:101245,IR:119465
+RED:101390,IR:119870
+RED:101514,IR:120160
+RED:101285,IR:119528
+RED:100901,IR:118563
+RED:101106,IR:119178
+RED:101669,IR:120549
+RED:101813,IR:120915
+RED:101680,IR:120551
+RED:101836,IR:120982
+RED:102075,IR:121596
+RED:102176,IR:121855
+RED:102384,IR:122400
+RED:102718,IR:123207
+RED:102850,IR:123522
+RED:102537,IR:122804
+RED:102128,IR:121894
+RED:101992,IR:121517
+RED:101539,IR:120339
+RED:100969,IR:118843
+RED:101232,IR:119476
+RED:101883,IR:121026
+RED:101939,IR:121203
+RED:101939,IR:121255
+RED:102486,IR:122589
+RED:102688,IR:122985
+RED:102240,IR:121843
+RED:101684,IR:120478
+RED:102019,IR:121363
+RED:102508,IR:122626
+RED:102643,IR:123033
+RED:102514,IR:122740
+RED:102406,IR:122596
+RED:102439,IR:122819
+RED:102548,IR:123265
+RED:102620,IR:123626
+RED:102587,IR:123572
+RED:102184,IR:122516
+RED:101669,IR:121149
+RED:101415,IR:120509
+RED:101314,IR:120290
+RED:101293,IR:120297
+RED:101438,IR:120688
+RED:101603,IR:121107
+RED:101603,IR:121134
+RED:101558,IR:121067
+RED:101425,IR:120770
+RED:101389,IR:120727
+RED:101497,IR:121047
+RED:101745,IR:121795
+RED:101888,IR:122232
+[0;32mI (9283) PPG_DEBUG: Tính toán thô: BPM = 240.0, SpO2 = 88.0% | Đếm được 3 đỉnh | AC_IR = 97147, DC_IR = 118592[0m
+[0;33mW (9283) MAIN_APP: Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều![0m
+RED:101887,IR:122328
+RED:101956,IR:122516
+RED:102013,IR:122598
+RED:102053,IR:122654
+RED:102092,IR:122664
+RED:102055,IR:122525
+RED:101754,IR:121613
+RED:101429,IR:120734
+RED:101314,IR:120425
+RED:101295,IR:120514
+RED:101210,IR:120538
+RED:101226,IR:120742
+RED:101204,IR:120733
+RED:101086,IR:120484
+RED:101103,IR:120550
+RED:101189,IR:120806
+RED:101225,IR:120897
+RED:101312,IR:121136
+RED:101389,IR:121332
+RED:101232,IR:120885
+RED:100424,IR:118796
+RED:100063,IR:118152
+RED:100447,IR:119140
+RED:100855,IR:120148
+RED:101139,IR:120813
+RED:101030,IR:120482
+RED:100638,IR:119548
+RED:100442,IR:119106
+RED:100482,IR:119246
+RED:100586,IR:119513
+RED:100671,IR:119727
+RED:100725,IR:119864
+RED:100675,IR:119741
+RED:100598,IR:119575
+RED:100574,IR:119519
+RED:100671,IR:119794
+RED:100881,IR:120332
+RED:100931,IR:120441
+RED:100956,IR:120523
+RED:101081,IR:120822
+RED:101172,IR:121022
+RED:101278,IR:121259
+RED:101335,IR:121366
+RED:101431,IR:121601
+RED:101339,IR:121278
+RED:100931,IR:120231
+RED:100557,IR:119376
+RED:100488,IR:119320
+RED:100547,IR:119481
+RED:100613,IR:119699
+[0;32mI (11283) PPG_DEBUG: Tính toán thô: BPM = 260.9, SpO2 = 94.8% | Đếm được 2 đỉnh | AC_IR = 5474, DC_IR = 120966[0m
+[0;33mW (11283) MAIN_APP: Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều![0m
+RED:100701,IR:119985
+[0;32mI (11353) MAIN_APP: Nhiệt độ chip hiện tại: 33.25 °C[0m
+RED:100672,IR:120073
+RED:100618,IR:120049
+RED:100612,IR:119985
+RED:100711,IR:120106
+RED:100872,IR:120378
+RED:100989,IR:120611
+RED:101057,IR:120773
+RED:101125,IR:120905
+RED:101129,IR:120935
+RED:101143,IR:120972
+RED:101217,IR:121171
+RED:101335,IR:121459
+RED:101230,IR:121180
+RED:100792,IR:120115
+RED:100330,IR:119103
+RED:100301,IR:119138
+RED:100450,IR:119573
+RED:100493,IR:119747
+RED:100589,IR:120054
+RED:100592,IR:120028
+RED:100451,IR:119643
+RED:100419,IR:119538
+RED:100546,IR:119786
+RED:100638,IR:119879
+RED:100747,IR:120010
+RED:100890,IR:120243
+RED:100879,IR:120222
+RED:100863,IR:120343
+RED:100850,IR:120451
+RED:100917,IR:120725
+RED:101012,IR:120931
+RED:100742,IR:120244
+RED:100367,IR:119336
+RED:100205,IR:119006
+RED:100210,IR:119033
+RED:100207,IR:119067
+RED:100317,IR:119345
+RED:100329,IR:119360
+RED:100315,IR:119277
+RED:100232,IR:119086
+RED:100304,IR:119227
+RED:100360,IR:119373
+RED:100500,IR:119708
+RED:100628,IR:120010
+RED:100702,IR:120167
+RED:100754,IR:120281
+RED:100815,IR:120422
+RED:100964,IR:120750
+RED:101017,IR:120875
+[0;32mI (13283) PPG_DEBUG: Tính toán thô: BPM = 0.0, SpO2 = 96.6% | Đếm được 1 đỉnh | AC_IR = 4512, DC_IR = 120292[0m
+[0;33mW (13283) MAIN_APP: Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều![0m
+RED:101032,IR:120905
+RED:100775,IR:120288
+RED:100260,IR:119023
+RED:99991,IR:118430
+RED:100012,IR:118491
+RED:100115,IR:118724
+RED:100258,IR:119049
+RED:100382,IR:119291
+RED:100377,IR:119262
+RED:100262,IR:118965
+RED:100266,IR:118986
+RED:100327,IR:119112
+RED:100407,IR:119242
+RED:100407,IR:119188
+RED:98301,IR:114689
+RED:82801,IR:75974
+RED:15463,IR:10431
+[0;33mW (13963) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 15463, IR: 10431[0m
+RED:2525,IR:1865
+[0;33mW (14003) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 2525, IR: 1865[0m
+RED:1103,IR:1202
+[0;33mW (14043) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 1103, IR: 1202[0m
+RED:76,IR:926
+[0;33mW (14083) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 76, IR: 926[0m
+RED:0,IR:831
+[0;33mW (14123) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 831[0m
+RED:0,IR:739
+[0;33mW (14163) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 739[0m
+RED:0,IR:666
+[0;33mW (14203) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 666[0m
+RED:0,IR:618
+[0;33mW (14243) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 0, IR: 618[0m
+RED:55,IR:579
+[0;33mW (14283) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 55, IR: 579[0m
+RED:421,IR:568
+[0;33mW (14323) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 421, IR: 568[0m
+RED:502,IR:559
+[0;33mW (14363) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 502, IR: 559[0m
+RED:512,IR:563
+[0;33mW (14403) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 512, IR: 563[0m
+RED:501,IR:565
+[0;33mW (14443) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 501, IR: 565[0m
+RED:502,IR:566
+[0;33mW (14483) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 502, IR: 566[0m
+RED:498,IR:561
+[0;33mW (14523) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 498, IR: 561[0m
+RED:498,IR:563
+[0;33mW (14563) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 498, IR: 563[0m
+RED:499,IR:553
+[0;33mW (14603) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 499, IR: 553[0m
+RED:491,IR:599
+[0;33mW (14643) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 491, IR: 599[0m
+RED:495,IR:910
+[0;33mW (14683) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 495, IR: 910[0m
+RED:491,IR:2038
+[0;33mW (14723) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 491, IR: 2038[0m
+RED:491,IR:4030
+[0;33mW (14763) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 491, IR: 4030[0m
+RED:484,IR:5687
+[0;33mW (14803) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 484, IR: 5687[0m
+RED:481,IR:5966
+[0;33mW (14843) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 481, IR: 5966[0m
+RED:488,IR:4404
+[0;33mW (14883) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 488, IR: 4404[0m
+RED:495,IR:2324
+[0;33mW (14923) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 495, IR: 2324[0m
+RED:618,IR:836
+[0;33mW (14963) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 618, IR: 836[0m
+RED:1214,IR:433
+[0;33mW (15003) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 1214, IR: 433[0m
+RED:2770,IR:409
+[0;33mW (15043) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 2770, IR: 409[0m
+RED:4761,IR:380
+[0;33mW (15083) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 4761, IR: 380[0m
+RED:5939,IR:357
+[0;33mW (15123) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 5939, IR: 357[0m
+RED:5360,IR:332
+[0;33mW (15163) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 5360, IR: 332[0m
+RED:3419,IR:302
+[0;33mW (15203) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 3419, IR: 302[0m
+RED:1433,IR:267
+[0;33mW (15243) PPG_ALGORITHM: Tín hiệu quá yếu! Có thể do không có tay hoặc tay không tiếp xúc tốt. Red: 1433, IR: 267[0m

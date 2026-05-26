@@ -1,0 +1,558 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0x1e (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 24 2026 17:52:11[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (25) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a9e8h ( 43496) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=0001aa10 vaddr=40800000 size=05608h ( 22024) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=17b5ch ( 97116) map[0m
+[0;32mI (116) esp_image: segment 3: paddr=00037b84 vaddr=40805608 size=06a54h ( 27220) load[0m
+[0;32mI (122) esp_image: segment 4: paddr=0003e5e0 vaddr=4080c060 size=0194ch (  6476) load[0m
+[0;32mI (127) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (141) cpu_start: Unicore app[0m
+[0;32mI (150) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (150) cpu_start: Pro cpu start user code[0m
+[0;32mI (150) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (152) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (161) app_init: App version:      df12168-dirty[0m
+[0;32mI (165) app_init: Compile time:     May 26 2026 18:06:06[0m
+[0;32mI (170) app_init: ELF file SHA256:  9825ba6b2...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (179) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (183) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (187) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (191) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (197) heap_init: At 4080F5D0 len 0006D040 (436 KiB): RAM[0m
+[0;32mI (202) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (207) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (213) spi_flash: detected chip: generic[0m
+[0;32mI (216) spi_flash: flash io: dio[0m
+[0;33mW (219) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (232) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (238) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (244) coexist: coex firmware version: 7260f71[0m
+[0;32mI (249) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (253) main_task: Started on CPU0[0m
+[0;32mI (253) main_task: Calling app_main()[0m
+[0;32mI (263) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;33mW (263) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (263) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (273) MAIN_APP: Khởi tạo thất bại lần 1. Thử lại sau 1 giây... (Hãy kiểm tra/ấn chặt lại dây nối)[0m
+[0;33mW (1283) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (1283) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (1293) MAIN_APP: Khởi tạo cảm biến thành công sau 2 lần thử![0m
+[0;32mI (1293) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (1293) main_task: Returned from app_main()[0m
+>AC_IR:21159.179688
+>Threshold:1057.958984
+>AC_IR:26068.171875
+>Threshold:2308.469727
+>AC_IR:27128.523438
+>Threshold:3549.472168
+>AC_IR:27627.687500
+>Threshold:4753.382812
+>AC_IR:28024.750000
+>Threshold:5916.951172
+>AC_IR:28309.992188
+>Threshold:7036.603027
+>AC_IR:28583.648438
+>Threshold:8113.955566
+>AC_IR:28855.750000
+>Threshold:9151.044922
+>AC_IR:28518.734375
+>Threshold:10119.428711
+>AC_IR:28058.117188
+>Threshold:11016.363281
+>AC_IR:27933.054688
+>Threshold:11862.197266
+>AC_IR:28068.234375
+>Threshold:12672.499023
+>AC_IR:28184.054688
+>Threshold:13448.077148
+>AC_IR:28115.273438
+>Threshold:14181.436523
+>AC_IR:27859.703125
+>Threshold:14865.349609
+>AC_IR:27515.164062
+>Threshold:15497.839844
+>AC_IR:27170.656250
+>Threshold:16081.480469
+>AC_IR:26725.234375
+>Threshold:16613.667969
+>AC_IR:24839.312500
+>Threshold:17024.949219
+>AC_IR:22717.679688
+>Threshold:17309.585938
+>AC_IR:22139.843750
+>Threshold:17551.097656
+>AC_IR:22221.343750
+>Threshold:17784.609375
+>AC_IR:22173.812500
+>Threshold:18004.070312
+>AC_IR:22294.820312
+>Threshold:18218.607422
+>AC_IR:22564.320312
+>Threshold:18435.894531
+>AC_IR:22269.828125
+>Threshold:18627.591797
+>AC_IR:21745.054688
+>Threshold:18783.464844
+>AC_IR:21481.656250
+>Threshold:18918.373047
+>AC_IR:21496.937500
+>Threshold:19047.302734
+>AC_IR:21416.859375
+>Threshold:19165.781250
+>AC_IR:21318.781250
+>Threshold:19273.431641
+>AC_IR:21162.882812
+>Threshold:19367.904297
+>AC_IR:20917.007812
+>Threshold:19445.359375
+>AC_IR:20659.382812
+>Threshold:19506.060547
+>AC_IR:20415.734375
+>Threshold:19551.544922
+>AC_IR:20220.078125
+>Threshold:19584.970703
+>AC_IR:19770.593750
+>Threshold:19594.251953
+>AC_IR:17756.218750
+>Threshold:19502.349609
+>AC_IR:15939.906250
+>Threshold:19324.228516
+>AC_IR:15602.484375
+>Threshold:19138.142578
+>AC_IR:15858.828125
+>Threshold:18974.175781
+>AC_IR:15963.046875
+>Threshold:18823.619141
+>AC_IR:16190.625000
+>Threshold:18691.968750
+>AC_IR:16447.953125
+>Threshold:18579.767578
+>AC_IR:16188.570312
+>Threshold:18460.207031
+>AC_IR:15857.937500
+>Threshold:18330.093750
+>AC_IR:15731.875000
+>Threshold:18200.181641
+>AC_IR:15738.671875
+>Threshold:18077.105469
+>AC_IR:15767.882812
+>Threshold:17961.644531
+>AC_IR:15708.296875
+>Threshold:17848.976562
+>AC_IR:15524.468750
+>Threshold:17732.750000
+>AC_IR:15323.734375
+>Threshold:17612.298828
+>AC_IR:15120.156250
+>Threshold:17487.691406
+>AC_IR:14913.796875
+>Threshold:17358.996094
+>AC_IR:14707.640625
+>Threshold:17226.429688
+>AC_IR:14547.742188
+>Threshold:17092.496094
+>AC_IR:14267.562500
+>Threshold:16951.250000
+>AC_IR:12686.648438
+>Threshold:16738.019531
+>AC_IR:10881.570312
+>Threshold:16445.197266
+>AC_IR:10444.414062
+>Threshold:16145.158203
+>AC_IR:10850.968750
+>Threshold:15880.449219
+>AC_IR:11162.171875
+>Threshold:15644.535156
+>AC_IR:11517.125000
+>Threshold:15438.165039
+>AC_IR:11715.039062
+>Threshold:15252.008789
+>AC_IR:11514.062500
+>Threshold:15065.111328
+>AC_IR:11192.640625
+>Threshold:14871.487305
+>AC_IR:11092.265625
+>Threshold:14682.526367
+>AC_IR:11161.476562
+>Threshold:14506.473633
+>AC_IR:11197.937500
+>Threshold:14341.045898
+>AC_IR:11173.898438
+>Threshold:14182.688477
+>AC_IR:11067.039062
+>Threshold:14026.905273
+>AC_IR:10939.781250
+>Threshold:13872.548828
+>AC_IR:10793.500000
+>Threshold:13718.595703
+>AC_IR:10658.968750
+>Threshold:13565.614258
+>AC_IR:10570.250000
+>Threshold:13415.845703
+>AC_IR:10441.164062
+>Threshold:13267.112305
+>AC_IR:9545.359375
+>Threshold:13081.024414
+>AC_IR:7519.890625
+>Threshold:12802.966797
+>AC_IR:6727.585938
+>Threshold:12499.197266
+>AC_IR:7120.273438
+>Threshold:12230.250977
+>AC_IR:7608.007812
+>Threshold:11999.138672
+>AC_IR:8006.601562
+>Threshold:11799.511719
+>AC_IR:8317.843750
+>Threshold:11625.428711
+>AC_IR:8192.640625
+>Threshold:11453.789062
+>AC_IR:7835.726562
+>Threshold:11272.885742
+>AC_IR:7732.906250
+>Threshold:11095.886719
+>AC_IR:7801.679688
+>Threshold:10931.175781
+>AC_IR:7869.078125
+>Threshold:10778.071289
+>AC_IR:7887.109375
+>Threshold:10633.523438
+>AC_IR:7853.828125
+>Threshold:10494.538086
+>AC_IR:7808.468750
+>Threshold:10360.235352
+>AC_IR:7744.421875
+>Threshold:10229.444336
+>AC_IR:7685.562500
+>Threshold:10102.250000
+>AC_IR:7622.984375
+>Threshold:9978.287109
+>AC_IR:7553.828125
+>Threshold:9857.064453
+>AC_IR:7499.765625
+>Threshold:9739.199219
+>AC_IR:7102.812500
+>Threshold:9607.379883
+>AC_IR:4989.984375
+>Threshold:9376.509766
+>AC_IR:3576.984375
+>Threshold:9086.534180
+>AC_IR:3723.984375
+>Threshold:8818.406250
+>AC_IR:4213.000000
+>Threshold:8588.135742
+>AC_IR:4586.406250
+>Threshold:8388.048828
+>AC_IR:4974.875000
+>Threshold:8217.390625
+>AC_IR:5301.671875
+>Threshold:8071.604492
+>AC_IR:5225.031250
+>Threshold:7929.275879
+>AC_IR:5034.281250
+>Threshold:7784.525879
+>AC_IR:5109.984375
+>Threshold:7650.798340
+>AC_IR:5328.234375
+>Threshold:7534.669922
+>AC_IR:5599.953125
+>Threshold:7437.934082
+>AC_IR:5681.984375
+>Threshold:7350.136230
+>AC_IR:5723.187500
+>Threshold:7268.788574
+>AC_IR:5752.781250
+>Threshold:7192.988281
+>AC_IR:5749.437500
+>Threshold:7120.810547
+>AC_IR:5729.515625
+>Threshold:7051.245605
+>AC_IR:5701.156250
+>Threshold:6983.740723
+>AC_IR:5703.750000
+>Threshold:6919.741211
+>AC_IR:5486.765625
+>Threshold:6848.092285
+>AC_IR:3805.109375
+>Threshold:6695.942871
+>AC_IR:2278.609375
+>Threshold:6475.076172
+>AC_IR:2116.406250
+>Threshold:6257.142578
+>AC_IR:2721.859375
+>Threshold:6080.377930
+>AC_IR:3222.109375
+>Threshold:5937.464355
+>AC_IR:3666.281250
+>Threshold:5823.905273
+>AC_IR:3983.000000
+>Threshold:5731.859863
+>AC_IR:3886.687500
+>Threshold:5639.601074
+>AC_IR:3695.265625
+>Threshold:5542.384277
+>AC_IR:3778.156250
+>Threshold:5454.172852
+>AC_IR:4011.296875
+>Threshold:5382.029297
+>AC_IR:4155.484375
+>Threshold:5320.702148
+>AC_IR:4282.093750
+>Threshold:5268.771484
+>AC_IR:4333.656250
+>Threshold:5222.015625
+>AC_IR:4358.703125
+>Threshold:5178.849609
+>AC_IR:4341.109375
+>Threshold:5136.962891
+>AC_IR:4325.828125
+>Threshold:5096.406250
+>AC_IR:4316.718750
+>Threshold:5057.421875
+>AC_IR:4340.140625
+>Threshold:5021.557617
+>AC_IR:4249.406250
+>Threshold:4982.949707
+>AC_IR:2849.250000
+>Threshold:4876.264648
+>AC_IR:1274.250000
+>Threshold:4696.163574
+>AC_IR:1081.187500
+>Threshold:4515.415039
+>AC_IR:1792.593750
+>Threshold:4379.273926
+>AC_IR:2422.156250
+>Threshold:4281.417969
+>AC_IR:2805.890625
+>Threshold:4207.641602
+>AC_IR:3051.609375
+>Threshold:4149.839844
+>AC_IR:2934.718750
+>Threshold:4089.083740
+>AC_IR:2735.875000
+>Threshold:4021.423096
+>AC_IR:2791.906250
+>Threshold:3959.947021
+>AC_IR:3023.218750
+>Threshold:3913.110596
+>AC_IR:3193.062500
+>Threshold:3877.108154
+>AC_IR:3283.062500
+>Threshold:3847.405762
+>AC_IR:3330.109375
+>Threshold:3821.540771
+>AC_IR:3350.734375
+>Threshold:3798.000244
+>AC_IR:3362.109375
+>Threshold:3776.205566
+>AC_IR:3345.828125
+>Threshold:3754.686768
+>AC_IR:3360.234375
+>Threshold:3734.964111
+>AC_IR:3383.187500
+>Threshold:3717.375244
+>AC_IR:2880.406250
+>Threshold:3675.526611
+>AC_IR:966.671875
+>Threshold:3540.083740
+>AC_IR:150.593750
+>Threshold:3370.609375
+>AC_IR:437.656250
+>Threshold:3223.961670
+>AC_IR:1128.625000
+>Threshold:3119.194580
+>AC_IR:1590.171875
+>Threshold:3042.743408
+>AC_IR:2016.031250
+>Threshold:2991.407715
+>AC_IR:2122.703125
+>Threshold:2947.972656
+>AC_IR:1946.968750
+>Threshold:2897.922363
+>AC_IR:1884.515625
+>Threshold:2847.251953
+>AC_IR:2082.031250
+>Threshold:2808.990967
+>AC_IR:2284.406250
+>Threshold:2782.761719
+>AC_IR:2426.875000
+>Threshold:2764.967285
+>AC_IR:2531.218750
+>Threshold:2753.280029
+>AC_IR:2598.187500
+>Threshold:2745.525391
+>AC_IR:2620.703125
+>Threshold:2739.284180
+>AC_IR:2635.906250
+>Threshold:2734.115234
+>AC_IR:2637.093750
+>Threshold:2729.264160
+>AC_IR:2634.328125
+>Threshold:2724.517334
+>AC_IR:2678.656250
+>Threshold:2722.224365
+>AC_IR:2539.812500
+>Threshold:2713.103760
+>AC_IR:972.953125
+>Threshold:2626.096191
+>AC_IR:-543.953125
+>Threshold:2467.593506
+>AC_IR:-780.031250
+>Threshold:2305.212402
+>AC_IR:-183.296875
+>Threshold:2180.786865
+>AC_IR:408.375000
+>Threshold:2092.166260
+>AC_IR:840.218750
+>Threshold:2029.568848
+>AC_IR:1191.890625
+>Threshold:1987.684814
+>AC_IR:1188.625000
+>Threshold:1947.731812
+>AC_IR:1065.859375
+>Threshold:1903.638184
+>AC_IR:1143.515625
+>Threshold:1865.632080
+>AC_IR:1398.953125
+>Threshold:1842.298096
+>AC_IR:1660.078125
+>Threshold:1833.187134
+>AC_IR:1780.734375
+>Threshold:1830.564453
+>AC_IR:1874.484375
+>Threshold:1832.760498
+>AC_IR:1977.140625
+>Threshold:1839.979492
+>AC_IR:2017.953125
+>Threshold:1848.878174
+>AC_IR:2027.578125
+>Threshold:1857.813110
+>AC_IR:2066.406250
+>Threshold:1868.242798
+>AC_IR:2142.671875
+>Threshold:1881.964233
+>AC_IR:2111.578125
+>Threshold:1893.444824
+>AC_IR:910.984375
+>Threshold:1844.321777
+>AC_IR:-746.781250
+>Threshold:1714.766602
+>AC_IR:-949.406250
+>Threshold:1581.557861
+>AC_IR:-343.390625
+>Threshold:1485.310425
+>AC_IR:252.468750
+>Threshold:1423.668335
+>AC_IR:679.593750
+>Threshold:1386.464600
+>AC_IR:1034.484375
+>Threshold:1368.865601
+>AC_IR:1008.890625
+>Threshold:1350.866943
+>AC_IR:828.968750
+>Threshold:1324.772095
+>AC_IR:893.734375
+>Threshold:1303.220215
+>AC_IR:1088.515625
+>Threshold:1292.484985
+>AC_IR:1303.906250
+>Threshold:1293.056030
+>AC_IR:1446.390625
+>Threshold:1300.722778
+>AC_IR:1538.000000
+>Threshold:1312.586670
+>AC_IR:1608.187500
+>Threshold:1327.366699
+>AC_IR:1638.750000
+>Threshold:1342.935791
+>AC_IR:1656.937500
+>Threshold:1358.635864
+>AC_IR:1702.203125
+>Threshold:1375.814209
+>AC_IR:1779.875000
+>Threshold:1396.017212
+>AC_IR:1592.375000
+>Threshold:1405.835083
+>AC_IR:-33.937500
+>Threshold:1333.846436
+>AC_IR:-1192.609375
+>Threshold:1207.523560
+>AC_IR:-1081.546875
+>Threshold:1093.069946
+>AC_IR:-407.234375
+>Threshold:1018.054688
+>AC_IR:112.453125
+>Threshold:972.774597
+>AC_IR:543.359375
+>Threshold:951.303833
+>AC_IR:665.781250
+>Threshold:937.027710
+>AC_IR:483.906250
+>Threshold:914.371643
+>AC_IR:312.531250
+>Threshold:884.279663
+>AC_IR:504.234375
+>Threshold:865.277405
+>AC_IR:802.843750
+>Threshold:862.155762
+>AC_IR:988.671875
+>Threshold:868.481567
+>AC_IR:1070.812500
+>Threshold:878.598145
+>AC_IR:1139.562500
+>Threshold:891.646362
+>AC_IR:1167.734375
+>Threshold:905.450745
+>AC_IR:1200.234375
+>Threshold:920.189941
+>AC_IR:1262.468750
+>Threshold:937.303833
+>AC_IR:1351.875000
+>Threshold:958.032410
+>AC_IR:1026.921875
+>Threshold:961.476868
+>AC_IR:-832.109375
+>Threshold:871.797546
+>AC_IR:-1905.218750
+>Threshold:732.946716
+>AC_IR:-1829.875000
+>Threshold:604.805603
+>AC_IR:-1299.359375
+>Threshold:509.597351
+>AC_IR:-939.203125
+>Threshold:437.157349
+>AC_IR:-556.843750
+>Threshold:387.457275
+>AC_IR:-394.796875
+>Threshold:348.344574
+>AC_IR:-1140.515625
+>Threshold:273.901550
+>AC_IR:-2305.468750
+>Threshold:144.933044
+>AC_IR:-11538.984375
+>Threshold:-439.262817
