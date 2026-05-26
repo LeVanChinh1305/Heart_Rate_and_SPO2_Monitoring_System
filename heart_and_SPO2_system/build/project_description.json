@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "heart_and_SPO2_system",
-    "project_version":    "df12168-dirty",
+    "project_version":    "4708b90-dirty",
     "project_path":       "D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system",
     "idf_path":           "D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2",
     "build_dir":          "D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build",
