@@ -569,6 +569,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MLX90614/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/cmake_install.cmake")
 endif()
 

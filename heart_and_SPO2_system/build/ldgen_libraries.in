@@ -160,6 +160,8 @@ $<TARGET_FILE:idf::wifi_provisioning>
 $<TARGET_FILE:__idf_json>
 $<TARGET_FILE:idf::MAX30102>
 $<TARGET_FILE:idf::ppg_algorithm>
+$<TARGET_FILE:idf::MLX90614>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_MAX30102>
 $<TARGET_FILE:__idf_ppg_algorithm>
+$<TARGET_FILE:__idf_MLX90614>

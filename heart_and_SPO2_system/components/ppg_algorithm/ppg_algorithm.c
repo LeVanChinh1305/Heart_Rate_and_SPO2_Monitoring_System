@@ -3,16 +3,13 @@
 #include <math.h>
 #include "esp_log.h"
 
-// [FIX 1] Thêm field 'initialized' để biết khi nào đã snap filter lần đầu.
-// Trước khi snap, filter.w = 0 → AC ảo hàng chục nghìn LSB → window 1 hoàn toàn sai.
+
 typedef struct {
     float w;           // Giá trị DC ước lượng hiện tại của bộ lọc IIR
     bool  initialized; // true = đã snap về DC thực lần đầu, false = chưa
 } iir_filter_t;
 
-// ============================================================
-// Bộ đệm nội bộ (static — chỉ dùng trong file này)
-// ============================================================
+// Bộ đệm nội bộ 
 static uint32_t buffer_red[WINDOW_SIZE];   // Mẫu thô LED đỏ
 static uint32_t buffer_ir[WINDOW_SIZE];    // Mẫu thô LED hồng ngoại
 static float    ac_buffer_ir[WINDOW_SIZE]; // Thành phần AC của IR sau khi loại DC
@@ -21,20 +18,15 @@ static int      sample_count         = 0;
 static int      stabilization_counter= 0;
 static iir_filter_t ir_filter, red_filter;
 
-// ============================================================
 // Bộ lọc high-pass IIR bậc 1 — loại bỏ thành phần DC
-// alpha = 0.02  →  hằng số thời gian ≈ 0.5 giây @ 100 SPS
-// Tần số cắt ≈ 0.32 Hz (giữ lại toàn bộ tín hiệu tim 0.8–2.5 Hz)
-// ============================================================
+// alpha = 0.02  →  hằng số thời gian 
 static float apply_dc_removal(uint32_t sample, iir_filter_t *filter)
 {
     filter->w = ((float)sample * 0.02f) + (filter->w * 0.98f);
     return (float)sample - filter->w;
 }
 
-// ============================================================
-// PUBLIC: Khởi tạo toàn bộ trạng thái
-// ============================================================
+// PUBLIC: Khởi tạo toàn bộ trạng thái của thuật toán
 void ppg_algorithm_init(void)
 {
     memset(buffer_red,    0, sizeof(buffer_red));
@@ -42,7 +34,7 @@ void ppg_algorithm_init(void)
     memset(ac_buffer_ir,  0, sizeof(ac_buffer_ir));
     memset(ac_buffer_red, 0, sizeof(ac_buffer_red));
 
-    // [FIX 1] Khởi tạo cờ snap — filter.w = 0 không có nghĩa gì cho đến khi snap
+    // Khởi tạo cờ snap — filter.w = 0 không có nghĩa gì cho đến khi snap
     ir_filter.w            = 0.0f;
     ir_filter.initialized  = false;
     red_filter.w           = 0.0f;
@@ -52,47 +44,40 @@ void ppg_algorithm_init(void)
     stabilization_counter = 0;
 }
 
-// ============================================================
 // PUBLIC: Xử lý 1 mẫu mới
 // Trả về true khi cửa sổ đầy và kết quả được ghi vào *result
-// ============================================================
 bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_result_t *result)
 {
     if (result == NULL) return false;
     result->valid = false;
+    
 
-    // ----------------------------------------------------------
     // GATE 1: Nhấc tay — tín hiệu quá yếu, không có ngón tay
-    // ----------------------------------------------------------
     if (red_sample < 30000 || ir_sample < 30000) {
         sample_count          = 0;
         stabilization_counter = 0;
-        // [FIX 1] Reset snap để lần đặt ngón tay sau được khởi tạo lại đúng
+        // Reset snap để lần đặt ngón tay sau được khởi tạo lại đúng
         ir_filter.initialized  = false;
         red_filter.initialized = false;
         return false;
     }
 
-    // ----------------------------------------------------------
     // GATE 2: Ngưỡng tín hiệu đặt ngón tay chưa đủ chắc
-    // ----------------------------------------------------------
     if (ir_sample < 115000 || red_sample < 95000) {
         sample_count = 0;
         // Snap về giá trị hiện tại để không bị sốc biên độ khi tín hiệu tăng
         ir_filter.w  = (float)ir_sample;
         red_filter.w = (float)red_sample;
         stabilization_counter  = 0;
-        // [FIX 1] Reset snap để bộ lọc bắt đầu lại từ DC đúng khi vượt ngưỡng
+        // Reset snap để bộ lọc bắt đầu lại từ DC đúng khi vượt ngưỡng
         ir_filter.initialized  = false;
         red_filter.initialized = false;
         return false;
     }
 
-    // ----------------------------------------------------------
-    // [FIX 1] Snap IIR filter lần đầu tiên tín hiệu đủ mạnh
+    //  Snap IIR filter lần đầu tiên tín hiệu đủ mạnh
     // Thay vì để filter.w leo từ 0 lên ~131k qua hàng trăm mẫu,
-    // ta đặt ngay về DC thực → sai số còn <0.3% sau 200 mẫu warm-up
-    // ----------------------------------------------------------
+    // ta đặt ngay về DC thực → sai số còn rất nhỏ sau 200 mẫu warm-up
     if (!ir_filter.initialized) {
         ir_filter.w            = (float)ir_sample;
         ir_filter.initialized  = true;
@@ -101,10 +86,8 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         stabilization_counter  = 0; // Bắt đầu đếm warm-up từ mức DC đúng
     }
 
-    // ----------------------------------------------------------
     // GIAI ĐOẠN ỔN ĐỊNH (200 mẫu = 2 giây)
     // Cho bộ lọc bám đuôi tín hiệu DC, không lưu vào buffer
-    // ----------------------------------------------------------
     if (stabilization_counter < STABILIZATION_SAMPLES) {
         stabilization_counter++;
         apply_dc_removal(ir_sample,  &ir_filter);
@@ -117,9 +100,7 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         return false;
     }
 
-    // ----------------------------------------------------------
-    // THU THẬP MẪU VÀO BUFFER
-    // ----------------------------------------------------------
+    // THU THẬP MẪU VÀO BUFFER AC sau khi loại bỏ DC bằng IIR filter
     buffer_ir[sample_count]     = ir_sample;
     buffer_red[sample_count]    = red_sample;
     ac_buffer_ir[sample_count]  = apply_dc_removal(ir_sample,  &ir_filter);
@@ -130,18 +111,14 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         return false;
     }
 
-    // ==========================================================
     // CỬA SỔ ĐẦY (200 mẫu) — TÍNH TOÁN HR VÀ SPO2
-    // ==========================================================
 
     const int start_index = 5; // Bỏ qua 5 mẫu đầu để tránh vùng filter còn dao động
 
-    // ----------------------------------------------------------
-    // [FIX 3] DC = filter.w (IIR) thay vì mean số học của raw buffer
+    // DC = filter.w (IIR) thay vì mean số học của raw buffer
     // Lý do: AC cũng dùng filter.w làm tham chiếu DC (ac = sample - filter.w).
     // Nếu dùng hai loại DC khác nhau, tỉ số R sẽ bị sai khi có DC drift.
-    // ----------------------------------------------------------
-    float ir_dc  = ir_filter.w;
+    float ir_dc  = ir_filter.w; 
     float red_dc = red_filter.w;
 
     // Tìm max / min của thành phần AC trong cửa sổ
@@ -158,10 +135,8 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
     float red_ac = ac_red_max - ac_red_min; // Biên độ AC của RED
     float ir_ac  = ac_ir_max  - ac_ir_min;  // Biên độ AC của IR
 
-    // ----------------------------------------------------------
-    // [FIX 4] Cảnh báo DC drift quá nhanh trong một cửa sổ
+    //  Cảnh báo DC drift quá nhanh trong một cửa sổ
     // Drift > 2% trong 200 mẫu = ngón tay đang trượt hoặc áp lực thay đổi
-    // ----------------------------------------------------------
     if (ir_dc > 0.0f) {
         float dc_drift_pct = fabsf((float)buffer_ir[WINDOW_SIZE - 1]
                                  - (float)buffer_ir[start_index]) / ir_dc * 100.0f;
@@ -170,11 +145,9 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         }
     }
 
-    // ----------------------------------------------------------
-    // [FIX 2] CỔNG PERFUSION INDEX — loại cửa sổ nhiễu
+    //  CỔNG PERFUSION INDEX — loại cửa sổ nhiễu
     // PI < 0.5%: AC quá nhỏ so với DC, dynamic_threshold sẽ nằm trong vùng
     // nhiễu điện → thuật toán dò đỉnh sẽ đếm đỉnh giả → BPM 130-160 sai
-    // ----------------------------------------------------------
     float pi_ir  = (ir_dc  > 0.0f) ? (ir_ac  / ir_dc)  : 0.0f;
     float pi_red = (red_dc > 0.0f) ? (red_ac / red_dc) : 0.0f;
 
@@ -186,11 +159,9 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         goto do_window_shift; // Bỏ qua tính toán, vẫn dịch cửa sổ
     }
 
-    // ----------------------------------------------------------
     // TÍNH SPO2
     // R = (AC_RED / DC_RED) / (AC_IR / DC_IR)
     // SpO2 = -45.06·R² + 30.35·R + 94.85  (đường chuẩn kinh nghiệm)
-    // ----------------------------------------------------------
     {
         float current_spo2 = 0.0f;
 
@@ -204,11 +175,9 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
                      r, red_ac, red_dc, ir_ac, ir_dc);
         }
 
-        // ----------------------------------------------------------
         // DÒ ĐỈNH NHỊP TIM
-        // Ngưỡng động 70%: loại bỏ đỉnh phụ dicrotic notch
-        // Dead-time 45 mẫu (450 ms): loại nhiễu răng cưa
-        // ----------------------------------------------------------
+        // Ngưỡng động 50%: loại bỏ đỉnh phụ dicrotic notch
+        // Dead-time 22 mẫu (220 ms): loại nhiễu răng cưa
         int peak_indices[50];
         int peak_count = 0;
         float dynamic_threshold = ac_ir_min + (ac_ir_max - ac_ir_min) * 0.7f;
@@ -255,11 +224,9 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         // Nếu không hợp lệ, result->valid đã = false từ đầu hàm
     }
 
-    // ==========================================================
     // DỊCH CHUYỂN CUỐN CHIẾU (sliding window với 50% overlap)
     // Giữ lại OVERLAP_SIZE = 100 mẫu cuối làm đầu cửa sổ tiếp theo
-    // ==========================================================
-do_window_shift: ;
+    do_window_shift: ;
     {
         const int shift_size = WINDOW_SIZE - OVERLAP_SIZE; // = 100 mẫu
         memmove(&buffer_red[0],    &buffer_red[shift_size],    OVERLAP_SIZE * sizeof(uint32_t));

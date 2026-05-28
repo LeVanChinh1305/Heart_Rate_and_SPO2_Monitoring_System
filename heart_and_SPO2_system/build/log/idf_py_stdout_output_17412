@@ -1,0 +1,181 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0x1e (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 24 2026 17:52:11[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (25) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=42020020 size=0b080h ( 45184) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=0001b0a8 vaddr=40800000 size=04f70h ( 20336) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=182b8h ( 99000) map[0m
+[0;32mI (116) esp_image: segment 3: paddr=000382e0 vaddr=40804f70 size=070ech ( 28908) load[0m
+[0;32mI (123) esp_image: segment 4: paddr=0003f3d4 vaddr=4080c060 size=0194ch (  6476) load[0m
+[0;32mI (128) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (141) cpu_start: Unicore app[0m
+[0;32mI (150) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (150) cpu_start: Pro cpu start user code[0m
+[0;32mI (150) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (152) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (161) app_init: App version:      9ea5ca1-dirty[0m
+[0;32mI (166) app_init: Compile time:     May 27 2026 02:21:52[0m
+[0;32mI (171) app_init: ELF file SHA256:  d86889c74...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (179) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (183) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (187) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (191) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (197) heap_init: At 4080F5E0 len 0006D030 (436 KiB): RAM[0m
+[0;32mI (202) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (208) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (214) spi_flash: detected chip: generic[0m
+[0;32mI (217) spi_flash: flash io: dio[0m
+[0;33mW (220) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (232) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (238) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (245) coexist: coex firmware version: 7260f71[0m
+[0;32mI (249) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (253) main_task: Started on CPU0[0m
+[0;32mI (253) main_task: Calling app_main()[0m
+[0;32mI (263) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;33mW (263) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (263) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (273) MAIN_APP: Khởi tạo cảm biến max30102 thất bại lần 1. Thử lại sau 1 giây...[0m
+[0;33mW (1283) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (1283) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (1293) MAIN_APP: Khởi tạo cảm biến MAX30102 thành công sau 2 lần thử![0m
+[0;32mI (1293) MLX90614_DRIVER: Đã đăng ký Driver thành công với địa chỉ: 0x5A[0m
+[0;32mI (1293) MLX90614_DRIVER: Kết nối THÀNH CÔNG! Đọc thử Serial ID1: 0x0014[0m
+[0;32mI (1303) MAIN_APP: Khởi tạo và cấu hình kết nối thành công MLX90614![0m
+[0;32mI (1313) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (1323) MAIN_APP: Task giám sát nhiệt độ tổng hợp bắt đầu chạy.[0m
+[0;32mI (1323) main_task: Returned from app_main()[0m
+[0;32mI (6353) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (6353) TEMP_MONITOR: MLX90614 -> Môi trường: 30.89 °C | Bề mặt da cổ tay: 30.31 °C[0m
+[0;32mI (11383) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (11383) TEMP_MONITOR: MLX90614 -> Môi trường: 30.89 °C | Bề mặt da cổ tay: 30.25 °C[0m
+[0;32mI (16413) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (16413) TEMP_MONITOR: MLX90614 -> Môi trường: 30.91 °C | Bề mặt da cổ tay: 40.93 °C[0m
+[0;33mW (19813) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (21443) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.50 °C[0m
+[0;32mI (21443) TEMP_MONITOR: MLX90614 -> Môi trường: 31.49 °C | Bề mặt da cổ tay: 38.29 °C[0m
+[0;33mW (23813) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (26473) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.75 °C[0m
+[0;32mI (26473) TEMP_MONITOR: MLX90614 -> Môi trường: 31.71 °C | Bề mặt da cổ tay: 37.27 °C[0m
+[0;32mI (31503) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (31503) TEMP_MONITOR: MLX90614 -> Môi trường: 31.95 °C | Bề mặt da cổ tay: 36.81 °C[0m
+[0;32mI (31813) R_DEBUG: R=0.427 | RED_AC=1542.7 RED_DC=111008.3 | IR_AC=3983.7 IR_DC=122263.5[0m
+[0;32mI (31813) PPG_DEBUG: BPM = 75.0 | SpO2 = 99.6% | Đỉnh = 3 | PI_IR = 3.26%[0m
+[0;32mI (31813) MAIN_APP: => KẾT QUẢ ĐO: HR: 75.0 bpm, Spo2: 99.6%[0m
+[0;32mI (35813) R_DEBUG: R=0.431 | RED_AC=1371.6 RED_DC=110741.6 | IR_AC=3508.8 IR_DC=121968.0[0m
+[0;32mI (35813) PPG_DEBUG: BPM = 115.4 | SpO2 = 99.6% | Đỉnh = 4 | PI_IR = 2.88%[0m
+[0;32mI (35813) MAIN_APP: => KẾT QUẢ ĐO: HR: 115.4 bpm, Spo2: 99.6%[0m
+[0;32mI (36533) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;32mI (36533) TEMP_MONITOR: MLX90614 -> Môi trường: 32.07 °C | Bề mặt da cổ tay: 36.49 °C[0m
+[0;32mI (39813) R_DEBUG: R=0.414 | RED_AC=1162.6 RED_DC=111135.9 | IR_AC=3121.6 IR_DC=123405.0[0m
+[0;32mI (39813) PPG_DEBUG: BPM = 112.1 | SpO2 = 99.7% | Đỉnh = 3 | PI_IR = 2.53%[0m
+[0;32mI (39823) MAIN_APP: => KẾT QUẢ ĐO: HR: 112.1 bpm, Spo2: 99.7%[0m
+[0;32mI (41563) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.56 °C[0m
+[0;32mI (41563) TEMP_MONITOR: MLX90614 -> Môi trường: 32.19 °C | Bề mặt da cổ tay: 36.15 °C[0m
+[0;32mI (43813) R_DEBUG: R=0.398 | RED_AC=1076.3 RED_DC=111181.2 | IR_AC=2995.3 IR_DC=123069.7[0m
+[0;32mI (43813) PPG_DEBUG: BPM = 111.1 | SpO2 = 99.8% | Đỉnh = 2 | PI_IR = 2.43%[0m
+[0;32mI (43823) MAIN_APP: => KẾT QUẢ ĐO: HR: 111.1 bpm, Spo2: 99.8%[0m
+[0;32mI (46593) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.44 °C[0m
+[0;32mI (46593) TEMP_MONITOR: MLX90614 -> Môi trường: 32.27 °C | Bề mặt da cổ tay: 35.99 °C[0m
+[0;32mI (47813) R_DEBUG: R=0.593 | RED_AC=1146.7 RED_DC=110785.8 | IR_AC=2140.0 IR_DC=122524.2[0m
+[0;32mI (47813) PPG_DEBUG: BPM = 120.0 | SpO2 = 97.0% | Đỉnh = 4 | PI_IR = 1.75%[0m
+[0;32mI (47823) MAIN_APP: => KẾT QUẢ ĐO: HR: 120.0 bpm, Spo2: 97.0%[0m
+[0;32mI (51623) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.69 °C[0m
+[0;32mI (51623) TEMP_MONITOR: MLX90614 -> Môi trường: 32.33 °C | Bề mặt da cổ tay: 35.89 °C[0m
+[0;32mI (51823) R_DEBUG: R=0.504 | RED_AC=1250.8 RED_DC=111015.3 | IR_AC=2747.5 IR_DC=122935.0[0m
+[0;32mI (51823) PPG_DEBUG: BPM = 116.1 | SpO2 = 98.7% | Đỉnh = 4 | PI_IR = 2.23%[0m
+[0;32mI (51823) MAIN_APP: => KẾT QUẢ ĐO: HR: 116.1 bpm, Spo2: 98.7%[0m
+[0;32mI (55823) R_DEBUG: R=0.493 | RED_AC=1240.8 RED_DC=111079.0 | IR_AC=2789.3 IR_DC=123016.0[0m
+[0;32mI (55823) PPG_DEBUG: BPM = 112.5 | SpO2 = 98.9% | Đỉnh = 4 | PI_IR = 2.27%[0m
+[0;32mI (55823) MAIN_APP: => KẾT QUẢ ĐO: HR: 112.5 bpm, Spo2: 98.9%[0m
+[0;32mI (56653) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.50 °C[0m
+[0;32mI (56653) TEMP_MONITOR: MLX90614 -> Môi trường: 32.43 °C | Bề mặt da cổ tay: 35.89 °C[0m
+[0;32mI (59823) R_DEBUG: R=0.453 | RED_AC=1358.1 RED_DC=110755.2 | IR_AC=3308.4 IR_DC=122112.2[0m
+[0;32mI (59823) PPG_DEBUG: BPM = 101.7 | SpO2 = 99.4% | Đỉnh = 4 | PI_IR = 2.71%[0m
+[0;32mI (59823) MAIN_APP: => KẾT QUẢ ĐO: HR: 101.7 bpm, Spo2: 99.4%[0m
+[0;32mI (61683) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.88 °C[0m
+[0;32mI (61683) TEMP_MONITOR: MLX90614 -> Môi trường: 32.51 °C | Bề mặt da cổ tay: 35.69 °C[0m
+[0;32mI (63823) R_DEBUG: R=0.465 | RED_AC=1229.6 RED_DC=110620.7 | IR_AC=2908.9 IR_DC=121746.6[0m
+[0;32mI (63823) PPG_DEBUG: BPM = 114.6 | SpO2 = 99.2% | Đỉnh = 4 | PI_IR = 2.39%[0m
+[0;32mI (63823) MAIN_APP: => KẾT QUẢ ĐO: HR: 114.6 bpm, Spo2: 99.2%[0m
+[0;32mI (66713) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.69 °C[0m
+[0;32mI (66713) TEMP_MONITOR: MLX90614 -> Môi trường: 32.53 °C | Bề mặt da cổ tay: 35.77 °C[0m
+[0;32mI (67823) R_DEBUG: R=0.471 | RED_AC=1331.4 RED_DC=110044.5 | IR_AC=3098.4 IR_DC=120637.1[0m
+[0;32mI (67823) PPG_DEBUG: BPM = 113.2 | SpO2 = 99.1% | Đỉnh = 4 | PI_IR = 2.57%[0m
+[0;32mI (67823) MAIN_APP: => KẾT QUẢ ĐO: HR: 113.2 bpm, Spo2: 99.1%[0m
+[0;32mI (71743) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.00 °C[0m
+[0;32mI (71743) TEMP_MONITOR: MLX90614 -> Môi trường: 32.59 °C | Bề mặt da cổ tay: 35.69 °C[0m
+[0;32mI (71823) R_DEBUG: R=0.474 | RED_AC=1590.2 RED_DC=110028.9 | IR_AC=3682.7 IR_DC=120773.2[0m
+[0;32mI (71823) PPG_DEBUG: BPM = 112.1 | SpO2 = 99.1% | Đỉnh = 3 | PI_IR = 3.05%[0m
+[0;32mI (71833) MAIN_APP: => KẾT QUẢ ĐO: HR: 112.1 bpm, Spo2: 99.1%[0m
+[0;32mI (75823) R_DEBUG: R=0.463 | RED_AC=1530.8 RED_DC=109770.1 | IR_AC=3625.7 IR_DC=120319.6[0m
+[0;32mI (75823) PPG_DEBUG: BPM = 104.0 | SpO2 = 99.2% | Đỉnh = 4 | PI_IR = 3.01%[0m
+[0;32mI (75833) MAIN_APP: => KẾT QUẢ ĐO: HR: 104.0 bpm, Spo2: 99.2%[0m
+[0;32mI (76773) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.81 °C[0m
+[0;32mI (76773) TEMP_MONITOR: MLX90614 -> Môi trường: 32.63 °C | Bề mặt da cổ tay: 35.63 °C[0m
+[0;32mI (79823) R_DEBUG: R=0.447 | RED_AC=1470.8 RED_DC=110329.7 | IR_AC=3634.3 IR_DC=121883.5[0m
+[0;32mI (79823) PPG_DEBUG: BPM = 118.4 | SpO2 = 99.4% | Đỉnh = 4 | PI_IR = 2.98%[0m
+[0;32mI (79833) MAIN_APP: => KẾT QUẢ ĐO: HR: 118.4 bpm, Spo2: 99.4%[0m
+[0;32mI (81803) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.00 °C[0m
+[0;32mI (81803) TEMP_MONITOR: MLX90614 -> Môi trường: 32.69 °C | Bề mặt da cổ tay: 35.63 °C[0m
+[0;32mI (83833) R_DEBUG: R=0.469 | RED_AC=1261.5 RED_DC=110862.9 | IR_AC=2971.3 IR_DC=122444.6[0m
+[0;32mI (83833) PPG_DEBUG: BPM = 114.6 | SpO2 = 99.2% | Đỉnh = 4 | PI_IR = 2.43%[0m
+[0;32mI (83833) MAIN_APP: => KẾT QUẢ ĐO: HR: 114.6 bpm, Spo2: 99.2%[0m
+[0;32mI (86833) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.94 °C[0m
+[0;32mI (86833) TEMP_MONITOR: MLX90614 -> Môi trường: 32.73 °C | Bề mặt da cổ tay: 35.63 °C[0m
+[0;32mI (87833) R_DEBUG: R=0.535 | RED_AC=1655.5 RED_DC=110527.1 | IR_AC=3403.0 IR_DC=121615.0[0m
+[0;32mI (87833) PPG_DEBUG: BPM = 116.5 | SpO2 = 98.2% | Đỉnh = 3 | PI_IR = 2.80%[0m
+[0;32mI (87833) MAIN_APP: => KẾT QUẢ ĐO: HR: 116.5 bpm, Spo2: 98.2%[0m
+[0;32mI (91833) R_DEBUG: R=0.522 | RED_AC=1371.2 RED_DC=110390.8 | IR_AC=2877.5 IR_DC=120861.5[0m
+[0;32mI (91833) PPG_DEBUG: BPM = 119.2 | SpO2 = 98.4% | Đỉnh = 4 | PI_IR = 2.38%[0m
+[0;32mI (91833) MAIN_APP: => KẾT QUẢ ĐO: HR: 119.2 bpm, Spo2: 98.4%[0m
+[0;32mI (91863) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.38 °C[0m
+[0;32mI (91863) TEMP_MONITOR: MLX90614 -> Môi trường: 32.75 °C | Bề mặt da cổ tay: 35.63 °C[0m
+[0;32mI (95833) R_DEBUG: R=0.475 | RED_AC=1289.3 RED_DC=110420.5 | IR_AC=2968.0 IR_DC=120741.1[0m
+[0;32mI (95833) PPG_DEBUG: BPM = 116.9 | SpO2 = 99.1% | Đỉnh = 4 | PI_IR = 2.46%[0m
+[0;32mI (95833) MAIN_APP: => KẾT QUẢ ĐO: HR: 116.9 bpm, Spo2: 99.1%[0m
+[0;32mI (96893) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.25 °C[0m
+[0;32mI (96893) TEMP_MONITOR: MLX90614 -> Môi trường: 32.81 °C | Bề mặt da cổ tay: 35.63 °C[0m
+[0;32mI (99833) R_DEBUG: R=0.475 | RED_AC=1500.6 RED_DC=109949.5 | IR_AC=3435.8 IR_DC=119662.2[0m
+[0;32mI (99833) PPG_DEBUG: BPM = 119.2 | SpO2 = 99.1% | Đỉnh = 4 | PI_IR = 2.87%[0m
+[0;32mI (99843) MAIN_APP: => KẾT QUẢ ĐO: HR: 119.2 bpm, Spo2: 99.1%[0m
+[0;32mI (101923) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.06 °C[0m
+[0;32mI (101923) TEMP_MONITOR: MLX90614 -> Môi trường: 32.83 °C | Bề mặt da cổ tay: 35.69 °C[0m
+[0;32mI (103833) R_DEBUG: R=0.439 | RED_AC=1362.9 RED_DC=109798.4 | IR_AC=3376.1 IR_DC=119311.7[0m
+[0;32mI (103833) PPG_DEBUG: BPM = 120.8 | SpO2 = 99.5% | Đỉnh = 4 | PI_IR = 2.83%[0m
+[0;32mI (103843) MAIN_APP: => KẾT QUẢ ĐO: HR: 120.8 bpm, Spo2: 99.5%[0m
+[0;32mI (106953) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.19 °C[0m
+[0;32mI (106953) TEMP_MONITOR: MLX90614 -> Môi trường: 32.85 °C | Bề mặt da cổ tay: 35.69 °C[0m
+[0;32mI (107833) R_DEBUG: R=0.446 | RED_AC=1389.5 RED_DC=109946.0 | IR_AC=3391.0 IR_DC=119684.2[0m
+[0;32mI (107833) PPG_DEBUG: BPM = 120.0 | SpO2 = 99.4% | Đỉnh = 4 | PI_IR = 2.83%[0m
+[0;32mI (107843) MAIN_APP: => KẾT QUẢ ĐO: HR: 120.0 bpm, Spo2: 99.4%[0m
+[0;32mI (111843) R_DEBUG: R=0.443 | RED_AC=1587.2 RED_DC=109640.1 | IR_AC=3888.8 IR_DC=118939.4[0m
+[0;32mI (111843) PPG_DEBUG: BPM = 122.4 | SpO2 = 99.5% | Đỉnh = 4 | PI_IR = 3.27%[0m
+[0;32mI (111843) MAIN_APP: => KẾT QUẢ ĐO: HR: 122.4 bpm, Spo2: 99.5%[0m
+[0;32mI (111983) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 35.25 °C[0m
+[0;32mI (111983) TEMP_MONITOR: MLX90614 -> Môi trường: 32.89 °C | Bề mặt da cổ tay: 35.71 °C[0m
+[0;32mI (117013) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.81 °C[0m
+[0;32mI (117013) TEMP_MONITOR: MLX90614 -> Môi trường: 32.67 °C | Bề mặt da cổ tay: 30.15 °C[0m
