@@ -859,6 +859,13 @@ D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/es
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MLX90614/CMakeFiles/install.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MLX90614/CMakeFiles/install/local.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/MLX90614/CMakeFiles/install/strip.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/__idf_ST7735.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/edit_cache.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/rebuild_cache.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/list_install_components.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/install.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/install/local.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ST7735/CMakeFiles/install/strip.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/CMakeFiles/__idf_main.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/CMakeFiles/edit_cache.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/main/CMakeFiles/rebuild_cache.dir
