@@ -1,0 +1,91 @@
+Command: ninja flash
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\esp-idf\esptool_py && D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5840 bytes. 0x27c0 bytes (31%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/heart_and_SPO2_system.c.obj
+[5/10] Linking C static library esp-idf\main\libmain.a
+[6/10] Generating esp-idf/esp_system/ld/sections.ld
+[7/10] Linking CXX executable heart_and_SPO2_system.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.11.dev1
+Creating esp32c6 image...
+Merged 3 ELF sections
+Successfully created esp32c6 image.
+Generated D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/heart_and_SPO2_system.bin
+[9/10] C:\Windows\system32\cmd.exe /C "cd /D D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\esp-idf\esptool_py && D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/partition_table/partition-table.bin D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/heart_and_SPO2_system.bin"
+heart_and_SPO2_system.bin binary size 0x104420 bytes. Smallest app partition is 0x177000 bytes. 0x72be0 bytes (31%) free.
+[9/10] C:\Windows\system32\cmd.exe /C "cd /D D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\components\esptool_py && D:\App\esp_idf\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2 -D SERIAL_TOOL=D:/App/esp_idf/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2/components/esptool_py/esptool/esptool.py;--chip;esp32c6 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build -P D:/App/esp_idf/Espressif/frameworks/esp-idf-v5.5.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32c6 -p COM5 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 heart_and_SPO2_system.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.11.dev1
+Serial port COM5
+Connecting....
+Chip is ESP32-C6 (QFN40) (revision v0.0)
+Features: Wi-Fi 6, BT 5 (LE), IEEE802.15.4, Single Core + LP Core, 160MHz, Unknown Embedded Flash
+Crystal is 40MHz
+MAC: 54:32:04:ff:fe:0c:fb:e4
+BASE MAC: 54:32:04:0c:fb:e4
+MAC_EXT: ff:fe
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00114fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 22592 bytes to 13977...
+Writing at 0x00000000... (100 %)
+Wrote 22592 bytes (13977 compressed) at 0x00000000 in 0.6 seconds (effective 322.9 kbit/s)...
+Hash of data verified.
+Compressed 1066016 bytes to 609486...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001c41e... (5 %)
+Writing at 0x00028a94... (7 %)
+Writing at 0x000310dc... (10 %)
+Writing at 0x0003a0b3... (13 %)
+Writing at 0x00041171... (15 %)
+Writing at 0x00048b38... (18 %)
+Writing at 0x00050870... (21 %)
+Writing at 0x00057909... (23 %)
+Writing at 0x0005ec9b... (26 %)
+Writing at 0x0006546f... (28 %)
+Writing at 0x0006bbd8... (31 %)
+Writing at 0x00072b75... (34 %)
+Writing at 0x00078f2d... (36 %)
+Writing at 0x0007f6b9... (39 %)
+Writing at 0x00085982... (42 %)
+Writing at 0x0008b4f0... (44 %)
+Writing at 0x000916fd... (47 %)
+Writing at 0x00097c60... (50 %)
+Writing at 0x0009dc62... (52 %)
+Writing at 0x000a3c74... (55 %)
+Writing at 0x000a9e88... (57 %)
+Writing at 0x000afb90... (60 %)
+Writing at 0x000b5f0c... (63 %)
+Writing at 0x000bcafc... (65 %)
+Writing at 0x000c3c33... (68 %)
+Writing at 0x000ca808... (71 %)
+Writing at 0x000d1ab6... (73 %)
+Writing at 0x000d7f09... (76 %)
+Writing at 0x000de2d6... (78 %)
+Writing at 0x000e47a5... (81 %)
+Writing at 0x000ea504... (84 %)
+Writing at 0x000f182c... (86 %)
+Writing at 0x000f8147... (89 %)
+Writing at 0x000feba0... (92 %)
+Writing at 0x001052c4... (94 %)
+Writing at 0x0010ad9c... (97 %)
+Writing at 0x001121f4... (100 %)
+Wrote 1066016 bytes (609486 compressed) at 0x00010000 in 14.0 seconds (effective 609.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (effective 606.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

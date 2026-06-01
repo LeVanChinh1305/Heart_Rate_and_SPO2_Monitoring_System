@@ -187,7 +187,7 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
                 ac_buffer_ir[i] > ac_buffer_ir[i + 1] &&
                 ac_buffer_ir[i] > dynamic_threshold) {
                 peak_indices[peak_count++] = i;
-                i += 45;
+                i += 70;// Bỏ qua 70 mẫu tiếp theo  để tránh đỉnh giả
                 if (peak_count >= 50) break;
             }
         }

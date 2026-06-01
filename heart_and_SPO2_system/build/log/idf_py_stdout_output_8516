@@ -1,0 +1,891 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0x1f (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c4
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jun  1 2026 13:54:16[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (25) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00250000[0m
+[0;32mI (72) boot:  3 storage          Unknown data     01 81 00260000 00190000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=420c0020 size=26550h (157008) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=00036578 vaddr=40800000 size=09aa0h ( 39584) load[0m
+[0;32mI (129) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=bb524h (767268) map[0m
+[0;32mI (275) esp_image: segment 3: paddr=000fb54c vaddr=40809aa0 size=15704h ( 87812) load[0m
+[0;32mI (295) esp_image: segment 4: paddr=00110c58 vaddr=4081f1b0 size=03900h ( 14592) load[0m
+[0;32mI (299) esp_image: segment 5: paddr=00114560 vaddr=50000000 size=00080h (   128) load[0m
+[0;32mI (307) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (307) boot: Disabling RNG early entropy source...[0m
+[0;32mI (320) cpu_start: Unicore app[0m
+[0;32mI (329) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (329) cpu_start: Pro cpu start user code[0m
+[0;32mI (329) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (331) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (340) app_init: App version:      5fc4938-dirty[0m
+[0;32mI (344) app_init: Compile time:     Jun  1 2026 13:53:37[0m
+[0;32mI (349) app_init: ELF file SHA256:  ca1102563...[0m
+[0;32mI (354) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (358) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (366) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (370) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (376) heap_init: At 40829250 len 000533C0 (332 KiB): RAM[0m
+[0;32mI (381) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (386) heap_init: At 50000080 len 00003F68 (15 KiB): RTCRAM[0m
+[0;32mI (392) spi_flash: detected chip: generic[0m
+[0;32mI (395) spi_flash: flash io: dio[0m
+[0;32mI (399) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (411) coexist: coex firmware version: 7260f71[0m
+[0;32mI (415) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (420) main_task: Started on CPU0[0m
+[0;32mI (440) main_task: Calling app_main()[0m
+[0;32mI (440) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;32mI (450) WIFI_DRIVER: Bắt đầu cấu hình hệ thống mạng Wi-Fi...[0m
+[0;32mI (450) pp: pp rom version: 5b8dcfa[0m
+[0;32mI (450) net80211: net80211 rom version: 5b8dcfa[0m
+[0;32mI (460) wifi:wifi driver task: 4082f8cc, prio:23, stack:6656, core=0[0m
+[0;32mI (460) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (460) wifi:wifi certification version: v7.0[0m
+[0;32mI (460) wifi:config NVS flash: enabled[0m
+[0;32mI (470) wifi:config nano formatting: disabled[0m
+[0;32mI (470) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1[0m
+[0;32mI (480) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (480) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (490) wifi:Init management short buffer num: 32[0m
+[0;32mI (490) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (500) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (500) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)[0m
+[0;32mI (510) wifi:Init static rx buffer num: 10[0m
+[0;32mI (510) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (510) wifi_init: rx ba win: 6[0m
+[0;32mI (520) wifi_init: accept mbox: 6[0m
+[0;32mI (520) wifi_init: tcpip mbox: 32[0m
+[0;32mI (520) wifi_init: udp mbox: 6[0m
+[0;32mI (530) wifi_init: tcp mbox: 6[0m
+[0;32mI (530) wifi_init: tcp tx win: 5760[0m
+[0;32mI (530) wifi_init: tcp rx win: 5760[0m
+[0;32mI (530) wifi_init: tcp mss: 1440[0m
+[0;32mI (540) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (540) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (540) wifi_init: WiFi SLP IRAM OP enabled[0m
+[0;32mI (550) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12[0m
+[0;33mW (620) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (620) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (620) wifi:(agc)0x600a7128:0xd2097a04, min.avgNF:0xce->0xd2(dB), RCalCount:0x97, min.RRssi:0xa04(-95.75)[0m
+[0;32mI (630) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (640) wifi:mode : sta (54:32:04:0c:fb:e4)[0m
+[0;32mI (640) wifi:enable tsf[0m
+[0;32mI (650) WIFI_DRIVER: Đang kết nối tới Wi-Fi...[0m
+[0;32mI (660) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (660) wifi:(connect)dot11_authmode:0x3, pairwise_cipher:0x3, group_cipher:0x3[0m
+[0;32mI (670) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (670) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (680) wifi:(assoc)RESP, Extended Capabilities length:8, operating_mode_notification:0[0m
+[0;32mI (680) wifi:(assoc)RESP, Extended Capabilities, MBSSID:0, TWT Responder:0, OBSS Narrow Bandwidth RU In OFDMA Tolerance:0[0m
+[0;32mI (690) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (700) wifi:(trc)phytype:CBW20-SGI, snr:35, maxRate:144, highestRateIdx:0[0m
+[0;33mW (700) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14[0m
+[0;32mI (710) wifi:(trc)band:2G, rate(L-MCS7, rateIdx:1), ampdu(rate:L-MCS7, schedIdx(1, stop:8)), snr:35, ampduState:wait operational[0m
+[0;32mI (720) wifi:ifidx:0, rssi:-62, nf:-97, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1[0m
+[0;32mI (730) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:5(4 us)[0m
+[0;32mI (780) wifi:connected with 43MH-P202, aid = 2, channel 4, BW20, bssid = 08:aa:89:5d:36:e8[0m
+[0;32mI (780) wifi:security: WPA2-PSK, phy:bgn, rssi:-62, cipher(pairwise:0x3, group:0x3), pmf:0, [0m
+[0;32mI (780) wifi:pm start, type: 1, twt_start:0[0m
+
+[0;32mI (790) wifi:pm start, type:1, aid:0x2, trans-BSSID:08:aa:89:5d:36:e8, BSSID[5]:0xe8, mbssid(max-indicator:0, index:0), he:0[0m
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (810) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000[0m
+[0;32mI (810) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)[0m
+[0;32mI (830) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)[0m
+[0;32mI (840) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)[0m
+[0;32mI (850) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (850) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (860) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (870) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[1;31mE (1650) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1650) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1650) mqtt_client: Error transport connect[0m
+[1;31mE (1650) MQTT_DRIVER: Phát hiện lỗi xung đột luồng dữ liệu MQTT[0m
+[0;33mW (1660) MQTT_DRIVER: Mất kết nối MQTT Broker! Hệ thống đang tự động liên kết lại...[0m
+[0;32mI (1670) MQTT_DRIVER: Driver MQTT ngầm khởi động thành công![0m
+[0;33mW (1730) wifi:<ba-add>idx:0, ifx:0, tid:6, TAHI:0x100e836, TALO:0x5d89aa08, (ssn:2, win:64, cur_ssn:2), CONF:0xc0006005[0m
+[0;32mI (2770) esp_netif_handlers: sta ip: 192.168.22.15, mask: 255.255.255.0, gw: 192.168.22.253[0m
+[0;32mI (2770) WIFI_DRIVER: ĐÃ KẾT NỐI WI-FI THÀNH CÔNG![0m
+[0;32mI (2770) WIFI_DRIVER: Địa chỉ IP cấp cho ESP32-C6: 192.168.22.15[0m
+[0;32mI (3080) MAIN_APP: Đã khởi tạo thành công driver đăng ký phần cứng màn hình ST7735![0m
+[0;33mW (3080) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (3080) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (3090) MAIN_APP: Khởi tạo cảm biến max30102 thất bại lần 1. Thử lại sau 1 giây...[0m
+[0;33mW (4100) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (4100) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (4110) MAIN_APP: Khởi tạo cảm biến MAX30102 thành công sau 2 lần thử![0m
+[0;32mI (4110) MLX90614_DRIVER: Đã đăng ký Driver thành công với địa chỉ: 0x5A[0m
+[0;32mI (4120) MLX90614_DRIVER: Kết nối THÀNH CÔNG! Đọc thử Serial ID1: 0x01BA[0m
+[0;32mI (4120) MAIN_APP: Khởi tạo và cấu hình kết nối thành công MLX90614![0m
+[0;32mI (4130) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (4140) MAIN_APP: Task giám sát nhiệt độ tổng hợp bắt đầu chạy.[0m
+[0;32mI (4650) main_task: Returned from app_main()[0m
+[0;32mI (9170) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (9170) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (9170) TEMP_MONITOR: MLX90614 -> Môi trường: 688.43 °C | Cơ thể: -135.49 °C[0m
+[0;33mW (11700) wifi:<ba-add>idx:1, ifx:0, tid:3, TAHI:0x100e836, TALO:0x5d89aa08, (ssn:1, win:64, cur_ssn:1), CONF:0xc0003005[0m
+[0;32mI (12280) MQTT_DRIVER: Đã kết nối thành công tới MQTT Broker![0m
+[0;32mI (12280) MQTT_DRIVER: Đã Subscribe thành công hộp thư lệnh: chinh/control[0m
+[0;32mI (14300) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (14300) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (14300) TEMP_MONITOR: MLX90614 -> Môi trường: 688.41 °C | Cơ thể: -133.61 °C[0m
+[0;32mI (14310) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35655][0m
+[0;32mI (14310) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (19430) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (19430) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (19430) TEMP_MONITOR: MLX90614 -> Môi trường: 688.41 °C | Cơ thể: -133.61 °C[0m
+[0;32mI (19440) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44148][0m
+[0;32mI (19440) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (24560) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (24560) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (24560) TEMP_MONITOR: MLX90614 -> Môi trường: 688.39 °C | Cơ thể: -133.61 °C[0m
+[0;32mI (24570) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48196][0m
+[0;32mI (24580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (29680) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (29680) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (29680) TEMP_MONITOR: MLX90614 -> Môi trường: 688.35 °C | Cơ thể: -131.79 °C[0m
+[0;32mI (29690) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:26220][0m
+[0;32mI (29700) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (34810) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (34810) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (34810) TEMP_MONITOR: MLX90614 -> Môi trường: 688.35 °C | Cơ thể: -132.59 °C[0m
+[0;32mI (34820) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:57696][0m
+[0;32mI (34820) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (39930) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (39930) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (39930) TEMP_MONITOR: MLX90614 -> Môi trường: 688.51 °C | Cơ thể: -47.31 °C[0m
+[0;32mI (39940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48901][0m
+[0;32mI (39940) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (41710) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (45050) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (45050) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (45050) TEMP_MONITOR: MLX90614 -> Môi trường: 688.89 °C | Cơ thể: -61.77 °C[0m
+[0;32mI (45060) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:4702][0m
+[0;32mI (45060) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (45710) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (50170) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.56 °C[0m
+[0;33mW (50170) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (50170) TEMP_MONITOR: MLX90614 -> Môi trường: 688.99 °C | Cơ thể: -65.91 °C[0m
+[0;32mI (50180) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:1446][0m
+[0;32mI (50180) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (53720) R_DEBUG: R=0.526 | RED_AC=1381.2 RED_DC=102825.5 | IR_AC=3139.1 IR_DC=122821.1[0m
+[0;32mI (53720) PPG_DEBUG: BPM = 63.2 | SpO2 = 98.4% | Đỉnh = 2 | PI_IR = 2.56%[0m
+[0;32mI (53720) MAIN_APP: => KẾT QUẢ ĐO: HR: 63.2 bpm, Spo2: 98.4%[0m
+[0;32mI (53730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:2825][0m
+[0;32mI (55280) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;33mW (55280) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (55280) TEMP_MONITOR: MLX90614 -> Môi trường: 689.13 °C | Cơ thể: -70.05 °C[0m
+[0;32mI (55290) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:45674][0m
+[0;32mI (55290) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (57720) R_DEBUG: R=0.456 | RED_AC=981.5 RED_DC=102471.8 | IR_AC=2568.2 IR_DC=122274.8[0m
+[0;32mI (57720) PPG_DEBUG: BPM = 71.4 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 2.10%[0m
+[0;32mI (57720) MAIN_APP: => KẾT QUẢ ĐO: HR: 71.4 bpm, Spo2: 99.3%[0m
+[0;32mI (57730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:22740][0m
+[0;32mI (60360) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.88 °C[0m
+[0;33mW (60360) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (60360) TEMP_MONITOR: MLX90614 -> Môi trường: 689.25 °C | Cơ thể: -72.07 °C[0m
+[0;32mI (60370) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:56427][0m
+[0;32mI (60370) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (61720) R_DEBUG: R=0.535 | RED_AC=914.7 RED_DC=102265.4 | IR_AC=2032.4 IR_DC=121505.9[0m
+[0;32mI (61720) PPG_DEBUG: BPM = 76.4 | SpO2 = 98.2% | Đỉnh = 3 | PI_IR = 1.67%[0m
+[0;32mI (61720) MAIN_APP: => KẾT QUẢ ĐO: HR: 76.4 bpm, Spo2: 98.2%[0m
+[0;32mI (61730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:1349][0m
+[0;32mI (65420) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.88 °C[0m
+[0;33mW (65420) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (65420) TEMP_MONITOR: MLX90614 -> Môi trường: 689.33 °C | Cơ thể: -75.15 °C[0m
+[0;32mI (65430) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:61796][0m
+[0;32mI (65430) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (65720) R_DEBUG: R=0.432 | RED_AC=966.9 RED_DC=102397.4 | IR_AC=2662.5 IR_DC=121833.9[0m
+[0;32mI (65720) PPG_DEBUG: BPM = 65.2 | SpO2 = 99.5% | Đỉnh = 2 | PI_IR = 2.19%[0m
+[0;32mI (65720) MAIN_APP: => KẾT QUẢ ĐO: HR: 65.2 bpm, Spo2: 99.5%[0m
+[0;32mI (65730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:36023][0m
+[0;32mI (69720) R_DEBUG: R=0.478 | RED_AC=956.0 RED_DC=102412.9 | IR_AC=2386.3 IR_DC=122088.1[0m
+[0;32mI (69720) PPG_DEBUG: BPM = 64.9 | SpO2 = 99.1% | Đỉnh = 3 | PI_IR = 1.95%[0m
+[0;32mI (69730) MAIN_APP: => KẾT QUẢ ĐO: HR: 64.9 bpm, Spo2: 99.1%[0m
+[0;32mI (69730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:21107][0m
+[0;32mI (70500) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (70500) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (70500) TEMP_MONITOR: MLX90614 -> Môi trường: 689.41 °C | Cơ thể: -62.19 °C[0m
+[0;32mI (70510) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:25656][0m
+[0;32mI (70510) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (73720) R_DEBUG: R=0.452 | RED_AC=904.2 RED_DC=102133.6 | IR_AC=2385.0 IR_DC=121730.0[0m
+[0;32mI (73720) PPG_DEBUG: BPM = 63.2 | SpO2 = 99.4% | Đỉnh = 2 | PI_IR = 1.96%[0m
+[0;32mI (73730) MAIN_APP: => KẾT QUẢ ĐO: HR: 63.2 bpm, Spo2: 99.4%[0m
+[0;32mI (73730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:11307][0m
+[0;32mI (75570) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.88 °C[0m
+[0;33mW (75570) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (75570) TEMP_MONITOR: MLX90614 -> Môi trường: 689.43 °C | Cơ thể: -63.11 °C[0m
+[0;32mI (75580) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:977][0m
+[0;32mI (75580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (77720) R_DEBUG: R=0.413 | RED_AC=782.3 RED_DC=101800.4 | IR_AC=2249.4 IR_DC=120985.8[0m
+[0;32mI (77720) PPG_DEBUG: BPM = 65.9 | SpO2 = 99.7% | Đỉnh = 2 | PI_IR = 1.86%[0m
+[0;32mI (77730) MAIN_APP: => KẾT QUẢ ĐO: HR: 65.9 bpm, Spo2: 99.7%[0m
+[0;32mI (77730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51416][0m
+[0;32mI (80650) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.88 °C[0m
+[0;33mW (80650) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (80650) TEMP_MONITOR: MLX90614 -> Môi trường: 689.53 °C | Cơ thể: -63.63 °C[0m
+[0;32mI (80660) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:23553][0m
+[0;32mI (80660) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (81720) R_DEBUG: R=0.488 | RED_AC=953.6 RED_DC=101416.0 | IR_AC=2314.9 IR_DC=120041.3[0m
+[0;32mI (81720) PPG_DEBUG: BPM = 66.3 | SpO2 = 98.9% | Đỉnh = 3 | PI_IR = 1.93%[0m
+[0;32mI (81730) MAIN_APP: => KẾT QUẢ ĐO: HR: 66.3 bpm, Spo2: 98.9%[0m
+[0;32mI (81730) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:26253][0m
+[0;32mI (85720) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;33mW (85720) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (85720) TEMP_MONITOR: MLX90614 -> Môi trường: 689.53 °C | Cơ thể: -64.95 °C[0m
+[0;32mI (85720) R_DEBUG: R=0.474 | RED_AC=1278.2 RED_DC=101612.3 | IR_AC=3194.1 IR_DC=120458.6[0m
+[0;32mI (85740) PPG_DEBUG: BPM = 72.3 | SpO2 = 99.1% | Đỉnh = 3 | PI_IR = 2.65%[0m
+[0;32mI (85740) MAIN_APP: => KẾT QUẢ ĐO: HR: 72.3 bpm, Spo2: 99.1%[0m
+[0;32mI (85750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44002][0m
+[0;32mI (85760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:17840][0m
+[0;32mI (85760) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (89720) R_DEBUG: R=0.480 | RED_AC=1124.5 RED_DC=101698.2 | IR_AC=2784.9 IR_DC=120931.1[0m
+[0;32mI (89730) PPG_DEBUG: BPM = 72.3 | SpO2 = 99.0% | Đỉnh = 3 | PI_IR = 2.30%[0m
+[0;32mI (89730) MAIN_APP: => KẾT QUẢ ĐO: HR: 72.3 bpm, Spo2: 99.0%[0m
+[0;32mI (89740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33134][0m
+[0;32mI (90800) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;33mW (90800) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (90800) TEMP_MONITOR: MLX90614 -> Môi trường: 689.57 °C | Cơ thể: -64.95 °C[0m
+[0;32mI (90810) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:26038][0m
+[0;32mI (90810) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (93730) R_DEBUG: R=0.449 | RED_AC=918.0 RED_DC=101561.2 | IR_AC=2426.5 IR_DC=120538.2[0m
+[0;32mI (93730) PPG_DEBUG: BPM = 69.4 | SpO2 = 99.4% | Đỉnh = 3 | PI_IR = 2.01%[0m
+[0;32mI (93730) MAIN_APP: => KẾT QUẢ ĐO: HR: 69.4 bpm, Spo2: 99.4%[0m
+[0;32mI (93740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:62325][0m
+[0;32mI (95900) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;33mW (95900) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (95900) TEMP_MONITOR: MLX90614 -> Môi trường: 689.57 °C | Cơ thể: -66.63 °C[0m
+[0;32mI (95910) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52233][0m
+[0;32mI (95910) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (97730) R_DEBUG: R=0.468 | RED_AC=1342.1 RED_DC=102119.4 | IR_AC=3417.9 IR_DC=121828.8[0m
+[0;32mI (97730) PPG_DEBUG: BPM = 80.0 | SpO2 = 99.2% | Đỉnh = 2 | PI_IR = 2.81%[0m
+[0;32mI (97730) MAIN_APP: => KẾT QUẢ ĐO: HR: 80.0 bpm, Spo2: 99.2%[0m
+[0;32mI (97740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33006][0m
+[0;32mI (100990) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;33mW (100990) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (100990) TEMP_MONITOR: MLX90614 -> Môi trường: 689.63 °C | Cơ thể: -66.73 °C[0m
+[0;32mI (101000) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35668][0m
+[0;32mI (101010) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (101730) R_DEBUG: R=0.463 | RED_AC=1571.3 RED_DC=101571.0 | IR_AC=4029.7 IR_DC=120588.6[0m
+[0;32mI (101730) PPG_DEBUG: BPM = 80.0 | SpO2 = 99.2% | Đỉnh = 2 | PI_IR = 3.34%[0m
+[0;32mI (101730) MAIN_APP: => KẾT QUẢ ĐO: HR: 80.0 bpm, Spo2: 99.2%[0m
+[0;32mI (101740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:46388][0m
+[0;32mI (105730) R_DEBUG: R=0.467 | RED_AC=1239.1 RED_DC=101395.4 | IR_AC=3137.9 IR_DC=119834.9[0m
+[0;32mI (105730) PPG_DEBUG: BPM = 70.6 | SpO2 = 99.2% | Đỉnh = 3 | PI_IR = 2.62%[0m
+[0;32mI (105730) MAIN_APP: => KẾT QUẢ ĐO: HR: 70.6 bpm, Spo2: 99.2%[0m
+[0;32mI (105740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:6158][0m
+[0;32mI (106070) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;33mW (106070) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[1;31mE (106080) TEMP_MONITOR: Lỗi đường truyền bus I2C với MLX90614![0m
+[0;32mI (109730) R_DEBUG: R=0.441 | RED_AC=1136.4 RED_DC=101311.5 | IR_AC=3040.5 IR_DC=119568.6[0m
+[0;32mI (109730) PPG_DEBUG: BPM = 83.3 | SpO2 = 99.5% | Đỉnh = 2 | PI_IR = 2.54%[0m
+[0;32mI (109730) MAIN_APP: => KẾT QUẢ ĐO: HR: 83.3 bpm, Spo2: 99.5%[0m
+[0;32mI (109740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:38460][0m
+[0;32mI (111180) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;33mW (111180) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (111180) TEMP_MONITOR: MLX90614 -> Môi trường: 689.73 °C | Cơ thể: -66.99 °C[0m
+[0;32mI (111190) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9601][0m
+[0;32mI (111190) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (113730) R_DEBUG: R=0.454 | RED_AC=1141.1 RED_DC=101187.0 | IR_AC=2968.8 IR_DC=119403.8[0m
+[0;32mI (113730) PPG_DEBUG: BPM = 71.9 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 2.49%[0m
+[0;32mI (113740) MAIN_APP: => KẾT QUẢ ĐO: HR: 71.9 bpm, Spo2: 99.3%[0m
+[0;32mI (113740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:49681][0m
+[0;32mI (116250) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (116250) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (116250) TEMP_MONITOR: MLX90614 -> Môi trường: 689.69 °C | Cơ thể: -67.27 °C[0m
+[0;32mI (116260) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48689][0m
+[0;32mI (116270) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (117730) R_DEBUG: R=0.461 | RED_AC=1161.0 RED_DC=101127.6 | IR_AC=2968.8 IR_DC=119082.8[0m
+[0;32mI (117730) PPG_DEBUG: BPM = 71.4 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 2.49%[0m
+[0;32mI (117740) MAIN_APP: => KẾT QUẢ ĐO: HR: 71.4 bpm, Spo2: 99.3%[0m
+[0;32mI (117740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:5998][0m
+[0;32mI (121310) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (121310) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (121310) TEMP_MONITOR: MLX90614 -> Môi trường: 689.71 °C | Cơ thể: -67.45 °C[0m
+[0;32mI (121320) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:15404][0m
+[0;32mI (121330) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (121730) R_DEBUG: R=0.477 | RED_AC=1109.3 RED_DC=101030.4 | IR_AC=2729.8 IR_DC=118588.0[0m
+[0;32mI (121730) PPG_DEBUG: BPM = 67.0 | SpO2 = 99.1% | Đỉnh = 3 | PI_IR = 2.30%[0m
+[0;32mI (121740) MAIN_APP: => KẾT QUẢ ĐO: HR: 67.0 bpm, Spo2: 99.1%[0m
+[0;32mI (121740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:18501][0m
+[0;32mI (125740) R_DEBUG: R=0.486 | RED_AC=1230.9 RED_DC=101174.0 | IR_AC=2968.1 IR_DC=118465.7[0m
+[0;32mI (125740) PPG_DEBUG: BPM = 67.4 | SpO2 = 99.0% | Đỉnh = 2 | PI_IR = 2.51%[0m
+[0;32mI (125740) MAIN_APP: => KẾT QUẢ ĐO: HR: 67.4 bpm, Spo2: 99.0%[0m
+[0;32mI (125750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:50199][0m
+[0;32mI (126420) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;33mW (126420) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (126420) TEMP_MONITOR: MLX90614 -> Môi trường: 689.77 °C | Cơ thể: -67.81 °C[0m
+[0;32mI (126430) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51334][0m
+[0;32mI (126440) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (129740) PPG_ALGO: DC drift 2.1% — giữ ngón tay thật yên![0m
+[0;32mI (129740) R_DEBUG: R=0.443 | RED_AC=1196.5 RED_DC=101698.8 | IR_AC=3168.2 IR_DC=119377.9[0m
+[0;32mI (129740) PPG_DEBUG: BPM = 72.3 | SpO2 = 99.4% | Đỉnh = 3 | PI_IR = 2.65%[0m
+[0;32mI (129750) MAIN_APP: => KẾT QUẢ ĐO: HR: 72.3 bpm, Spo2: 99.4%[0m
+[0;32mI (129750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43610][0m
+[0;32mI (131500) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;33mW (131500) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (131500) TEMP_MONITOR: MLX90614 -> Môi trường: 689.73 °C | Cơ thể: -67.81 °C[0m
+[0;32mI (131510) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9368][0m
+[0;32mI (131510) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (133740) R_DEBUG: R=0.450 | RED_AC=1366.5 RED_DC=101752.5 | IR_AC=3563.1 IR_DC=119305.5[0m
+[0;32mI (133740) PPG_DEBUG: BPM = 73.6 | SpO2 = 99.4% | Đỉnh = 3 | PI_IR = 2.99%[0m
+[0;32mI (133740) MAIN_APP: => KẾT QUẢ ĐO: HR: 73.6 bpm, Spo2: 99.4%[0m
+[0;32mI (133750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:25093][0m
+[0;32mI (136560) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;33mW (136560) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (136560) TEMP_MONITOR: MLX90614 -> Môi trường: 689.77 °C | Cơ thể: -68.37 °C[0m
+[0;32mI (136570) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35900][0m
+[0;32mI (136580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (137740) R_DEBUG: R=0.439 | RED_AC=1331.4 RED_DC=102098.3 | IR_AC=3563.1 IR_DC=119879.0[0m
+[0;32mI (137740) PPG_DEBUG: BPM = 74.1 | SpO2 = 99.5% | Đỉnh = 3 | PI_IR = 2.97%[0m
+[0;32mI (137740) MAIN_APP: => KẾT QUẢ ĐO: HR: 74.1 bpm, Spo2: 99.5%[0m
+[0;32mI (137750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55385][0m
+[0;32mI (141650) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (141650) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (141650) TEMP_MONITOR: MLX90614 -> Môi trường: 689.71 °C | Cơ thể: -68.09 °C[0m
+[0;32mI (141660) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:38691][0m
+[0;32mI (141670) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (141740) R_DEBUG: R=0.462 | RED_AC=1289.7 RED_DC=102076.8 | IR_AC=3273.5 IR_DC=119670.5[0m
+[0;32mI (141740) PPG_DEBUG: BPM = 45.1 | SpO2 = 99.3% | Đỉnh = 2 | PI_IR = 2.74%[0m
+[0;33mW (141740) MAIN_APP: Kết quả không hợp lệ do tín hiệu yếu hoặc nhiễu quá nhiều![0m
+[0;32mI (145740) R_DEBUG: R=0.441 | RED_AC=1212.2 RED_DC=101610.2 | IR_AC=3194.5 IR_DC=118186.6[0m
+[0;32mI (145740) PPG_DEBUG: BPM = 71.0 | SpO2 = 99.5% | Đỉnh = 3 | PI_IR = 2.70%[0m
+[0;32mI (145750) MAIN_APP: => KẾT QUẢ ĐO: HR: 71.0 bpm, Spo2: 99.5%[0m
+[0;32mI (145750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:12482][0m
+[0;32mI (146730) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (146730) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (146730) TEMP_MONITOR: MLX90614 -> Môi trường: 689.77 °C | Cơ thể: -68.17 °C[0m
+[0;32mI (146740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:27406][0m
+[0;32mI (146750) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (149740) R_DEBUG: R=0.479 | RED_AC=1293.4 RED_DC=101828.2 | IR_AC=3128.2 IR_DC=118090.3[0m
+[0;32mI (149740) PPG_DEBUG: BPM = 66.3 | SpO2 = 99.0% | Đỉnh = 3 | PI_IR = 2.65%[0m
+[0;32mI (149750) MAIN_APP: => KẾT QUẢ ĐO: HR: 66.3 bpm, Spo2: 99.0%[0m
+[0;32mI (149750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58297][0m
+[0;32mI (151830) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (151830) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (151830) TEMP_MONITOR: MLX90614 -> Môi trường: 689.77 °C | Cơ thể: -68.17 °C[0m
+[0;32mI (151840) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:743][0m
+[0;32mI (151840) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (153740) R_DEBUG: R=0.457 | RED_AC=1136.9 RED_DC=101828.7 | IR_AC=2877.1 IR_DC=117895.1[0m
+[0;32mI (153740) PPG_DEBUG: BPM = 82.8 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 2.44%[0m
+[0;32mI (153750) MAIN_APP: => KẾT QUẢ ĐO: HR: 82.8 bpm, Spo2: 99.3%[0m
+[0;32mI (153750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44676][0m
+[0;32mI (156900) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;33mW (156900) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (156900) TEMP_MONITOR: MLX90614 -> Môi trường: 689.81 °C | Cơ thể: -68.65 °C[0m
+[0;32mI (156910) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9766][0m
+[0;32mI (156910) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (157750) R_DEBUG: R=0.454 | RED_AC=1129.8 RED_DC=101879.6 | IR_AC=2877.1 IR_DC=117844.4[0m
+[0;32mI (157750) PPG_DEBUG: BPM = 81.6 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 2.44%[0m
+[0;32mI (157750) MAIN_APP: => KẾT QUẢ ĐO: HR: 81.6 bpm, Spo2: 99.3%[0m
+[0;32mI (157760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:11522][0m
+[0;32mI (161750) R_DEBUG: R=0.458 | RED_AC=1031.8 RED_DC=101893.7 | IR_AC=2607.1 IR_DC=118023.2[0m
+[0;32mI (161750) PPG_DEBUG: BPM = 72.3 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 2.21%[0m
+[0;32mI (161750) MAIN_APP: => KẾT QUẢ ĐO: HR: 72.3 bpm, Spo2: 99.3%[0m
+[0;32mI (161760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:31185][0m
+[0;32mI (161980) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;33mW (161980) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (161980) TEMP_MONITOR: MLX90614 -> Môi trường: 689.81 °C | Cơ thể: -68.65 °C[0m
+[0;32mI (161990) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7927][0m
+[0;32mI (161990) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (165750) R_DEBUG: R=0.500 | RED_AC=979.0 RED_DC=102021.9 | IR_AC=2276.2 IR_DC=118502.9[0m
+[0;32mI (165750) PPG_DEBUG: BPM = 69.4 | SpO2 = 98.8% | Đỉnh = 3 | PI_IR = 1.92%[0m
+[0;32mI (165750) MAIN_APP: => KẾT QUẢ ĐO: HR: 69.4 bpm, Spo2: 98.8%[0m
+[0;32mI (165760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52993][0m
+[0;32mI (167080) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;33mW (167080) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (167080) TEMP_MONITOR: MLX90614 -> Môi trường: 689.81 °C | Cơ thể: -68.09 °C[0m
+[0;32mI (167090) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:24759][0m
+[0;32mI (167100) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (169750) R_DEBUG: R=0.539 | RED_AC=1934.7 RED_DC=101220.5 | IR_AC=4166.1 IR_DC=117472.6[0m
+[0;32mI (169750) PPG_DEBUG: BPM = 76.9 | SpO2 = 98.1% | Đỉnh = 3 | PI_IR = 3.55%[0m
+[0;32mI (169750) MAIN_APP: => KẾT QUẢ ĐO: HR: 76.9 bpm, Spo2: 98.1%[0m
+[0;32mI (169760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35199][0m
+[0;32mI (172160) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;33mW (172160) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (172160) TEMP_MONITOR: MLX90614 -> Môi trường: 689.85 °C | Cơ thể: -68.09 °C[0m
+[0;32mI (172170) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33852][0m
+[0;32mI (172180) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (177250) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;33mW (177250) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (177250) TEMP_MONITOR: MLX90614 -> Môi trường: 689.89 °C | Cơ thể: -68.45 °C[0m
+[0;32mI (177260) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:3633][0m
+[0;32mI (177270) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (182320) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.44 °C[0m
+[0;33mW (182320) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (182320) TEMP_MONITOR: MLX90614 -> Môi trường: 689.91 °C | Cơ thể: -69.47 °C[0m
+[0;32mI (182330) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:8783][0m
+[0;32mI (182330) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (187400) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.44 °C[0m
+[0;33mW (187400) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (187400) TEMP_MONITOR: MLX90614 -> Môi trường: 689.91 °C | Cơ thể: -68.45 °C[0m
+[0;32mI (187410) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:29179][0m
+[0;32mI (187420) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (189840) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (192490) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.56 °C[0m
+[0;33mW (192490) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (192490) TEMP_MONITOR: MLX90614 -> Môi trường: 689.89 °C | Cơ thể: -69.47 °C[0m
+[0;32mI (192500) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:21070][0m
+[0;32mI (192510) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (197550) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.31 °C[0m
+[0;33mW (197550) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (197550) TEMP_MONITOR: MLX90614 -> Môi trường: 689.89 °C | Cơ thể: -76.29 °C[0m
+[0;32mI (197560) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:63586][0m
+[0;32mI (197560) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (202610) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.31 °C[0m
+[0;33mW (202610) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (202610) TEMP_MONITOR: MLX90614 -> Môi trường: 689.89 °C | Cơ thể: -63.73 °C[0m
+[0;32mI (202620) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58927][0m
+[0;32mI (202620) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (204360) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (207670) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;33mW (207670) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (207670) TEMP_MONITOR: MLX90614 -> Môi trường: 689.89 °C | Cơ thể: -64.25 °C[0m
+[0;32mI (207680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:12233][0m
+[0;32mI (207690) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (208360) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (212740) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.38 °C[0m
+[0;33mW (212740) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (212740) TEMP_MONITOR: MLX90614 -> Môi trường: 689.85 °C | Cơ thể: -120.71 °C[0m
+[0;32mI (212750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51563][0m
+[0;32mI (212760) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (217800) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.31 °C[0m
+[0;33mW (217800) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (217800) TEMP_MONITOR: MLX90614 -> Môi trường: 689.69 °C | Cơ thể: -120.29 °C[0m
+[0;32mI (217810) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:22787][0m
+[0;32mI (217820) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (222870) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;33mW (222870) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (222870) TEMP_MONITOR: MLX90614 -> Môi trường: 689.57 °C | Cơ thể: -117.55 °C[0m
+[0;32mI (222880) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:64314][0m
+[0;32mI (222890) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (227930) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.69 °C[0m
+[0;33mW (227930) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (227930) TEMP_MONITOR: MLX90614 -> Môi trường: 689.49 °C | Cơ thể: -116.65 °C[0m
+[0;32mI (227940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:27102][0m
+[0;32mI (227950) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (233010) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.56 °C[0m
+[0;33mW (233010) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (233010) TEMP_MONITOR: MLX90614 -> Môi trường: 689.37 °C | Cơ thể: -116.45 °C[0m
+[0;32mI (233020) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:22524][0m
+[0;32mI (233030) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (238070) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.56 °C[0m
+[0;33mW (238070) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (238070) TEMP_MONITOR: MLX90614 -> Môi trường: 689.31 °C | Cơ thể: -142.41 °C[0m
+[0;32mI (238080) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:21085][0m
+[0;32mI (238090) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (243150) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.56 °C[0m
+[0;33mW (243150) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (243150) TEMP_MONITOR: MLX90614 -> Môi trường: 689.21 °C | Cơ thể: -140.13 °C[0m
+[0;32mI (243160) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:29922][0m
+[0;32mI (243170) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (248220) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.56 °C[0m
+[0;33mW (248220) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (248220) TEMP_MONITOR: MLX90614 -> Môi trường: 689.19 °C | Cơ thể: -135.73 °C[0m
+[0;32mI (248230) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33956][0m
+[0;32mI (248240) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (253320) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.38 °C[0m
+[0;33mW (253320) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (253320) TEMP_MONITOR: MLX90614 -> Môi trường: 689.13 °C | Cơ thể: -132.57 °C[0m
+[0;32mI (253330) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:54056][0m
+[0;32mI (253340) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (258390) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.44 °C[0m
+[0;33mW (258390) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (258390) TEMP_MONITOR: MLX90614 -> Môi trường: 689.09 °C | Cơ thể: -138.39 °C[0m
+[0;32mI (258400) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:53756][0m
+[0;32mI (258410) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (263450) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.44 °C[0m
+[0;33mW (263450) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (263450) TEMP_MONITOR: MLX90614 -> Môi trường: 689.01 °C | Cơ thể: -131.43 °C[0m
+[0;32mI (263460) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:61333][0m
+[0;32mI (263470) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (268520) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.31 °C[0m
+[0;33mW (268520) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (268520) TEMP_MONITOR: MLX90614 -> Môi trường: 688.97 °C | Cơ thể: -130.49 °C[0m
+[0;32mI (268530) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:49926][0m
+[0;32mI (268540) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (273590) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.31 °C[0m
+[0;33mW (273590) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (273590) TEMP_MONITOR: MLX90614 -> Môi trường: 688.91 °C | Cơ thể: -130.15 °C[0m
+[0;32mI (273600) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:60585][0m
+[0;32mI (273610) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (278650) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.25 °C[0m
+[0;33mW (278650) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (278650) TEMP_MONITOR: MLX90614 -> Môi trường: 688.85 °C | Cơ thể: -127.17 °C[0m
+[0;32mI (278660) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:53384][0m
+[0;32mI (278670) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (283710) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.25 °C[0m
+[0;33mW (283710) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (283710) TEMP_MONITOR: MLX90614 -> Môi trường: 688.85 °C | Cơ thể: -130.15 °C[0m
+[0;32mI (283720) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35539][0m
+[0;32mI (283730) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (288780) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.31 °C[0m
+[0;33mW (288780) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (288780) TEMP_MONITOR: MLX90614 -> Môi trường: 688.79 °C | Cơ thể: -127.17 °C[0m
+[0;32mI (288790) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:54989][0m
+[0;32mI (288800) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (293860) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.12 °C[0m
+[0;33mW (293860) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (293860) TEMP_MONITOR: MLX90614 -> Môi trường: 688.79 °C | Cơ thể: -128.17 °C[0m
+[0;32mI (293870) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:13095][0m
+[0;32mI (293880) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (298910) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.12 °C[0m
+[0;33mW (298910) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (298910) TEMP_MONITOR: MLX90614 -> Môi trường: 688.77 °C | Cơ thể: -125.69 °C[0m
+[0;32mI (298920) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55874][0m
+[0;32mI (298930) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (303990) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.19 °C[0m
+[0;33mW (303990) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (303990) TEMP_MONITOR: MLX90614 -> Môi trường: 688.73 °C | Cơ thể: -124.83 °C[0m
+[0;32mI (304000) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44910][0m
+[0;32mI (304010) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (309040) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.19 °C[0m
+[0;33mW (309040) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (309040) TEMP_MONITOR: MLX90614 -> Môi trường: 688.65 °C | Cơ thể: -128.81 °C[0m
+[0;32mI (309050) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:32460][0m
+[0;32mI (309060) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (314120) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.12 °C[0m
+[0;33mW (314120) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (314120) TEMP_MONITOR: MLX90614 -> Môi trường: 688.65 °C | Cơ thể: -121.71 °C[0m
+[0;32mI (314130) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:13022][0m
+[0;32mI (314140) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (319200) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (319200) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (319200) TEMP_MONITOR: MLX90614 -> Môi trường: 688.63 °C | Cơ thể: -122.27 °C[0m
+[0;32mI (319210) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:18982][0m
+[0;32mI (319220) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (324270) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (324270) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (324270) TEMP_MONITOR: MLX90614 -> Môi trường: 688.57 °C | Cơ thể: -122.27 °C[0m
+[0;32mI (324280) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:38724][0m
+[0;32mI (324290) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (329330) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (329330) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (329330) TEMP_MONITOR: MLX90614 -> Môi trường: 688.63 °C | Cơ thể: -123.11 °C[0m
+[0;32mI (329340) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58660][0m
+[0;32mI (329350) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (334420) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (334420) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (334420) TEMP_MONITOR: MLX90614 -> Môi trường: 688.57 °C | Cơ thể: -122.27 °C[0m
+[0;32mI (334430) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:16245][0m
+[0;32mI (334440) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (339520) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (339520) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (339520) TEMP_MONITOR: MLX90614 -> Môi trường: 688.51 °C | Cơ thể: -120.65 °C[0m
+[0;32mI (339530) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:29920][0m
+[0;32mI (339540) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (344600) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (344600) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (344600) TEMP_MONITOR: MLX90614 -> Môi trường: 688.55 °C | Cơ thể: -122.27 °C[0m
+[0;32mI (344610) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:15454][0m
+[0;32mI (344620) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (349680) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (349680) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (349680) TEMP_MONITOR: MLX90614 -> Môi trường: 688.49 °C | Cơ thể: -121.97 °C[0m
+[0;32mI (349690) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:31274][0m
+[0;32mI (349700) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (354750) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (354750) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (354750) TEMP_MONITOR: MLX90614 -> Môi trường: 688.51 °C | Cơ thể: -137.17 °C[0m
+[0;32mI (354760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:31873][0m
+[0;32mI (354770) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (359810) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (359810) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (359810) TEMP_MONITOR: MLX90614 -> Môi trường: 688.49 °C | Cơ thể: -136.39 °C[0m
+[0;32mI (359820) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39650][0m
+[0;32mI (359830) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (364880) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (364880) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (364880) TEMP_MONITOR: MLX90614 -> Môi trường: 688.49 °C | Cơ thể: -135.49 °C[0m
+[0;32mI (364890) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:38828][0m
+[0;32mI (364900) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (369960) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (369960) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (369960) TEMP_MONITOR: MLX90614 -> Môi trường: 688.49 °C | Cơ thể: -132.87 °C[0m
+[0;32mI (369970) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:54871][0m
+[0;32mI (369980) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (375040) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (375040) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (375040) TEMP_MONITOR: MLX90614 -> Môi trường: 688.45 °C | Cơ thể: -134.73 °C[0m
+[0;32mI (375050) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:49123][0m
+[0;32mI (375060) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (380100) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (380100) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (380100) TEMP_MONITOR: MLX90614 -> Môi trường: 688.49 °C | Cơ thể: -132.87 °C[0m
+[0;32mI (380110) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:27582][0m
+[0;32mI (380120) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (385190) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (385190) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (385190) TEMP_MONITOR: MLX90614 -> Môi trường: 688.43 °C | Cơ thể: -133.61 °C[0m
+[0;32mI (385200) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43635][0m
+[0;32mI (385210) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (390290) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (390290) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (390290) TEMP_MONITOR: MLX90614 -> Môi trường: 688.39 °C | Cơ thể: -134.73 °C[0m
+[0;32mI (390300) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39100][0m
+[0;32mI (390310) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (395340) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (395340) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (395340) TEMP_MONITOR: MLX90614 -> Môi trường: 688.43 °C | Cơ thể: -132.87 °C[0m
+[0;32mI (395350) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33173][0m
+[0;32mI (395360) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (400390) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.12 °C[0m
+[0;33mW (400390) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (400390) TEMP_MONITOR: MLX90614 -> Môi trường: 688.43 °C | Cơ thể: -132.87 °C[0m
+[0;32mI (400400) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58065][0m
+[0;32mI (400410) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (405460) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (405460) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (405460) TEMP_MONITOR: MLX90614 -> Môi trường: 688.43 °C | Cơ thể: -132.87 °C[0m
+[0;32mI (405470) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:45313][0m
+[0;32mI (405480) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (410540) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (410540) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (410540) TEMP_MONITOR: MLX90614 -> Môi trường: 688.41 °C | Cơ thể: -133.61 °C[0m
+[0;32mI (410550) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:49589][0m
+[0;32mI (410560) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (415600) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (415600) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (415600) TEMP_MONITOR: MLX90614 -> Môi trường: 688.41 °C | Cơ thể: -130.27 °C[0m
+[0;32mI (415610) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:5902][0m
+[0;32mI (415610) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (420660) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (420660) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (420660) TEMP_MONITOR: MLX90614 -> Môi trường: 688.39 °C | Cơ thể: -133.61 °C[0m
+[0;32mI (420670) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59679][0m
+[0;32mI (420680) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (425760) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (425760) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (425760) TEMP_MONITOR: MLX90614 -> Môi trường: 688.39 °C | Cơ thể: -134.73 °C[0m
+[0;32mI (425770) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:30002][0m
+[0;32mI (425780) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (430830) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (430830) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (430830) TEMP_MONITOR: MLX90614 -> Môi trường: 688.35 °C | Cơ thể: -131.79 °C[0m
+[0;32mI (430840) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:53145][0m
+[0;32mI (430850) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (435900) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (435900) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (435900) TEMP_MONITOR: MLX90614 -> Môi trường: 688.39 °C | Cơ thể: -132.59 °C[0m
+[0;32mI (435910) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:26909][0m
+[0;32mI (435920) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (440980) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (440980) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (440980) TEMP_MONITOR: MLX90614 -> Môi trường: 688.29 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (440990) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:60663][0m
+[0;32mI (441000) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (446070) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (446070) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (446070) TEMP_MONITOR: MLX90614 -> Môi trường: 688.31 °C | Cơ thể: -130.27 °C[0m
+[0;32mI (446080) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35765][0m
+[0;32mI (446090) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (451140) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (451140) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (451140) TEMP_MONITOR: MLX90614 -> Môi trường: 688.31 °C | Cơ thể: -129.33 °C[0m
+[0;32mI (451150) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52236][0m
+[0;32mI (451160) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (456190) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (456190) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (456190) TEMP_MONITOR: MLX90614 -> Môi trường: 688.35 °C | Cơ thể: -130.27 °C[0m
+[0;32mI (456200) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:20275][0m
+[0;32mI (456210) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (461290) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (461290) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (461290) TEMP_MONITOR: MLX90614 -> Môi trường: 688.31 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (461300) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43510][0m
+[0;32mI (461310) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (466350) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (466350) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (466350) TEMP_MONITOR: MLX90614 -> Môi trường: 688.31 °C | Cơ thể: -131.29 °C[0m
+[0;32mI (466360) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:53598][0m
+[0;32mI (466370) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (471410) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (471410) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (471410) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -128.57 °C[0m
+[0;32mI (471420) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7620][0m
+[0;32mI (471430) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (476490) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.12 °C[0m
+[0;33mW (476490) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (476490) TEMP_MONITOR: MLX90614 -> Môi trường: 688.29 °C | Cơ thể: -132.59 °C[0m
+[0;32mI (476500) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52264][0m
+[0;32mI (476510) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (481560) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (481560) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (481560) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -131.79 °C[0m
+[0;32mI (481570) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44161][0m
+[0;32mI (481580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (486630) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (486630) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (486630) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -134.45 °C[0m
+[0;32mI (486640) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:25654][0m
+[0;32mI (486650) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (491700) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (491700) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (491700) TEMP_MONITOR: MLX90614 -> Môi trường: 688.29 °C | Cơ thể: -131.79 °C[0m
+[0;32mI (491710) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52931][0m
+[0;32mI (491720) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (496790) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (496790) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (496790) TEMP_MONITOR: MLX90614 -> Môi trường: 688.31 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (496800) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39976][0m
+[0;32mI (496810) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (501860) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (501860) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (501860) TEMP_MONITOR: MLX90614 -> Môi trường: 688.31 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (501870) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55531][0m
+[0;32mI (501880) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (506930) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (506930) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (506930) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -133.33 °C[0m
+[0;32mI (506940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55909][0m
+[0;32mI (506950) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (511990) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (511990) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (511990) TEMP_MONITOR: MLX90614 -> Môi trường: 688.29 °C | Cơ thể: -132.59 °C[0m
+[0;32mI (512000) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:62500][0m
+[0;32mI (512010) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (517070) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (517070) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (517070) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -129.33 °C[0m
+[0;32mI (517080) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:21871][0m
+[0;32mI (517090) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (522120) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (522120) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (522120) TEMP_MONITOR: MLX90614 -> Môi trường: 688.21 °C | Cơ thể: -128.57 °C[0m
+[0;32mI (522130) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51060][0m
+[0;32mI (522140) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (527180) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;33mW (527180) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (527180) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -131.79 °C[0m
+[0;33mW (535450) transport_base: Poll timeout or error, errno=Success, fd=54, timeout_ms=10000[0m
+[1;31mE (535450) mqtt_client: Writing didn't complete in specified timeout: errno=0[0m
+[0;33mW (535450) MQTT_DRIVER: Mất kết nối MQTT Broker! Hệ thống đang tự động liên kết lại...[0m
+[0;33mW (535460) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (535470) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:21787][0m
+[0;32mI (535470) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (540510) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (540510) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (540510) TEMP_MONITOR: MLX90614 -> Môi trường: 688.27 °C | Cơ thể: -133.33 °C[0m
+[0;32mI (545550) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;33mW (545550) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (545550) TEMP_MONITOR: MLX90614 -> Môi trường: 688.21 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (548040) MQTT_DRIVER: Đã kết nối thành công tới MQTT Broker![0m
+[0;32mI (548040) MQTT_DRIVER: Đã Subscribe thành công hộp thư lệnh: chinh/control[0m
+[0;32mI (550590) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (550590) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (550590) TEMP_MONITOR: MLX90614 -> Môi trường: 688.21 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (550600) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:61369][0m
+[0;32mI (550610) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (555640) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (555640) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (555640) TEMP_MONITOR: MLX90614 -> Môi trường: 688.21 °C | Cơ thể: -129.33 °C[0m
+[0;32mI (555650) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52600][0m
+[0;32mI (555660) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (560690) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (560690) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (560690) TEMP_MONITOR: MLX90614 -> Môi trường: 688.23 °C | Cơ thể: -127.87 °C[0m
+[0;32mI (560700) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33250][0m
+[0;32mI (560710) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (565740) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (565740) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (565740) TEMP_MONITOR: MLX90614 -> Môi trường: 688.19 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (565750) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:37754][0m
+[0;32mI (565760) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (570790) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (570790) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (570790) TEMP_MONITOR: MLX90614 -> Môi trường: 688.21 °C | Cơ thể: -131.07 °C[0m
+[0;32mI (570800) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:2811][0m
+[0;32mI (570810) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (575840) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;33mW (575840) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (575840) TEMP_MONITOR: MLX90614 -> Môi trường: 688.19 °C | Cơ thể: -127.87 °C[0m
+[0;32mI (580690) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:28115][0m
+[0;32mI (580690) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (585730) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (585730) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (585730) TEMP_MONITOR: MLX90614 -> Môi trường: 688.19 °C | Cơ thể: -132.59 °C[0m
+[0;32mI (585740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:19195][0m
+[0;32mI (585750) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (590780) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (590780) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (590780) TEMP_MONITOR: MLX90614 -> Môi trường: 688.17 °C | Cơ thể: -129.33 °C[0m
+[0;32mI (590790) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:49699][0m
+[0;32mI (590800) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (595830) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (595830) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (595830) TEMP_MONITOR: MLX90614 -> Môi trường: 688.09 °C | Cơ thể: -126.47 °C[0m
+[0;32mI (595840) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55115][0m
+[0;32mI (595850) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (600880) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (600880) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (600880) TEMP_MONITOR: MLX90614 -> Môi trường: 688.07 °C | Cơ thể: -133.09 °C[0m
+[0;32mI (600890) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:30027][0m
+[0;32mI (600900) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (605930) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.75 °C[0m
+[0;33mW (605930) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (605930) TEMP_MONITOR: MLX90614 -> Môi trường: 688.07 °C | Cơ thể: -128.11 °C[0m
+[0;32mI (605940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58276][0m
+[0;32mI (605950) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (610980) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (610980) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (610980) TEMP_MONITOR: MLX90614 -> Môi trường: 688.09 °C | Cơ thể: -128.11 °C[0m
+[0;32mI (610990) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:62576][0m
+[0;32mI (611000) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (616030) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (616030) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (616030) TEMP_MONITOR: MLX90614 -> Môi trường: 688.09 °C | Cơ thể: -127.67 °C[0m
+[0;32mI (616040) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:64618][0m
+[0;32mI (616050) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (621080) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (621080) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (621080) TEMP_MONITOR: MLX90614 -> Môi trường: 688.09 °C | Cơ thể: -129.07 °C[0m
+[0;32mI (621090) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7762][0m
+[0;32mI (621100) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (626130) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;33mW (626130) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (626130) TEMP_MONITOR: MLX90614 -> Môi trường: 688.09 °C | Cơ thể: -129.07 °C[0m
+[0;32mI (626140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:49519][0m
+[0;32mI (626150) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (631180) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (631180) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (631180) TEMP_MONITOR: MLX90614 -> Môi trường: 688.17 °C | Cơ thể: -126.47 °C[0m
+[0;32mI (631190) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:41918][0m
+[0;32mI (631200) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (636230) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;33mW (636230) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (636230) TEMP_MONITOR: MLX90614 -> Môi trường: 688.07 °C | Cơ thể: -125.15 °C[0m
+[0;32mI (636240) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:14317][0m
+[0;32mI (636250) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (641280) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (641280) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (641280) TEMP_MONITOR: MLX90614 -> Môi trường: 688.17 °C | Cơ thể: -127.67 °C[0m
+[0;32mI (641290) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:4914][0m
+[0;32mI (641300) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (646330) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;33mW (646330) MLX90614_DRIVER: Cảnh báo: Phát hiện cờ bit lỗi tràn dữ liệu (Data Error Flag) tại RAM Ta.[0m
+[0;32mI (646330) TEMP_MONITOR: MLX90614 -> Môi trường: 688.07 °C | Cơ thể: -126.05 °C[0m
+[0;32mI (646340) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:60797][0m
+[0;32mI (646350) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
