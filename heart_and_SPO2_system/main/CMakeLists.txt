@@ -1,4 +1,4 @@
 idf_component_register(SRCS "heart_and_SPO2_system.c"
                     INCLUDE_DIRS "."
-                    REQUIRES driver MAX30102 ppg_algorithm MLX90614 ST7735 WIFI my_mqtt
+                    REQUIRES driver MAX30102 ppg_algorithm MLX90614 ST7735 WIFI my_mqtt button1
                     )

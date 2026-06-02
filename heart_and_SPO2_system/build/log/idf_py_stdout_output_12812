@@ -1,0 +1,717 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+�2, aid�ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c4
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jun  1 2026 13:54:16[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (24) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00250000[0m
+[0;32mI (72) boot:  3 storage          Unknown data     01 81 00260000 00190000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=420c0020 size=26470h (156784) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=00036498 vaddr=40800000 size=09b80h ( 39808) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=bb548h (767304) map[0m
+[0;32mI (275) esp_image: segment 3: paddr=000fb570 vaddr=40809b80 size=15624h ( 87588) load[0m
+[0;32mI (295) esp_image: segment 4: paddr=00110b9c vaddr=4081f1b0 size=03900h ( 14592) load[0m
+[0;32mI (299) esp_image: segment 5: paddr=001144a4 vaddr=50000000 size=00080h (   128) load[0m
+[0;32mI (307) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (307) boot: Disabling RNG early entropy source...[0m
+[0;32mI (320) cpu_start: Unicore app[0m
+[0;32mI (329) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (329) cpu_start: Pro cpu start user code[0m
+[0;32mI (329) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (331) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (340) app_init: App version:      decbc87-dirty[0m
+[0;32mI (344) app_init: Compile time:     Jun  1 2026 17:27:37[0m
+[0;32mI (349) app_init: ELF file SHA256:  3f322ecd2...[0m
+[0;32mI (354) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (358) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (366) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (370) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (376) heap_init: At 40829250 len 000533C0 (332 KiB): RAM[0m
+[0;32mI (381) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (386) heap_init: At 50000080 len 00003F68 (15 KiB): RTCRAM[0m
+[0;32mI (392) spi_flash: detected chip: generic[0m
+[0;32mI (395) spi_flash: flash io: dio[0m
+[0;32mI (399) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (405) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (411) coexist: coex firmware version: 7260f71[0m
+[0;32mI (415) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (420) main_task: Started on CPU0[0m
+[0;32mI (440) main_task: Calling app_main()[0m
+[0;32mI (440) MAIN_APP: Đang khởi tạo hệ thống...[0m
+[0;32mI (450) WIFI_DRIVER: Bắt đầu cấu hình hệ thống mạng Wi-Fi...[0m
+[0;32mI (450) pp: pp rom version: 5b8dcfa[0m
+[0;32mI (450) net80211: net80211 rom version: 5b8dcfa[0m
+[0;32mI (460) wifi:wifi driver task: 4082f8cc, prio:23, stack:6656, core=0[0m
+[0;32mI (460) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (460) wifi:wifi certification version: v7.0[0m
+[0;32mI (460) wifi:config NVS flash: enabled[0m
+[0;32mI (470) wifi:config nano formatting: disabled[0m
+[0;32mI (470) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1[0m
+[0;32mI (480) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (480) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (490) wifi:Init management short buffer num: 32[0m
+[0;32mI (490) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (500) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (500) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)[0m
+[0;32mI (510) wifi:Init static rx buffer num: 10[0m
+[0;32mI (510) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (510) wifi_init: rx ba win: 6[0m
+[0;32mI (520) wifi_init: accept mbox: 6[0m
+[0;32mI (520) wifi_init: tcpip mbox: 32[0m
+[0;32mI (520) wifi_init: udp mbox: 6[0m
+[0;32mI (530) wifi_init: tcp mbox: 6[0m
+[0;32mI (530) wifi_init: tcp tx win: 5760[0m
+[0;32mI (530) wifi_init: tcp rx win: 5760[0m
+[0;32mI (530) wifi_init: tcp mss: 1440[0m
+[0;32mI (540) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (540) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (550) wifi_init: WiFi SLP IRAM OP enabled[0m
+[0;32mI (550) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12[0m
+[0;33mW (620) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (620) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (620) wifi:(agc)0x600a7128:0xd2140a0e, min.avgNF:0xce->0xd2(dB), RCalCount:0x140, min.RRssi:0xa0e(-95.12)[0m
+[0;32mI (630) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (640) wifi:mode : sta (54:32:04:0c:fb:e4)[0m
+[0;32mI (640) wifi:enable tsf[0m
+[0;32mI (650) WIFI_DRIVER: Đang kết nối tới Wi-Fi...[0m
+[0;32mI (660) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (660) wifi:(connect)dot11_authmode:0x3, pairwise_cipher:0x3, group_cipher:0x3[0m
+[0;32mI (660) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (670) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (690) wifi:(assoc)RESP, Extended Capabilities length:8, operating_mode_notification:0[0m
+[0;32mI (690) wifi:(assoc)RESP, Extended Capabilities, MBSSID:0, TWT Responder:0, OBSS Narrow Bandwidth RU In OFDMA Tolerance:0[0m
+[0;32mI (700) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (700) wifi:(trc)phytype:CBW20-SGI, snr:35, maxRate:144, highestRateIdx:0[0m
+[0;33mW (710) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14[0m
+[0;32mI (710) wifi:(trc)band:2G, rate(L-MCS7, rateIdx:1), ampdu(rate:L-MCS7, schedIdx(1, stop:8)), snr:35, ampduState:wait operational[0m
+[0;32mI (730) wifi:ifidx:0, rssi:-62, nf:-97, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1[0m
+[0;32mI (740) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:5(4 us)[0m
+[0;32mI (790) wifi:connected with 43MH-P202, aid = 2, channel 4, BW20, bssid = 08:aa:89:5d:36:e8[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy:bgn, rssi:-62, cipher(pairwise:0x3, group:0x3), pmf:0, [0m
+[0;32mI (790) wifi:pm start, type: 1, twt_start:0[0m
+
+[0;32mI (800) wifi:pm start, type:1, aid:0x2, trans-BSSID:08:aa:89:5d:36:e8, BSSID[5]:0xe8, mbssid(max-indicator:0, index:0), he:0[0m
+[0;32mI (810) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (820) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000[0m
+[0;32mI (820) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)[0m
+[0;32mI (840) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)[0m
+[0;32mI (850) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)[0m
+[0;32mI (860) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (860) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (870) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (880) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[1;31mE (1650) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1650) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1650) mqtt_client: Error transport connect[0m
+[1;31mE (1650) MQTT_DRIVER: Phát hiện lỗi xung đột luồng dữ liệu MQTT[0m
+[0;33mW (1660) MQTT_DRIVER: Mất kết nối MQTT Broker! Hệ thống đang tự động liên kết lại...[0m
+[0;32mI (1670) MQTT_DRIVER: Driver MQTT ngầm khởi động thành công![0m
+[0;33mW (2960) wifi:<ba-add>idx:0, ifx:0, tid:6, TAHI:0x100e836, TALO:0x5d89aa08, (ssn:2, win:64, cur_ssn:2), CONF:0xc0006005[0m
+[0;32mI (3080) MAIN_APP: Đã khởi tạo thành công driver đăng ký phần cứng màn hình ST7735![0m
+[0;33mW (3080) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (3080) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;33mW (3090) MAIN_APP: Khởi tạo cảm biến max30102 thất bại lần 1. Thử lại sau 1 giây...[0m
+[0;32mI (4040) esp_netif_handlers: sta ip: 192.168.22.15, mask: 255.255.255.0, gw: 192.168.22.253[0m
+[0;32mI (4040) WIFI_DRIVER: ĐÃ KẾT NỐI WI-FI THÀNH CÔNG![0m
+[0;32mI (4040) WIFI_DRIVER: Địa chỉ IP cấp cho ESP32-C6: 192.168.22.15[0m
+[0;33mW (4100) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (4100) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (4110) MAIN_APP: Khởi tạo cảm biến MAX30102 thành công sau 2 lần thử![0m
+[0;32mI (4110) MLX90614_DRIVER: Đã đăng ký Driver thành công với địa chỉ: 0x5A[0m
+[0;32mI (4110) MLX90614_DRIVER: Kết nối THÀNH CÔNG! Đọc thử Serial ID1: 0x0000[0m
+[0;32mI (4120) MAIN_APP: Khởi tạo và cấu hình kết nối thành công MLX90614![0m
+[0;32mI (4130) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (4140) MAIN_APP: Task giám sát nhiệt độ tổng hợp bắt đầu chạy.[0m
+[0;32mI (4650) main_task: Returned from app_main()[0m
+[0;32mI (9170) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (9170) TEMP_MONITOR: MLX90614 -> Môi trường: 31.09 °C | Cơ thể: 31.07 °C[0m
+[0;33mW (11700) wifi:<ba-add>idx:1, ifx:0, tid:3, TAHI:0x100e836, TALO:0x5d89aa08, (ssn:1, win:64, cur_ssn:1), CONF:0xc0003005[0m
+[0;32mI (12140) MQTT_DRIVER: Đã kết nối thành công tới MQTT Broker![0m
+[0;32mI (12140) MQTT_DRIVER: Đã Subscribe thành công hộp thư lệnh: chinh/control[0m
+[0;32mI (14240) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;32mI (14240) TEMP_MONITOR: MLX90614 -> Môi trường: 31.03 °C | Cơ thể: 31.01 °C[0m
+[0;32mI (14240) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:56620][0m
+[0;32mI (14240) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (19360) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (19360) TEMP_MONITOR: MLX90614 -> Môi trường: 31.21 °C | Cơ thể: 379.89 °C[0m
+[0;32mI (19360) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:18733][0m
+[0;32mI (19360) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (24480) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (24480) TEMP_MONITOR: MLX90614 -> Môi trường: 31.43 °C | Cơ thể: 379.85 °C[0m
+[0;32mI (24480) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:31756][0m
+[0;32mI (24480) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (24670) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;33mW (28670) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (29600) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.38 °C[0m
+[0;32mI (29600) TEMP_MONITOR: MLX90614 -> Môi trường: 31.55 °C | Cơ thể: 379.81 °C[0m
+[0;32mI (29600) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:40934][0m
+[0;32mI (29600) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (34720) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.50 °C[0m
+[0;32mI (34720) TEMP_MONITOR: MLX90614 -> Môi trường: 31.63 °C | Cơ thể: 379.81 °C[0m
+[0;32mI (34720) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:28645][0m
+[0;32mI (34720) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (36670) R_DEBUG: R=0.423 | RED_AC=1232.9 RED_DC=96478.5 | IR_AC=3583.8 IR_DC=118579.2[0m
+[0;32mI (36670) PPG_DEBUG: BPM = 79.5 | SpO2 = 99.6% | Đỉnh = 3 | PI_IR = 3.02%[0m
+[0;32mI (36680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:54860][0m
+[0;32mI (39790) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.81 °C[0m
+[0;32mI (39790) TEMP_MONITOR: MLX90614 -> Môi trường: 31.71 °C | Cơ thể: 379.79 °C[0m
+[0;32mI (39790) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:19534][0m
+[0;32mI (39790) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (40670) R_DEBUG: R=0.446 | RED_AC=1306.9 RED_DC=96183.6 | IR_AC=3604.4 IR_DC=118284.0[0m
+[0;32mI (40670) PPG_DEBUG: BPM = 0.0 | SpO2 = 99.4% | Đỉnh = 1 | PI_IR = 3.05%[0m
+[0;32mI (44670) R_DEBUG: R=0.546 | RED_AC=1171.7 RED_DC=95648.4 | IR_AC=2638.6 IR_DC=117634.2[0m
+[0;32mI (44670) PPG_DEBUG: BPM = 84.5 | SpO2 = 98.0% | Đỉnh = 2 | PI_IR = 2.24%[0m
+[0;32mI (44680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:3967][0m
+[0;32mI (44840) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.88 °C[0m
+[0;32mI (44840) TEMP_MONITOR: MLX90614 -> Môi trường: 31.79 °C | Cơ thể: 379.77 °C[0m
+[0;32mI (44840) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:20632][0m
+[0;32mI (44840) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (49880) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;32mI (49880) TEMP_MONITOR: MLX90614 -> Môi trường: 31.83 °C | Cơ thể: 379.79 °C[0m
+[0;32mI (49880) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:27180][0m
+[0;32mI (49880) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (54920) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (54920) TEMP_MONITOR: MLX90614 -> Môi trường: 31.89 °C | Cơ thể: 379.79 °C[0m
+[0;32mI (54920) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51752][0m
+[0;32mI (54920) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (59960) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;32mI (59960) TEMP_MONITOR: MLX90614 -> Môi trường: 31.93 °C | Cơ thể: 379.77 °C[0m
+[0;32mI (59960) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9486][0m
+[0;32mI (59960) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (65000) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.75 °C[0m
+[0;32mI (65000) TEMP_MONITOR: MLX90614 -> Môi trường: 31.89 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (65000) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39228][0m
+[0;32mI (65000) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (70040) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.12 °C[0m
+[0;32mI (70040) TEMP_MONITOR: MLX90614 -> Môi trường: 31.95 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (70040) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:30773][0m
+[0;32mI (70040) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (75090) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (75090) TEMP_MONITOR: MLX90614 -> Môi trường: 31.93 °C | Cơ thể: 379.77 °C[0m
+[0;32mI (75090) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:45997][0m
+[0;32mI (75100) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (79130) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (80130) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (80130) TEMP_MONITOR: MLX90614 -> Môi trường: 31.97 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (80130) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:50473][0m
+[0;32mI (80130) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (83130) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (85170) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (85170) TEMP_MONITOR: MLX90614 -> Môi trường: 31.99 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (85170) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35357][0m
+[0;32mI (85170) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (90210) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;32mI (90210) TEMP_MONITOR: MLX90614 -> Môi trường: 32.01 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (90210) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:21272][0m
+[0;32mI (90210) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (91130) R_DEBUG: R=0.530 | RED_AC=1355.9 RED_DC=98415.0 | IR_AC=3045.1 IR_DC=117093.5[0m
+[0;32mI (91130) PPG_DEBUG: BPM = 75.0 | SpO2 = 98.3% | Đỉnh = 3 | PI_IR = 2.60%[0m
+[0;32mI (91130) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51837][0m
+[0;32mI (95130) R_DEBUG: R=0.532 | RED_AC=1355.9 RED_DC=98193.4 | IR_AC=3045.1 IR_DC=117256.3[0m
+[0;32mI (95130) PPG_DEBUG: BPM = 56.1 | SpO2 = 98.2% | Đỉnh = 2 | PI_IR = 2.60%[0m
+[0;32mI (95140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33353][0m
+[0;32mI (95260) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (95260) TEMP_MONITOR: MLX90614 -> Môi trường: 32.05 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (95260) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:11658][0m
+[0;32mI (95260) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (99130) R_DEBUG: R=0.518 | RED_AC=1131.3 RED_DC=97977.7 | IR_AC=2618.2 IR_DC=117417.6[0m
+[0;32mI (99130) PPG_DEBUG: BPM = 69.0 | SpO2 = 98.5% | Đỉnh = 3 | PI_IR = 2.23%[0m
+[0;32mI (99140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:2925][0m
+[0;32mI (100300) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;32mI (100300) TEMP_MONITOR: MLX90614 -> Môi trường: 32.03 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (100300) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:24686][0m
+[0;32mI (100300) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (103130) R_DEBUG: R=0.506 | RED_AC=1099.6 RED_DC=97920.5 | IR_AC=2615.8 IR_DC=117906.0[0m
+[0;32mI (103140) PPG_DEBUG: BPM = 71.9 | SpO2 = 98.7% | Đỉnh = 3 | PI_IR = 2.22%[0m
+[0;32mI (103140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:47311][0m
+[0;32mI (105340) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (105340) TEMP_MONITOR: MLX90614 -> Môi trường: 32.03 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (105340) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:53275][0m
+[0;32mI (105340) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (107140) R_DEBUG: R=0.483 | RED_AC=1343.6 RED_DC=98066.7 | IR_AC=3367.3 IR_DC=118712.0[0m
+[0;32mI (107140) PPG_DEBUG: BPM = 75.0 | SpO2 = 99.0% | Đỉnh = 3 | PI_IR = 2.84%[0m
+[0;32mI (107140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58722][0m
+[0;32mI (110390) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (110390) TEMP_MONITOR: MLX90614 -> Môi trường: 32.09 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (110390) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:50630][0m
+[0;32mI (110390) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (111140) PPG_ALGO: DC drift 2.5% — giữ ngón tay thật yên![0m
+[0;32mI (111140) R_DEBUG: R=0.432 | RED_AC=1518.4 RED_DC=97432.2 | IR_AC=4227.2 IR_DC=117109.1[0m
+[0;32mI (111140) PPG_DEBUG: BPM = 0.0 | SpO2 = 99.6% | Đỉnh = 1 | PI_IR = 3.61%[0m
+[0;33mW (115140) PPG_ALGO: DC drift 2.4% — giữ ngón tay thật yên![0m
+[0;32mI (115140) R_DEBUG: R=0.497 | RED_AC=1232.9 RED_DC=97313.1 | IR_AC=2967.2 IR_DC=116451.6[0m
+[0;32mI (115140) PPG_DEBUG: BPM = 80.0 | SpO2 = 98.8% | Đỉnh = 3 | PI_IR = 2.55%[0m
+[0;32mI (115150) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48276][0m
+[0;32mI (115430) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (115430) TEMP_MONITOR: MLX90614 -> Môi trường: 32.05 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (115430) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7307][0m
+[0;32mI (115430) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (119140) R_DEBUG: R=0.477 | RED_AC=1206.9 RED_DC=97416.1 | IR_AC=3025.0 IR_DC=116447.4[0m
+[0;32mI (119140) PPG_DEBUG: BPM = 79.5 | SpO2 = 99.1% | Đỉnh = 3 | PI_IR = 2.60%[0m
+[0;32mI (119150) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:16859][0m
+[0;32mI (120480) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.81 °C[0m
+[0;32mI (120480) TEMP_MONITOR: MLX90614 -> Môi trường: 32.07 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (120480) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:29239][0m
+[0;32mI (120480) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (125520) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (125520) TEMP_MONITOR: MLX90614 -> Môi trường: 31.97 °C | Cơ thể: 31.97 °C[0m
+[0;32mI (125520) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:30780][0m
+[0;32mI (125520) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (130560) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;32mI (130560) TEMP_MONITOR: MLX90614 -> Môi trường: 31.87 °C | Cơ thể: 31.85 °C[0m
+[0;32mI (130560) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39992][0m
+[0;32mI (130560) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (135600) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.69 °C[0m
+[0;32mI (135600) TEMP_MONITOR: MLX90614 -> Môi trường: 31.79 °C | Cơ thể: 31.77 °C[0m
+[0;32mI (135600) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:20177][0m
+[0;32mI (135600) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (140640) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.44 °C[0m
+[0;32mI (140640) TEMP_MONITOR: MLX90614 -> Môi trường: 31.71 °C | Cơ thể: 31.69 °C[0m
+[0;32mI (140640) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:60043][0m
+[0;32mI (140640) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (145680) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.44 °C[0m
+[0;32mI (145680) TEMP_MONITOR: MLX90614 -> Môi trường: 31.63 °C | Cơ thể: 31.61 °C[0m
+[0;32mI (145680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:13483][0m
+[0;32mI (145680) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (150720) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.50 °C[0m
+[0;32mI (150720) TEMP_MONITOR: MLX90614 -> Môi trường: 31.77 °C | Cơ thể: 379.79 °C[0m
+[0;32mI (150720) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:28055][0m
+[0;32mI (150720) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (151670) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;33mW (155670) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (155760) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.56 °C[0m
+[0;32mI (155760) TEMP_MONITOR: MLX90614 -> Môi trường: 31.87 °C | Cơ thể: 379.79 °C[0m
+[0;32mI (155760) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44132][0m
+[0;32mI (155760) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (160800) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.75 °C[0m
+[0;32mI (160800) TEMP_MONITOR: MLX90614 -> Môi trường: 31.97 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (160800) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:47883][0m
+[0;32mI (160800) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (163680) R_DEBUG: R=0.485 | RED_AC=1406.4 RED_DC=106806.2 | IR_AC=3514.2 IR_DC=129359.0[0m
+[0;32mI (163680) PPG_DEBUG: BPM = 74.5 | SpO2 = 99.0% | Đỉnh = 3 | PI_IR = 2.72%[0m
+[0;32mI (163680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:45178][0m
+[0;32mI (165840) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (165840) TEMP_MONITOR: MLX90614 -> Môi trường: 32.01 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (165840) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:37221][0m
+[0;32mI (165840) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (167680) R_DEBUG: R=0.442 | RED_AC=869.0 RED_DC=106527.3 | IR_AC=2390.9 IR_DC=129593.9[0m
+[0;32mI (167680) PPG_DEBUG: BPM = 80.5 | SpO2 = 99.5% | Đỉnh = 3 | PI_IR = 1.84%[0m
+[0;32mI (167680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:63939][0m
+[0;32mI (170890) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (170890) TEMP_MONITOR: MLX90614 -> Môi trường: 32.03 °C | Cơ thể: 379.75 °C[0m
+[0;32mI (170890) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9376][0m
+[0;32mI (170890) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (171680) R_DEBUG: R=0.449 | RED_AC=821.0 RED_DC=106335.3 | IR_AC=2234.3 IR_DC=129795.8[0m
+[0;32mI (171680) PPG_DEBUG: BPM = 74.5 | SpO2 = 99.4% | Đỉnh = 3 | PI_IR = 1.72%[0m
+[0;32mI (171680) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33164][0m
+[0;32mI (175930) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.94 °C[0m
+[0;32mI (175930) TEMP_MONITOR: MLX90614 -> Môi trường: 32.07 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (175930) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:6424][0m
+[0;32mI (175930) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (178080) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (180970) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.81 °C[0m
+[0;32mI (180970) TEMP_MONITOR: MLX90614 -> Môi trường: 32.11 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (180970) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:6494][0m
+[0;32mI (180970) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (182080) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (186010) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (186010) TEMP_MONITOR: MLX90614 -> Môi trường: 32.17 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (186010) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:46622][0m
+[0;32mI (186010) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (191050) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (191050) TEMP_MONITOR: MLX90614 -> Môi trường: 32.19 °C | Cơ thể: 379.71 °C[0m
+[0;32mI (191050) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:26849][0m
+[0;32mI (191050) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (191930) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;33mW (195930) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (196090) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.25 °C[0m
+[0;32mI (196090) TEMP_MONITOR: MLX90614 -> Môi trường: 32.19 °C | Cơ thể: 379.71 °C[0m
+[0;32mI (196090) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:62506][0m
+[0;32mI (196090) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (201130) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.25 °C[0m
+[0;32mI (201130) TEMP_MONITOR: MLX90614 -> Môi trường: 32.21 °C | Cơ thể: 379.71 °C[0m
+[0;32mI (201130) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43240][0m
+[0;32mI (201130) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (206170) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.31 °C[0m
+[0;32mI (206170) TEMP_MONITOR: MLX90614 -> Môi trường: 32.17 °C | Cơ thể: 379.73 °C[0m
+[0;32mI (206170) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:40699][0m
+[0;32mI (206170) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (208970) PPG_ALGO: Đang ổn định bộ lọc... 1.0/2.0 giây[0m
+[0;32mI (211210) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.00 °C[0m
+[0;32mI (211210) TEMP_MONITOR: MLX90614 -> Môi trường: 32.25 °C | Cơ thể: 379.69 °C[0m
+[0;32mI (211210) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59179][0m
+[0;32mI (211210) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;33mW (212970) PPG_ALGO: Đang ổn định bộ lọc... 2.0/2.0 giây[0m
+[0;32mI (216250) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;32mI (216250) TEMP_MONITOR: MLX90614 -> Môi trường: 32.29 °C | Cơ thể: 379.69 °C[0m
+[0;32mI (216250) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:23959][0m
+[0;32mI (216250) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (220980) R_DEBUG: R=0.479 | RED_AC=2131.7 RED_DC=104617.7 | IR_AC=5319.7 IR_DC=124962.6[0m
+[0;32mI (220980) PPG_DEBUG: BPM = 0.0 | SpO2 = 99.1% | Đỉnh = 1 | PI_IR = 4.26%[0m
+[0;32mI (221290) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.19 °C[0m
+[0;32mI (221290) TEMP_MONITOR: MLX90614 -> Môi trường: 32.31 °C | Cơ thể: 379.69 °C[0m
+[0;32mI (221290) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:34085][0m
+[0;32mI (221300) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (224980) R_DEBUG: R=0.452 | RED_AC=1704.2 RED_DC=104646.2 | IR_AC=4522.3 IR_DC=125542.7[0m
+[0;32mI (224980) PPG_DEBUG: BPM = 77.9 | SpO2 = 99.4% | Đỉnh = 2 | PI_IR = 3.60%[0m
+[0;32mI (224980) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:40414][0m
+[0;32mI (226350) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.31 °C[0m
+[0;32mI (226350) TEMP_MONITOR: MLX90614 -> Môi trường: 32.29 °C | Cơ thể: 379.69 °C[0m
+[0;32mI (226350) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:13610][0m
+[0;32mI (226350) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (228980) R_DEBUG: R=0.453 | RED_AC=1632.5 RED_DC=104596.3 | IR_AC=4328.2 IR_DC=125617.5[0m
+[0;32mI (228980) PPG_DEBUG: BPM = 80.5 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 3.45%[0m
+[0;32mI (228980) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55895][0m
+[0;32mI (231390) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.38 °C[0m
+[0;32mI (231390) TEMP_MONITOR: MLX90614 -> Môi trường: 32.31 °C | Cơ thể: 379.67 °C[0m
+[0;32mI (231390) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:3546][0m
+[0;32mI (231390) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (232980) R_DEBUG: R=0.453 | RED_AC=1632.5 RED_DC=104600.2 | IR_AC=4328.2 IR_DC=125567.2[0m
+[0;32mI (232980) PPG_DEBUG: BPM = 81.6 | SpO2 = 99.4% | Đỉnh = 3 | PI_IR = 3.45%[0m
+[0;32mI (232980) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43662][0m
+[0;32mI (236440) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.38 °C[0m
+[0;32mI (236440) TEMP_MONITOR: MLX90614 -> Môi trường: 32.33 °C | Cơ thể: 379.69 °C[0m
+[0;32mI (236440) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59749][0m
+[0;32mI (236440) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (236980) R_DEBUG: R=0.457 | RED_AC=1645.6 RED_DC=104949.3 | IR_AC=4332.5 IR_DC=126347.7[0m
+[0;32mI (236980) PPG_DEBUG: BPM = 80.0 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 3.43%[0m
+[0;32mI (236990) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39809][0m
+[0;32mI (240980) R_DEBUG: R=0.461 | RED_AC=1716.8 RED_DC=105092.4 | IR_AC=4490.1 IR_DC=126768.3[0m
+[0;32mI (240980) PPG_DEBUG: BPM = 78.4 | SpO2 = 99.3% | Đỉnh = 3 | PI_IR = 3.54%[0m
+[0;32mI (240990) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9769][0m
+[0;32mI (241500) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (241500) TEMP_MONITOR: MLX90614 -> Môi trường: 32.37 °C | Cơ thể: 379.69 °C[0m
+[0;32mI (241500) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59351][0m
+[0;32mI (241500) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (246540) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (246540) TEMP_MONITOR: MLX90614 -> Môi trường: 32.25 °C | Cơ thể: 32.27 °C[0m
+[0;32mI (246540) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:2175][0m
+[0;32mI (246540) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (251580) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 34.06 °C[0m
+[0;32mI (251580) TEMP_MONITOR: MLX90614 -> Môi trường: 32.15 °C | Cơ thể: 32.11 °C[0m
+[0;32mI (251580) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48397][0m
+[0;32mI (251580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (256620) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.81 °C[0m
+[0;32mI (256620) TEMP_MONITOR: MLX90614 -> Môi trường: 32.03 °C | Cơ thể: 32.03 °C[0m
+[0;32mI (256620) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58216][0m
+[0;32mI (256620) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (261660) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.81 °C[0m
+[0;32mI (261660) TEMP_MONITOR: MLX90614 -> Môi trường: 31.95 °C | Cơ thể: 31.95 °C[0m
+[0;32mI (261660) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:38642][0m
+[0;32mI (261660) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (266700) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.50 °C[0m
+[0;32mI (266700) TEMP_MONITOR: MLX90614 -> Môi trường: 31.85 °C | Cơ thể: 31.83 °C[0m
+[0;32mI (266700) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43823][0m
+[0;32mI (266700) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (271740) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.50 °C[0m
+[0;32mI (271740) TEMP_MONITOR: MLX90614 -> Môi trường: 31.75 °C | Cơ thể: 31.75 °C[0m
+[0;32mI (271740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:5281][0m
+[0;32mI (271740) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (276780) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.50 °C[0m
+[0;32mI (276780) TEMP_MONITOR: MLX90614 -> Môi trường: 31.67 °C | Cơ thể: 31.67 °C[0m
+[0;32mI (276780) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:25544][0m
+[0;32mI (276780) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (281820) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.31 °C[0m
+[0;32mI (281820) TEMP_MONITOR: MLX90614 -> Môi trường: 31.59 °C | Cơ thể: 31.57 °C[0m
+[0;32mI (281820) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58581][0m
+[0;32mI (281820) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (286860) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.31 °C[0m
+[0;32mI (286860) TEMP_MONITOR: MLX90614 -> Môi trường: 31.51 °C | Cơ thể: 31.49 °C[0m
+[0;32mI (286860) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7523][0m
+[0;32mI (286860) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (291900) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.25 °C[0m
+[0;32mI (291900) TEMP_MONITOR: MLX90614 -> Môi trường: 31.45 °C | Cơ thể: 31.43 °C[0m
+[0;32mI (291900) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:1193][0m
+[0;32mI (291900) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (296940) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.31 °C[0m
+[0;32mI (296940) TEMP_MONITOR: MLX90614 -> Môi trường: 31.39 °C | Cơ thể: 31.39 °C[0m
+[0;32mI (296940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:12554][0m
+[0;32mI (296940) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (301980) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.25 °C[0m
+[0;32mI (301980) TEMP_MONITOR: MLX90614 -> Môi trường: 31.37 °C | Cơ thể: 31.33 °C[0m
+[0;32mI (301980) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44613][0m
+[0;32mI (301980) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (307020) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.25 °C[0m
+[0;32mI (307020) TEMP_MONITOR: MLX90614 -> Môi trường: 31.33 °C | Cơ thể: 31.39 °C[0m
+[0;32mI (307020) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7228][0m
+[0;32mI (307030) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (312060) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (312060) TEMP_MONITOR: MLX90614 -> Môi trường: 31.31 °C | Cơ thể: 31.29 °C[0m
+[0;32mI (312060) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:34165][0m
+[0;32mI (312060) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (317100) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (317100) TEMP_MONITOR: MLX90614 -> Môi trường: 31.27 °C | Cơ thể: 31.27 °C[0m
+[0;32mI (317100) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58768][0m
+[0;32mI (317100) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (322140) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (322140) TEMP_MONITOR: MLX90614 -> Môi trường: 31.21 °C | Cơ thể: 31.27 °C[0m
+[0;32mI (322140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:19260][0m
+[0;32mI (322140) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (327180) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;32mI (327180) TEMP_MONITOR: MLX90614 -> Môi trường: 31.19 °C | Cơ thể: 31.21 °C[0m
+[0;32mI (327180) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33933][0m
+[0;32mI (327180) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (332220) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;32mI (332220) TEMP_MONITOR: MLX90614 -> Môi trường: 31.19 °C | Cơ thể: 31.15 °C[0m
+[0;32mI (332220) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:1901][0m
+[0;32mI (332220) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (337260) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;32mI (337260) TEMP_MONITOR: MLX90614 -> Môi trường: 31.11 °C | Cơ thể: 31.15 °C[0m
+[0;32mI (337260) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:56976][0m
+[0;32mI (337260) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (342300) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;32mI (342300) TEMP_MONITOR: MLX90614 -> Môi trường: 31.13 °C | Cơ thể: 31.11 °C[0m
+[0;32mI (342300) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:57586][0m
+[0;32mI (342300) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (347340) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (347340) TEMP_MONITOR: MLX90614 -> Môi trường: 31.07 °C | Cơ thể: 31.07 °C[0m
+[0;32mI (347340) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59677][0m
+[0;32mI (347340) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (352380) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.00 °C[0m
+[0;32mI (352380) TEMP_MONITOR: MLX90614 -> Môi trường: 31.07 °C | Cơ thể: 31.07 °C[0m
+[0;32mI (352380) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:51523][0m
+[0;32mI (352380) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (357420) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;32mI (357420) TEMP_MONITOR: MLX90614 -> Môi trường: 30.99 °C | Cơ thể: 31.01 °C[0m
+[0;32mI (357420) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:62587][0m
+[0;32mI (357420) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (362460) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.94 °C[0m
+[0;32mI (362460) TEMP_MONITOR: MLX90614 -> Môi trường: 31.01 °C | Cơ thể: 31.01 °C[0m
+[0;32mI (362460) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:114][0m
+[0;32mI (362460) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (367500) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (367500) TEMP_MONITOR: MLX90614 -> Môi trường: 30.99 °C | Cơ thể: 30.99 °C[0m
+[0;32mI (367500) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:22762][0m
+[0;32mI (367500) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (372540) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (372540) TEMP_MONITOR: MLX90614 -> Môi trường: 30.97 °C | Cơ thể: 30.97 °C[0m
+[0;32mI (372540) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:56035][0m
+[0;32mI (372540) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (377580) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (377580) TEMP_MONITOR: MLX90614 -> Môi trường: 30.95 °C | Cơ thể: 30.97 °C[0m
+[0;32mI (377580) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52100][0m
+[0;32mI (377580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (382620) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;32mI (382620) TEMP_MONITOR: MLX90614 -> Môi trường: 30.93 °C | Cơ thể: 30.93 °C[0m
+[0;32mI (382620) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59568][0m
+[0;32mI (382620) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (387660) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.88 °C[0m
+[0;32mI (387660) TEMP_MONITOR: MLX90614 -> Môi trường: 30.89 °C | Cơ thể: 30.87 °C[0m
+[0;32mI (387660) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:26069][0m
+[0;32mI (387660) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (392700) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (392700) TEMP_MONITOR: MLX90614 -> Môi trường: 30.89 °C | Cơ thể: 30.87 °C[0m
+[0;32mI (392700) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:58059][0m
+[0;32mI (392700) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (397740) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (397740) TEMP_MONITOR: MLX90614 -> Môi trường: 30.85 °C | Cơ thể: 30.85 °C[0m
+[0;32mI (397740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43074][0m
+[0;32mI (397740) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (402780) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (402780) TEMP_MONITOR: MLX90614 -> Môi trường: 30.87 °C | Cơ thể: 30.85 °C[0m
+[0;32mI (402780) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39277][0m
+[0;32mI (402780) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (407820) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (407820) TEMP_MONITOR: MLX90614 -> Môi trường: 30.85 °C | Cơ thể: 30.85 °C[0m
+[0;32mI (407820) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:53838][0m
+[0;32mI (407820) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (412860) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (412860) TEMP_MONITOR: MLX90614 -> Môi trường: 30.87 °C | Cơ thể: 30.85 °C[0m
+[0;32mI (412860) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:1150][0m
+[0;32mI (412860) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (417900) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (417900) TEMP_MONITOR: MLX90614 -> Môi trường: 30.81 °C | Cơ thể: 30.81 °C[0m
+[0;32mI (417900) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:4652][0m
+[0;32mI (417900) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (422940) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.81 °C[0m
+[0;32mI (422940) TEMP_MONITOR: MLX90614 -> Môi trường: 30.77 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (422940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:25475][0m
+[0;32mI (422940) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (427980) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.75 °C[0m
+[0;32mI (427980) TEMP_MONITOR: MLX90614 -> Môi trường: 30.79 °C | Cơ thể: 30.79 °C[0m
+[0;32mI (427980) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:30986][0m
+[0;32mI (427980) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (433020) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.75 °C[0m
+[0;32mI (433020) TEMP_MONITOR: MLX90614 -> Môi trường: 30.79 °C | Cơ thể: 30.79 °C[0m
+[0;32mI (433020) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:31610][0m
+[0;32mI (433020) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (438060) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (438060) TEMP_MONITOR: MLX90614 -> Môi trường: 30.77 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (438060) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43511][0m
+[0;32mI (438060) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (443100) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (443100) TEMP_MONITOR: MLX90614 -> Môi trường: 30.77 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (443100) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:33900][0m
+[0;32mI (443100) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (448140) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (448140) TEMP_MONITOR: MLX90614 -> Môi trường: 30.77 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (448140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:56409][0m
+[0;32mI (448140) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (453180) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (453180) TEMP_MONITOR: MLX90614 -> Môi trường: 30.77 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (453180) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:27138][0m
+[0;32mI (453180) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (458220) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (458220) TEMP_MONITOR: MLX90614 -> Môi trường: 30.77 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (458220) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:40053][0m
+[0;32mI (458220) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (463260) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.75 °C[0m
+[0;32mI (463260) TEMP_MONITOR: MLX90614 -> Môi trường: 30.75 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (463260) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:52846][0m
+[0;32mI (463260) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (468300) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (468300) TEMP_MONITOR: MLX90614 -> Môi trường: 30.75 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (468300) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:31514][0m
+[0;32mI (468300) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (473340) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (473340) TEMP_MONITOR: MLX90614 -> Môi trường: 30.73 °C | Cơ thể: 30.73 °C[0m
+[0;32mI (473340) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:7285][0m
+[0;32mI (473340) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (478380) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (478380) TEMP_MONITOR: MLX90614 -> Môi trường: 30.73 °C | Cơ thể: 30.73 °C[0m
+[0;32mI (478380) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:10337][0m
+[0;32mI (478380) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (483420) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (483420) TEMP_MONITOR: MLX90614 -> Môi trường: 30.75 °C | Cơ thể: 30.77 °C[0m
+[0;32mI (483420) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:61048][0m
+[0;32mI (483420) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (488460) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (488460) TEMP_MONITOR: MLX90614 -> Môi trường: 30.71 °C | Cơ thể: 30.71 °C[0m
+[0;32mI (488460) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:37580][0m
+[0;32mI (488460) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (493500) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (493500) TEMP_MONITOR: MLX90614 -> Môi trường: 30.73 °C | Cơ thể: 30.73 °C[0m
+[0;32mI (493500) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:57657][0m
+[0;32mI (493500) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (498540) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (498540) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (498540) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:62956][0m
+[0;32mI (498540) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (503580) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (503580) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (503580) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:50687][0m
+[0;32mI (503580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (508620) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.56 °C[0m
+[0;32mI (508620) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (508620) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:54691][0m
+[0;32mI (508620) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (513660) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (513660) TEMP_MONITOR: MLX90614 -> Môi trường: 30.71 °C | Cơ thể: 30.71 °C[0m
+[0;32mI (513660) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:46488][0m
+[0;32mI (513660) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (518700) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (518700) TEMP_MONITOR: MLX90614 -> Môi trường: 30.71 °C | Cơ thể: 30.71 °C[0m
+[0;32mI (518700) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39408][0m
+[0;32mI (518700) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (523740) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (523740) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (523740) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:25431][0m
+[0;32mI (523740) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (528780) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (528780) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (528780) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:44324][0m
+[0;32mI (528780) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (533820) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.75 °C[0m
+[0;32mI (533820) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (533820) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:2263][0m
+[0;32mI (533820) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (538860) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (538860) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (538860) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:5870][0m
+[0;32mI (538870) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (543900) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (543900) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (543900) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48208][0m
+[0;32mI (543900) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (548940) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (548940) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (548940) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:9132][0m
+[0;32mI (548940) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (553980) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (553980) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (553980) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:36387][0m
+[0;32mI (553980) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (559020) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (559020) TEMP_MONITOR: MLX90614 -> Môi trường: 30.69 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (559020) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:35602][0m
+[0;32mI (559020) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (564060) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (564060) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (564060) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55969][0m
+[0;32mI (564060) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (569100) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.56 °C[0m
+[0;32mI (569100) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (569100) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:4433][0m
+[0;32mI (569100) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (574140) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (574140) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (574140) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:39131][0m
+[0;32mI (574140) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (579180) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.50 °C[0m
+[0;32mI (579180) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (579180) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:59164][0m
+[0;32mI (579180) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (584220) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.56 °C[0m
+[0;32mI (584220) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (584220) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:48994][0m
+[0;32mI (584220) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (589260) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (589260) TEMP_MONITOR: MLX90614 -> Môi trường: 30.63 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (589260) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:37759][0m
+[0;32mI (589260) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (594300) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (594300) TEMP_MONITOR: MLX90614 -> Môi trường: 30.63 °C | Cơ thể: 30.67 °C[0m
+[0;32mI (594300) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:54080][0m
+[0;32mI (594300) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (599340) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (599340) TEMP_MONITOR: MLX90614 -> Môi trường: 30.63 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (599340) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:19306][0m
+[0;32mI (599340) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (604380) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (604380) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (604380) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:61525][0m
+[0;32mI (604380) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (609420) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (609420) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.63 °C[0m
+[0;32mI (609420) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:20001][0m
+[0;32mI (609420) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (614460) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.62 °C[0m
+[0;32mI (614460) TEMP_MONITOR: MLX90614 -> Môi trường: 30.65 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (614460) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:43186][0m
+[0;32mI (614460) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (619500) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.69 °C[0m
+[0;32mI (619500) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (619500) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:11210][0m
+[0;32mI (619500) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (624540) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.56 °C[0m
+[0;32mI (624540) TEMP_MONITOR: MLX90614 -> Môi trường: 30.65 °C | Cơ thể: 30.65 °C[0m
+[0;32mI (624540) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:61292][0m
+[0;32mI (624540) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (629580) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.38 °C[0m
+[0;32mI (629580) TEMP_MONITOR: MLX90614 -> Môi trường: 30.65 °C | Cơ thể: 30.63 °C[0m
+[0;32mI (629580) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:3556][0m
+[0;32mI (629580) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m
+[0;32mI (634620) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 32.56 °C[0m
+[0;32mI (634620) TEMP_MONITOR: MLX90614 -> Môi trường: 30.67 °C | Cơ thể: 30.63 °C[0m
+[0;32mI (634620) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:55960][0m
+[0;32mI (634620) TEMP_MONITOR: Đã gửi cập nhật nhiệt độ mới lên MQTT.[0m

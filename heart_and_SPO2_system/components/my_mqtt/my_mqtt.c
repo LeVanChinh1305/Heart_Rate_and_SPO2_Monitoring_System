@@ -4,6 +4,7 @@
 #include "esp_log.h"
 #include <string.h>
 #include "mqtt_client.h"
+#include "button1.h"
 
 static const char *TAG = "MQTT_DRIVER";
 static esp_mqtt_client_handle_t s_client = NULL;
@@ -95,6 +96,27 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         }
                     }
                 }
+
+                // Lệnh Bắt đầu theo dõi từ Web (START)
+                else if (strcmp(data_buff, "START") == 0) {
+                    if (g_device_event_group != NULL) {
+                        // Web ra lệnh đo -> Xóa trạng thái THÁO MÁY, Kích hoạt trạng thái ĐANG ĐEO
+                        xEventGroupClearBits(g_device_event_group, BIT_STATUS_NOT_WEARING);
+                        xEventGroupSetBits(g_device_event_group, BIT_STATUS_WEARING);
+                        ESP_LOGI(TAG, "Lệnh Web: Đã đồng bộ chuyển mạch sang chế độ ĐANG ĐEO");
+                    }
+                }
+
+                //  Lệnh Dừng theo dõi từ Web (STOP)
+                else if (strcmp(data_buff, "STOP") == 0) {
+                    if (g_device_event_group != NULL) {
+                        // Web ra lệnh dừng -> Xóa trạng thái ĐANG ĐEO, Kích hoạt trạng thái THÁO MÁY
+                        xEventGroupClearBits(g_device_event_group, BIT_STATUS_WEARING);
+                        xEventGroupSetBits(g_device_event_group, BIT_STATUS_NOT_WEARING);
+                        ESP_LOGW(TAG, "Lệnh Web: Đã đồng bộ chuyển mạch sang chế độ THÁO MÁY");
+                    }
+                }
+                
             }
             break;
         }
@@ -140,6 +162,14 @@ esp_err_t mqtt_pulish_data(float bpm, float spo2, float temp){
         return ESP_ERR_INVALID_STATE; // Mạng chưa sẵn sàng để đẩy dữ liệu
     }
 
+    // Kiểm tra trạng thái đeo máy trước khi gửi dữ liệu 
+    if (g_device_event_group != NULL) {
+        EventBits_t bits = xEventGroupGetBits(g_device_event_group);
+        if (!(bits & BIT_STATUS_WEARING)) {
+            return ESP_ERR_INVALID_STATE; // Đang tháo máy thì không gửi dữ liệu sinh hiệu
+        }
+    }
+
     char payload[128];
     // Đóng gói dữ liệu thành chuỗi định dạng JSON tiêu chuẩn để Web dễ phân tích (parse)
     int len = snprintf(payload, sizeof(payload), 
@@ -160,6 +190,13 @@ esp_err_t mqtt_pulish_data(float bpm, float spo2, float temp){
 esp_err_t mqtt_publish_raw_single(int32_t raw_sample) {
     if (!s_is_connected || s_client == NULL) {
         return ESP_ERR_INVALID_STATE;
+    }
+
+    if (g_device_event_group != NULL) {
+        EventBits_t bits = xEventGroupGetBits(g_device_event_group);
+        if (!(bits & BIT_STATUS_WEARING)) {
+            return ESP_ERR_INVALID_STATE; // Đang tháo máy thì không gửi dữ liệu sinh hiệu
+        }
     }
 
     // --- THUẬT TOÁN LỌC DC REMOVAL FILTER (Hệ số alpha = 0.95 đến 0.99) ---

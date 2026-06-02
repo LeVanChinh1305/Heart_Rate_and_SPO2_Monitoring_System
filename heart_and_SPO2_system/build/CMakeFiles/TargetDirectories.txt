@@ -873,6 +873,13 @@ D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/es
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/WIFI/CMakeFiles/install.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/WIFI/CMakeFiles/install/local.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/WIFI/CMakeFiles/install/strip.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/__idf_button1.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/edit_cache.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/rebuild_cache.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/list_install_components.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/install.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/install/local.dir
+D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/CMakeFiles/install/strip.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/my_mqtt/CMakeFiles/__idf_my_mqtt.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/my_mqtt/CMakeFiles/edit_cache.dir
 D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/my_mqtt/CMakeFiles/rebuild_cache.dir

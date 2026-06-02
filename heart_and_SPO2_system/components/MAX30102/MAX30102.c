@@ -237,6 +237,7 @@ esp_err_t max30102_read_sample(max30102_dev_t *dev, max30102_sample_t *sample)
 }
 
 esp_err_t max30102_read_samples(max30102_dev_t *dev, max30102_sample_t *samples, uint8_t count, uint8_t *samples_read)
+// tham số `count` chỉ định số lượng mẫu tối đa muốn đọc, `samples_read` sẽ trả về số lượng mẫu thực tế đã đọc được từ FIFO, và `samples` là mảng chứa các mẫu đã đọc (mỗi mẫu gồm giá trị Red và IR). Hàm này sẽ kiểm tra số lượng mẫu có sẵn trong FIFO trước khi đọc để tránh đọc quá
 {
     if(dev == NULL || samples == NULL || samples_read == NULL) return ESP_ERR_INVALID_ARG;
     uint8_t available; 
@@ -319,14 +320,14 @@ esp_err_t max30102_shutdown(max30102_dev_t *dev, bool enable)
 
 esp_err_t max30102_get_interrupt_status(max30102_dev_t *dev, uint8_t *status1, uint8_t *status2)
 {
-    if (dev == NULL) return ESP_ERR_INVALID_ARG;
+    if (dev == NULL) return ESP_ERR_INVALID_ARG;// Kiểm tra con trỏ hợp lệ trước khi đọc thanh ghi ngắt
     esp_err_t err;
     if (status1 != NULL) {
-        err = max30102_read_reg(dev, MAX30102_REG_INTR_STATUS_1, status1);
+        err = max30102_read_reg(dev, MAX30102_REG_INTR_STATUS_1, status1);// đọc trạng thái ngắt từ thanh ghi 0x00 (INTR_STATUS_1) để biết nguyên nhân ngắt và xử lý phù hợp
         if (err != ESP_OK) return err;
     }
     if (status2 != NULL) {
-        err = max30102_read_reg(dev, MAX30102_REG_INTR_STATUS_2, status2);
+        err = max30102_read_reg(dev, MAX30102_REG_INTR_STATUS_2, status2);// đọc thêm thanh ghi 0x01 (INTR_STATUS_2) nếu cần để biết thêm thông tin về ngắt, như ngắt Proximity hoặc FIFO Overflow
         if (err != ESP_OK) return err;
     }
     return ESP_OK;
