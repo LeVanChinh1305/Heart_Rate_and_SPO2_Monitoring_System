@@ -1,0 +1,182 @@
+Command: D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\heart_and_SPO2_system.elf D:\projects\Heart_Rate_and_SPO2_Monitoring_System\heart_and_SPO2_system\build\bootloader\bootloader.elf --force-color -m 'D:\App\esp_idf\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\App\esp_idf\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM5'
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0x1e (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x175c
+load:0x4086b910,len:0xec8
+load:0x4086e610,len:0x31c4
+entry 0x4086b91a
+I (23) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader
+[0;32mI (24) boot: compile time Jun  3 2026 20:41:34[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (25) boot: efuse block revision: v0.2[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c6: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00250000[0m
+[0;32mI (72) boot:  3 storage          Unknown data     01 81 00260000 00190000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=420c0020 size=26b28h (158504) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=00036b50 vaddr=40800000 size=094c8h ( 38088) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=bbd38h (769336) map[0m
+[0;32mI (276) esp_image: segment 3: paddr=000fbd60 vaddr=408094c8 size=16390h ( 91024) load[0m
+[0;32mI (296) esp_image: segment 4: paddr=001120f8 vaddr=4081f860 size=03900h ( 14592) load[0m
+[0;32mI (300) esp_image: segment 5: paddr=00115a00 vaddr=50000000 size=00080h (   128) load[0m
+[0;32mI (308) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (308) boot: Disabling RNG early entropy source...[0m
+[0;32mI (321) cpu_start: Unicore app[0m
+[0;32mI (330) cpu_start: GPIO 17 and 16 are used as console UART I/O pins[0m
+[0;32mI (330) cpu_start: Pro cpu start user code[0m
+[0;32mI (330) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (332) app_init: Application information:[0m
+[0;32mI (336) app_init: Project name:     heart_and_SPO2_system[0m
+[0;32mI (341) app_init: App version:      b4dac16-dirty[0m
+[0;32mI (345) app_init: Compile time:     Jun  4 2026 14:03:59[0m
+[0;32mI (350) app_init: ELF file SHA256:  73aed4469...[0m
+[0;32mI (355) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (359) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (363) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (371) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (377) heap_init: At 40829A40 len 00052BD0 (330 KiB): RAM[0m
+[0;32mI (382) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (387) heap_init: At 50000080 len 00003F68 (15 KiB): RTCRAM[0m
+[0;32mI (393) spi_flash: detected chip: generic[0m
+[0;32mI (396) spi_flash: flash io: dio[0m
+[0;32mI (400) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (406) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (412) coexist: coex firmware version: 7260f71[0m
+[0;32mI (417) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (421) main_task: Started on CPU0[0m
+[0;32mI (441) main_task: Calling app_main()[0m
+[0;32mI (441) MAIN_APP: Đang khởi tạo toàn bộ hệ thống...[0m
+[0;32mI (441) BUTTON1_DRIVER: Khởi tạo thành công Driver nút bấm (Chân 5). Chế độ: Tách luồng ISR an toàn.[0m
+[0;32mI (461) WIFI_DRIVER: Bắt đầu cấu hình hệ thống mạng Wi-Fi...[0m
+[0;32mI (461) pp: pp rom version: 5b8dcfa[0m
+[0;32mI (461) net80211: net80211 rom version: 5b8dcfa[0m
+[0;32mI (471) wifi:wifi driver task: 40831d14, prio:23, stack:6656, core=0[0m
+[0;32mI (471) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (471) wifi:wifi certification version: v7.0[0m
+[0;32mI (471) wifi:config NVS flash: enabled[0m
+[0;32mI (481) wifi:config nano formatting: disabled[0m
+[0;32mI (481) wifi:mac_version:HAL_MAC_ESP32AX_761,ut_version:N, band mode:0x1[0m
+[0;32mI (491) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (491) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (501) wifi:Init management short buffer num: 32[0m
+[0;32mI (501) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (511) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (511) wifi:Init static rx buffer size: 1700 (rxctrl:92, csi:512)[0m
+[0;32mI (521) wifi:Init static rx buffer num: 10[0m
+[0;32mI (521) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (521) wifi_init: rx ba win: 6[0m
+[0;32mI (531) wifi_init: accept mbox: 6[0m
+[0;32mI (531) wifi_init: tcpip mbox: 32[0m
+[0;32mI (531) wifi_init: udp mbox: 6[0m
+[0;32mI (531) wifi_init: tcp mbox: 6[0m
+[0;32mI (541) wifi_init: tcp tx win: 5760[0m
+[0;32mI (541) wifi_init: tcp rx win: 5760[0m
+[0;32mI (541) wifi_init: tcp mss: 1440[0m
+[0;32mI (551) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (551) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (551) wifi_init: WiFi SLP IRAM OP enabled[0m
+[0;32mI (561) phy_init: phy_version 343,b513b46,Nov 14 2025,16:34:12[0m
+[0;32mI (631) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;33mW (671) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (671) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (671) wifi:(agc)0x600a7128:0xd2177a02, min.avgNF:0xce->0xd2(dB), RCalCount:0x177, min.RRssi:0xa02(-95.88)[0m
+[0;32mI (681) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (691) wifi:mode : sta (54:32:04:0c:fb:e4)[0m
+[0;32mI (691) wifi:enable tsf[0m
+[0;32mI (701) WIFI_DRIVER: Đang kết nối tới Wi-Fi...[0m
+[0;32mI (711) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (711) wifi:(connect)dot11_authmode:0x3, pairwise_cipher:0x3, group_cipher:0x3[0m
+[0;32mI (711) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (721) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (731) wifi:(assoc)RESP, Extended Capabilities length:8, operating_mode_notification:0[0m
+[0;32mI (731) wifi:(assoc)RESP, Extended Capabilities, MBSSID:0, TWT Responder:0, OBSS Narrow Bandwidth RU In OFDMA Tolerance:0[0m
+[0;32mI (741) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (741) wifi:(trc)phytype:CBW20-SGI, snr:37, maxRate:144, highestRateIdx:0[0m
+[0;33mW (751) wifi:(trc)band:2G, phymode:3, highestRateIdx:0, lowestRateIdx:11, dataSchedTableSize:14[0m
+[0;32mI (761) wifi:(trc)band:2G, rate(S-MCS7, rateIdx:0), ampdu(rate:S-MCS7, schedIdx(0, stop:8)), snr:37, ampduState:wait operational[0m
+[0;32mI (771) wifi:ifidx:0, rssi:-60, nf:-97, phytype(0x3, CBW20-SGI), phymode(0x3, 11bgn), max_rate:144, he:0, vht:0, ht:1[0m
+[0;32mI (781) wifi:(ht)max.RxAMPDULenExponent:3(65535 bytes), MMSS:5(4 us)[0m
+[0;32mI (841) wifi:connected with 43MH-P202, aid = 2, channel 4, BW20, bssid = 08:aa:89:5d:36:e8[0m
+[0;32mI (841) wifi:security: WPA2-PSK, phy:bgn, rssi:-60, cipher(pairwise:0x3, group:0x3), pmf:0, [0m
+[0;32mI (841) wifi:pm start, type: 1, twt_start:0[0m
+
+[0;32mI (841) wifi:pm start, type:1, aid:0x2, trans-BSSID:08:aa:89:5d:36:e8, BSSID[5]:0xe8, mbssid(max-indicator:0, index:0), he:0[0m
+[0;32mI (861) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (861) wifi:set rx beacon pti, rx_bcn_pti: 10, bcn_timeout: 25000, mt_pti: 10, mt_time: 10000[0m
+[0;32mI (871) wifi:[ADDBA]TX addba request, tid:0, dialogtoken:1, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)[0m
+[0;32mI (881) wifi:[ADDBA]TX addba request, tid:7, dialogtoken:2, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x20)[0m
+[0;32mI (891) wifi:[ADDBA]TX addba request, tid:5, dialogtoken:3, bufsize:64, A-MSDU:0(not supported), policy:1(IMR), ssn:0(0x0)[0m
+[0;32mI (911) wifi:[ADDBA]RX addba response, status:0, tid:0/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (911) wifi:[ADDBA]RX addba response, status:0, tid:7/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (921) wifi:[ADDBA]RX addba response, status:0, tid:5/tb:1(0xa1), bufsize:64, batimeout:0, txa_wnd:64[0m
+[0;32mI (941) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;33mW (1151) wifi:<ba-add>idx:0, ifx:0, tid:6, TAHI:0x100e836, TALO:0x5d89aa08, (ssn:2, win:64, cur_ssn:2), CONF:0xc0006005[0m
+[1;31mE (1201) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (1201) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (1201) mqtt_client: Error transport connect[0m
+[1;31mE (1201) MQTT_DRIVER: Phát hiện lỗi xung đột luồng dữ liệu MQTT[0m
+[0;33mW (1211) MQTT_DRIVER: Mất kết nối MQTT Broker! Hệ thống đang tự động liên kết lại...[0m
+[0;32mI (1221) MQTT_DRIVER: Driver MQTT ngầm khởi động thành công![0m
+[0;32mI (2131) MAIN_APP: Khởi tạo thành công phần cứng màn hình màu ST7735![0m
+[0;33mW (2131) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[1;31mE (2131) MAX30102: Lỗi kết nối vật lý I2C hoặc sai cấu hình chân![0m
+[0;32mI (2261) esp_netif_handlers: sta ip: 192.168.22.15, mask: 255.255.255.0, gw: 192.168.22.253[0m
+[0;32mI (2261) WIFI_DRIVER: ĐÃ KẾT NỐI WI-FI THÀNH CÔNG![0m
+[0;32mI (2261) WIFI_DRIVER: Địa chỉ IP cấp cho ESP32-C6: 192.168.22.15[0m
+[0;33mW (2641) MAX30102_DEBUG: ==========> PART ID THỰC TẾ ĐỌC ĐƯỢC LÀ: 0x15 <==========[0m
+[0;32mI (2641) MAX30102: Đã xác minh chính xác chip MAX30102 (ID: 0x15)![0m
+[0;32mI (2651) MAIN_APP: Khởi tạo cảm biến sinh hiệu MAX30102 thành công![0m
+[0;32mI (2651) MLX90614_DRIVER: Đã đăng ký Driver thành công với địa chỉ: 0x5A[0m
+[0;32mI (2651) MLX90614_DRIVER: Kết nối THÀNH CÔNG! Đọc thử Serial ID1: 0x01BA[0m
+[0;32mI (2661) MAIN_APP: Kết nối thành công cảm biến nhiệt độ không tiếp xúc MLX90614![0m
+[0;32mI (2671) MAIN_APP: Task xử lý MAX30102 bắt đầu hoạt động...[0m
+[0;32mI (2681) MAIN_APP: Task giám sát nhiệt độ tổng hợp bắt đầu chạy.[0m
+[0;32mI (3181) main_task: Returned from app_main()[0m
+[0;33mW (11251) wifi:<ba-add>idx:1, ifx:0, tid:3, TAHI:0x100e836, TALO:0x5d89aa08, (ssn:1, win:64, cur_ssn:1), CONF:0xc0003005[0m
+[0;32mI (11711) MQTT_DRIVER: Đã kết nối thành công tới MQTT Broker![0m
+[0;32mI (11711) MQTT_DRIVER: Đã Subscribe thành công hộp thư lệnh: chinh/control[0m
+[0;32mI (44151) BUTTON1_DRIVER: Đã nhận tín hiệu từ nút bấm, tiến hành gửi MQTT...[0m
+[0;32mI (47881) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.19 °C[0m
+[0;32mI (47881) TEMP_MONITOR: MLX90614 -> Môi trường: 31.45 °C | Cơ thể: -258.73 °C[0m
+[0;32mI (47881) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:41645][0m
+[0;32mI (48251) MQTT_DRIVER: [Web Control] -> Lệnh: STOP[0m
+[0;33mW (48251) MQTT_DRIVER: Lệnh Web: Đã đồng bộ chuyển mạch sang chế độ THÁO MÁY[0m
+[0;33mW (48261) MQTT_DRIVER: Đã gửi cảnh báo lên Web [ID:15939]: Thông báo : Đã đồng bộ chuyển mạch sang chế độ THÁO MÁY[0m
+[0;32mI (52451) MQTT_DRIVER: [Web Control] -> Lệnh: START[0m
+[0;32mI (52451) MQTT_DRIVER: Lệnh Web: Đã đồng bộ chuyển mạch sang chế độ ĐANG ĐEO[0m
+[0;33mW (52461) MQTT_DRIVER: Đã gửi cảnh báo lên Web [ID:24850]: Thông báo : Đã đồng bộ chuyển mạch sang chế độ ĐANG ĐEO[0m
+[0;32mI (52911) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;32mI (52911) TEMP_MONITOR: MLX90614 -> Môi trường: 31.41 °C | Cơ thể: -221.97 °C[0m
+[0;32mI (52911) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:56355][0m
+[0;32mI (58061) TEMP_MONITOR: Nhiệt độ bo mạch MAX30102: 33.06 °C[0m
+[0;32mI (58061) TEMP_MONITOR: MLX90614 -> Môi trường: 31.41 °C | Cơ thể: -221.97 °C[0m
+[0;32mI (58061) MQTT_DRIVER: Đã gửi thành công JSON lên Web [ID:1406][0m
+[0;32mI (58821) MQTT_DRIVER: [Web Control] -> Lệnh: DEEP_SLEEP[0m
+[0;33mW (58821) MQTT_DRIVER: Yêu cầu từ Web: Đang dọn dẹp tài nguyên để vào DEEP SLEEP...[0m
+[0;33mW (58821) MQTT_DRIVER: Đã gửi cảnh báo lên Web [ID:42409]: Thông báo : Thiết bị đang ngủ sâu[0m
+[1;31mE (58831) mqtt_client: Client cannot be stopped from MQTT task[0m
+[0;32mI (58841) wifi:state: run -> init (0x0)[0m
+[0;32mI (58851) wifi:teardown, set twt_inactive_time_secs:6, sp_count:0[0m
+[0;32mI (58851) wifi:pm stop, total sleep time: 36653531 us / 57991809 us[0m
+
+[0;32mI (58851) wifi:<ba-del>idx:1, tid:3[0m
+[0;32mI (58861) wifi:<ba-del>idx:0, tid:6[0m
+[0;32mI (58861) wifi:new:<4,0>, old:<4,0>, ap:<255,255>, sta:<4,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (58871) WIFI_DRIVER: Mất kết nối Wi-Fi! Đang tự động thử kết nối lại...[0m
+[0;32mI (58931) wifi:flush txq[0m
+[0;32mI (58931) wifi:stop sw txq[0m
+[0;32mI (58931) wifi:lmac stop hw txq[0m
+[1;31mE (59431) sleep: gpio 9 is an invalid deep sleep wakeup IO[0m
+[0;32mI (59431) MQTT_DRIVER: Thiết bị bắt đầu ngủ sâu![0m

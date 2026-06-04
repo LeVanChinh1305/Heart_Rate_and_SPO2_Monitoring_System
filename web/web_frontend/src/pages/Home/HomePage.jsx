@@ -10,6 +10,7 @@ const HomePage = ({ user }) => {
   const [thresholds, setThresholds] = useState({ hrMax: 140, spo2Min: 92 });
   const [powerSaving, setPowerSaving] = useState(false);
   const [wsConnected, setWsConnected] = useState(false);
+  const [deviceStatus, setDeviceStatus] = useState({ active: false, measure: false });
   const [alerts, setAlerts] = useState([]);
   const wsRef = useRef(null);
 
@@ -36,6 +37,10 @@ const HomePage = ({ user }) => {
             message: incoming.alert
           };
           setAlerts(prev => [newAlert, ...prev].slice(0, 10));
+        }
+        // Handle incoming status
+        else if (incoming.status !== undefined) {
+          setDeviceStatus({ active: incoming.active, measure: incoming.measure });
         }
         // Handle raw heart rate data from chinh/health_raw topic
         else if (incoming.raw_hr !== undefined) {
@@ -140,16 +145,66 @@ const HomePage = ({ user }) => {
       {/* Main Content (Left) */}
       <div style={{ flex: '1', minWidth: '0' }}>
 
-      {/* Connection Status */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-        <span style={{
-          width: '10px', height: '10px', borderRadius: '50%',
-          background: wsConnected ? '#43a047' : '#d32f2f',
-          display: 'inline-block'
-        }}></span>
-        <span style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>
-          {wsConnected ? 'Đang kết nối tới thiết bị' : 'Mất kết nối – đang chờ dữ liệu...'}
-        </span>
+      {/* Connection & Device Status */}
+      <div className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', padding: '1rem 1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span style={{
+              width: '12px', height: '12px', borderRadius: '50%',
+              background: wsConnected ? '#43a047' : '#d32f2f',
+              display: 'inline-block'
+            }}></span>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-color)', fontWeight: 'bold' }}>
+              Web: {wsConnected ? 'Online' : 'Offline'}
+            </span>
+          </div>
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span style={{
+              width: '12px', height: '12px', borderRadius: '50%',
+              background: deviceStatus.active ? '#1e88e5' : '#9e9e9e',
+              display: 'inline-block'
+            }}></span>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-color)', fontWeight: 'bold' }}>
+              Thiết bị: {deviceStatus.active ? 'Hoạt động' : 'Chưa kết nối'}
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span style={{
+              width: '12px', height: '12px', borderRadius: '50%',
+              background: deviceStatus.measure ? '#fb8c00' : '#9e9e9e',
+              display: 'inline-block'
+            }}></span>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-color)', fontWeight: 'bold' }}>
+              Đo: {deviceStatus.measure ? 'Đang đo' : 'Đang dừng'}
+            </span>
+          </div>
+        </div>
+
+        {/* Start / Stop Button */}
+        <div>
+          <button 
+            onClick={async () => {
+              const cmd = deviceStatus.measure ? 'STOP' : 'START';
+              const result = await sendCommand(cmd);
+              if (result?.success) {
+                setDeviceStatus(prev => ({ ...prev, measure: !prev.measure }));
+              }
+            }}
+            disabled={!deviceStatus.active}
+            style={{ 
+              background: !deviceStatus.active ? '#ccc' : (deviceStatus.measure ? '#d32f2f' : '#43a047'), 
+              width: '150px', 
+              padding: '0.5rem 1rem',
+              cursor: !deviceStatus.active ? 'not-allowed' : 'pointer',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+              margin: '0'
+            }}
+          >
+            {deviceStatus.measure ? 'Dừng đo (STOP)' : 'Bắt đầu (START)'}
+          </button>
+        </div>
       </div>
 
       {/* Quick Stats Cards */}

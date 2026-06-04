@@ -1,5 +1,5 @@
 const mqtt = require('mqtt');
-const { MQTT_BROKER, MQTT_TOPIC_DATA, MQTT_TOPIC_RAW, MQTT_TOPIC_CONTROL, MQTT_TOPIC_ALERT } = require('../config/mqtt');
+const { MQTT_BROKER, MQTT_TOPIC_DATA, MQTT_TOPIC_RAW, MQTT_TOPIC_CONTROL, MQTT_TOPIC_ALERT, MQTT_TOPIC_STATUS } = require('../config/mqtt');
 const healthDataService = require('./healthDataService');
 
 let mqttClient = null;
@@ -24,6 +24,11 @@ const initMqttClient = (onDataMessage) => {
         console.log(`[MQTT] Subscribed to: ${MQTT_TOPIC_ALERT}`);
       }
     });
+    mqttClient.subscribe(MQTT_TOPIC_STATUS, { qos: 0 }, (err) => {
+      if (!err) {
+        console.log(`[MQTT] Subscribed to: ${MQTT_TOPIC_STATUS}`);
+      }
+    });
   });
 
   mqttClient.on('message', async (topic, message) => {
@@ -41,11 +46,13 @@ const initMqttClient = (onDataMessage) => {
           console.error('[MongoDB] Save error:', err);
         }
       } else if (topic === MQTT_TOPIC_RAW) {
-        console.log('[MQTT] Received RAW:', payload);
         onDataMessage({ raw_hr: payload.val });
       } else if (topic === MQTT_TOPIC_ALERT) {
         console.log('[MQTT] Received ALERT:', payload);
         onDataMessage({ alert: payload.alert, deviceId: payload.deviceId });
+      } else if (topic === MQTT_TOPIC_STATUS) {
+        console.log('[MQTT] Received STATUS:', payload);
+        onDataMessage({ status: true, deviceId: payload.deviceId, active: payload.active, measure: payload.measure });
       }
     } catch (err) {
       console.error('[MQTT] Invalid JSON:', message.toString());

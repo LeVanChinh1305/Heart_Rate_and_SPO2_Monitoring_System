@@ -70,22 +70,20 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                 // 2. Lệnh Ngủ sâu (DEEP SLEEP)
                 else if (strcmp(data_buff, "DEEP_SLEEP") == 0) {
                     ESP_LOGW(TAG, "Yêu cầu từ Web: Đang dọn dẹp tài nguyên để vào DEEP SLEEP...");
-                    esp_mqtt_client_stop(client);
-                    esp_wifi_stop();
-                    vTaskDelay(pdMS_TO_TICKS(500));
-                    
-                    // Kích hoạt nút bấm cứng vật lý (Ví dụ GPIO 9) để nhấn giữ là tự thức dậy
-                    esp_deep_sleep_enable_gpio_wakeup(1ULL << GPIO_NUM_9, ESP_GPIO_WAKEUP_GPIO_LOW);
-                    
-                    ESP_LOGI(TAG, "Thiết bị bắt đầu ngủ sâu!");
-                    esp_deep_sleep_start();
-
                     if (mqtt_is_connected()) {
                         char drift_msg[64];
                         snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Thiết bị đang ngủ sâu");
                         mqtt_publish_alert(drift_msg);
                     } 
-
+                    vTaskDelay(pdMS_TO_TICKS(100));
+                    esp_wifi_stop();
+                    vTaskDelay(pdMS_TO_TICKS(500));
+                    
+                    // Kích hoạt nút bấm cứng vật lý (Ví dụ GPIO 9) để nhấn giữ là tự thức dậy
+                    esp_deep_sleep_enable_gpio_wakeup(1ULL << GPIO_NUM_5, ESP_GPIO_WAKEUP_GPIO_LOW);
+                    
+                    ESP_LOGI(TAG, "Thiết bị bắt đầu ngủ sâu!");
+                    esp_deep_sleep_start();
                 }
                 
                 // 3. Lệnh thay đổi ngưỡng nhịp tim (SET_HR_LIMIT:xxx)

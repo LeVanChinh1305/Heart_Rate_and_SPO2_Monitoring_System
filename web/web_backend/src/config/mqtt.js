@@ -3,5 +3,6 @@ module.exports = {
   MQTT_TOPIC_DATA: 'chinh/health_data',
   MQTT_TOPIC_RAW: 'chinh/health_raw',
   MQTT_TOPIC_CONTROL: 'chinh/control',
-  MQTT_TOPIC_ALERT: 'chinh/alert'
+  MQTT_TOPIC_ALERT: 'chinh/alert',
+  MQTT_TOPIC_STATUS: 'chinh/status'
 };

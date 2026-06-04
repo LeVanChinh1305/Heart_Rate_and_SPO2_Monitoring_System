@@ -170,7 +170,9 @@ void max30102_processing_task(void *pvParameters)
                             snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã gửi kết quả mới nhất");
                             mqtt_publish_alert(drift_msg);
                         } 
-
+                        if (ppg_result.heart_rate > g_heart_rate_max_threshold || ppg_result.spo2 < spo2_min_threshold) {
+                            mqtt_publish_alert("Cảnh báo: Nhịp tim hoặc nồng độ SpO2 vượt ngưỡng!");
+                        }
                     } else {
                         // KỊCH BẢN NGUY KỊCH: ĐANG ĐEO MÁY NHƯNG PHÁT HIỆN NGỪNG THỞ / MẤT MẠCH (Flatline)
                         non_valid_counter++;
