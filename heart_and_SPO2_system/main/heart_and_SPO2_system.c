@@ -1,17 +1,17 @@
-#include <stdio.h>                   //thư viện chuẩn C cho các hàm vào ra cơ bản như printf, snprintf
-#include <string.h>                  //thư viện chuẩn C cho các hàm xử lý chuỗi như memset, memcpy
-#include "freertos/FreeRTOS.h"       //thư viện FreeRTOS cho các hàm quản lý hệ điều hành thời gian thực như tạo task, delay, mutex
-#include "freertos/task.h"           //thư viện FreeRTOS cho các hàm quản lý task như xTaskCreate, vTaskDelay
-#include "freertos/queue.h"          //thư viện FreeRTOS cho các hàm quản lý hàng đợi như xQueueCreate, xQueueSend, xQueueReceive
-#include "freertos/semphr.h"         //thư viện FreeRTOS cho các hàm quản lý semaphore như xSemaphoreCreateMutex, xSemaphoreTake, xSemaphoreGive
-#include "freertos/event_groups.h"   //thư viện FreeRTOS cho các hàm quản lý nhóm sự kiện như xEventGroupCreate, xEventGroupSetBits, xEventGroupWaitBits
-#include "driver/gpio.h"             //thư viện ESP-IDF cho các hàm quản lý GPIO như gpio_config, gpio_set_level, gpio_install_isr_service
-#include "driver/i2c_master.h"       //thư viện ESP-IDF cho các hàm quản lý I2C Master như i2c_master_init, i2c_master_read, i2c_master_write
-#include "driver/spi_master.h"       //thư viện ESP-IDF cho các hàm quản lý SPI Master như spi_bus_initialize, spi_device_transmit
-#include "esp_log.h"                 //thư viện ESP-IDF cho các hàm quản lý log như ESP_LOGI, ESP_LOGE, ESP_LOGW
-#include "esp_err.h"                 //thư viện ESP-IDF cho các hàm quản lý lỗi như esp_err_to_name, ESP_ERROR_CHECK
-#include "nvs_flash.h"               //thư viện ESP-IDF cho các hàm quản lý bộ nhớ flash không bay hơi như nvs_flash_init, nvs_flash_erase
-#include "MAX30102.h"                // các driver của các components liên quan 
+#include <stdio.h>                   // Thư viện chuẩn C cho các hàm vào ra cơ bản như printf, snprintf
+#include <string.h>                  // Thư viện chuẩn C cho các hàm xử lý chuỗi như memset, memcpy
+#include "freertos/FreeRTOS.h"       // Thư viện FreeRTOS cho các hàm quản lý hệ điều hành thời gian thực như tạo task, delay, mutex
+#include "freertos/task.h"           // Thư viện FreeRTOS cho các hàm quản lý task như xTaskCreate, vTaskDelay
+#include "freertos/queue.h"          // Thư viện FreeRTOS cho các hàm quản lý hàng đợi như xQueueCreate, xQueueSend, xQueueReceive
+#include "freertos/semphr.h"         // Thư viện FreeRTOS cho các hàm quản lý semaphore như xSemaphoreCreateMutex, xSemaphoreTake, xSemaphoreGive
+#include "freertos/event_groups.h"   // Thư viện FreeRTOS cho các hàm quản lý nhóm sự kiện như xEventGroupCreate, xEventGroupSetBits, xEventGroupWaitBits
+#include "driver/gpio.h"             // Thư viện ESP-IDF cho các hàm quản lý GPIO như gpio_config, gpio_set_level, gpio_install_isr_service
+#include "driver/i2c_master.h"       // Thư viện ESP-IDF cho các hàm quản lý I2C Master như i2c_master_init, i2c_master_read, i2c_master_write
+#include "driver/spi_master.h"       // Thư viện ESP-IDF cho các hàm quản lý SPI Master như spi_bus_initialize, spi_device_transmit
+#include "esp_log.h"                 // Thư viện ESP-IDF cho các hàm quản lý log như ESP_LOGI, ESP_LOGE, ESP_LOGW
+#include "esp_err.h"                 // Thư viện ESP-IDF cho các hàm quản lý lỗi như esp_err_to_name, ESP_ERROR_CHECK
+#include "nvs_flash.h"               // Thư viện ESP-IDF cho các hàm quản lý bộ bộ nhớ flash không bay hơi như nvs_flash_init, nvs_flash_erase
+#include "MAX30102.h"                // Các driver của các components liên quan 
 #include "MLX90614.h"
 #include "ppg_algorithm.h"
 #include "st7735.h"           
@@ -45,9 +45,9 @@ typedef struct {
     i2c_master_dev_handle_t mlx90614_dev; // Handle thiết bị MLX90614, có thể NULL nếu cảm biến này không được kết nối hoặc khởi tạo thất bại
 } temp_task_args_t; // cấu trúc task giám sát nhiệt độ tổng hợp
 
-static health_data_t g_health_data = {0}; // biến cấu trúc toàn cục lưu trữ dữ liệu sức khỏe hiện tại
+static health_data_t g_health_data = {0}; // Biến cấu trúc toàn cục lưu trữ dữ liệu sức khỏe hiện tại
 static SemaphoreHandle_t g_data_mutex = NULL; // Mutex bảo vệ truy cập đồng thời vào g_health_data giữa các Task 
-static TaskHandle_t max30102_task_handle = NULL; //Lưu handle của Task đọc cảm biến MAX30102.
+static TaskHandle_t max30102_task_handle = NULL; // Lưu handle của Task đọc cảm biến MAX30102
 SemaphoreHandle_t i2c_bus_mutex = NULL; // Mutex bảo vệ Bus I2C dùng chung
 
 static void IRAM_ATTR max30102_gpio_isr_handler(void* arg) 
@@ -72,6 +72,11 @@ void max30102_processing_task(void *pvParameters)
     uint32_t non_valid_counter = 0; 
 
     ESP_LOGI(TAG, "Task xử lý MAX30102 bắt đầu hoạt động...");
+    
+    // Gửi thông tin trạng thái khởi động lên Web Server
+    if(mqtt_is_connected()){
+        mqtt_publish_alert("Device Started");
+    }
 
     while (1) {
         // Đọc tín hiệu ngắt phần cứng từ MAX30102
@@ -81,7 +86,7 @@ void max30102_processing_task(void *pvParameters)
         EventBits_t current_bits = xEventGroupGetBits(g_device_event_group);
         bool is_wearing = (current_bits & BIT_STATUS_WEARING) ? true : false;
 
-        // TRƯỜNG HỢP 1: Không có tín hiệu ngắt (Timeout) HOẶC Người dùng chủ động chọn THÁO MÁY (từ nút bấm/web)
+        // TH1: Không có tín hiệu ngắt (Timeout) HOẶC Người dùng chủ động chọn THÁO MÁY (từ nút bấm/web)
         if (is_notified == 0 || !is_wearing) {
             
             // Xóa sạch cờ ngắt cũ để bảo vệ bus I2C và tránh treo chân INT phần cứng
@@ -110,7 +115,7 @@ void max30102_processing_task(void *pvParameters)
             continue; 
         }
 
-        // TRƯỜNG HỢP 2: Thiết bị đang đeo (WEARING) và có dữ liệu ngắt sẵn sàng từ cảm biến
+        // TH 2: Thiết bị đang đeo (WEARING) và có dữ liệu ngắt sẵn sàng từ cảm biến
         bool bus_clear = false;
         if (xSemaphoreTake(i2c_bus_mutex, pdMS_TO_TICKS(50)) == pdTRUE) {
             if (max30102_get_interrupt_status(max30102_dev, &status1, &status2) == ESP_OK) {
@@ -153,17 +158,23 @@ void max30102_processing_task(void *pvParameters)
                         }
                         mqtt_pulish_data(ppg_result.heart_rate, ppg_result.spo2, current_temp);
 
+                        if (mqtt_is_connected()) {
+                            char drift_msg[64];
+                            snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã gửi kết quả mới nhất");
+                            mqtt_publish_alert(drift_msg);
+                        } 
+
                     } else {
                         // KỊCH BẢN NGUY KỊCH: ĐANG ĐEO MÁY NHƯNG PHÁT HIỆN NGỪNG THỞ / MẤT MẠCH (Flatline)
                         non_valid_counter++;
 
-                        // Tín hiệu phẳng không đổi liên tục trong khoảng 100 mẫu (~1 giây)
+                        // Tín hiệu phẳng không đổi liên tục trong khoảng 1 giây (100 mẫu)
                         if (non_valid_counter >= 100) {
                             non_valid_counter = 0; 
                             
                             ESP_LOGE("HEALTH_ALERT", "CẢNH BÁO NGUY KỊCH: Mất tuần hoàn/Ngừng thở trên cơ thể!");
 
-                            // Ép giá trị về 0 lập tức bảo vệ an toàn
+                            // Ép giá trị về 0 lập tức bảo vệ an toàn luồng dữ liệu hiển thị
                             if (xSemaphoreTake(g_data_mutex, pdMS_TO_TICKS(10)) == pdTRUE) {
                                 g_health_data.heart_rate = 0.0f;
                                 g_health_data.spo2 = 0.0f;
@@ -171,7 +182,15 @@ void max30102_processing_task(void *pvParameters)
                                 xSemaphoreGive(g_data_mutex); 
                             }
 
-                            // Đồng bộ đẩy dữ liệu khẩn cấp về 0.0f lên Web Server
+                            // Gọi thẳng hàm gửi khẩn cấp (Hàm non-blocking, cực kỳ an toàn và nhanh chóng)
+                            if(mqtt_is_connected()){
+                                char drift_msg[128]; 
+                                snprintf(drift_msg, sizeof(drift_msg), "CẢNH BÁO NGUY KỊCH: Mất tuần hoàn/Ngừng thở trên cơ thể!");
+                                mqtt_publish_alert(drift_msg);
+                            } 
+                            
+
+                            // Đồng bộ đẩy dữ liệu khẩn cấp về 0.0f lên Web Server qua topic data định kỳ
                             float current_temp = 0.0f;
                             if (xSemaphoreTake(g_data_mutex, pdMS_TO_TICKS(5)) == pdTRUE) {
                                 current_temp = g_health_data.body_temp;
@@ -380,7 +399,7 @@ void app_main(void)
 
     // Cấu hình tham số cảm biến MAX30102
     max30102_config_t sensor_config = {
-        .mode = MAX30102_MODE_SPO2,                                                   
+        .mode = MAX30102_MODE_SPO2,                                                                                   
         .adc_range = MAX30102_SPO2_ADC_RGE_4096nA,                    
         .sample_rate = MAX30102_SPO2_SR_100,                          
         .pulse_width = MAX30102_SPO2_PW_411us_18b,                    
@@ -400,7 +419,6 @@ void app_main(void)
             xSemaphoreGive(i2c_bus_mutex);
         }
         if (ret == ESP_OK) {
-            ESP_LOGI(TAG, "Khởi tạo cảm biến sinh hiệu MAX30102 thành công!");
             break;
         }
         retry_count++;
@@ -411,6 +429,7 @@ void app_main(void)
         ESP_LOGE(TAG, "Lỗi nghiêm trọng phần cứng MAX30102! Khóa bo mạch.");
         return; 
     }
+    ESP_LOGI(TAG, "Khởi tạo cảm biến sinh hiệu MAX30102 thành công!");
 
     // Khởi tạo cảm biến nhiệt độ MLX90614 hồng ngoại dùng chung Bus I2C
     i2c_master_dev_handle_t mlx90614_device_handle = NULL;
@@ -437,13 +456,13 @@ void app_main(void)
         .intr_type = GPIO_INTR_NEGEDGE,            
         .mode = GPIO_MODE_INPUT,                                   
         .pin_bit_mask = (1ULL << MAX30102_INT_GPIO),
-        .pull_down_en = 0,                                          
-        .pull_up_en = 1,                                           
+        .pull_down_en = 0,                                                                          
+        .pull_up_en = 1,                                                                           
     };
     gpio_config(&io_conf);
     gpio_isr_handler_add(MAX30102_INT_GPIO, max30102_gpio_isr_handler, NULL);
 
-    // Đóng gói cấu trúc đối số chia sẻ Task
+    // Đóng gói cấu trúc đối số chia sẻ Task nhiệt độ
     static temp_task_args_t temp_args;
     temp_args.max30102_dev = &max30102_device;
     temp_args.mlx90614_dev = mlx90614_device_handle;

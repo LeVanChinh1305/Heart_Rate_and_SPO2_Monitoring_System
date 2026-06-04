@@ -1,5 +1,5 @@
 const mqtt = require('mqtt');
-const { MQTT_BROKER, MQTT_TOPIC_DATA, MQTT_TOPIC_RAW, MQTT_TOPIC_CONTROL } = require('../config/mqtt');
+const { MQTT_BROKER, MQTT_TOPIC_DATA, MQTT_TOPIC_RAW, MQTT_TOPIC_CONTROL, MQTT_TOPIC_ALERT } = require('../config/mqtt');
 const healthDataService = require('./healthDataService');
 
 let mqttClient = null;
@@ -17,6 +17,11 @@ const initMqttClient = (onDataMessage) => {
     mqttClient.subscribe(MQTT_TOPIC_RAW, { qos: 0 }, (err) => {
       if (!err) {
         console.log(`[MQTT] Subscribed to: ${MQTT_TOPIC_RAW}`);
+      }
+    });
+    mqttClient.subscribe(MQTT_TOPIC_ALERT, { qos: 1 }, (err) => {
+      if (!err) {
+        console.log(`[MQTT] Subscribed to: ${MQTT_TOPIC_ALERT}`);
       }
     });
   });
@@ -38,6 +43,9 @@ const initMqttClient = (onDataMessage) => {
       } else if (topic === MQTT_TOPIC_RAW) {
         console.log('[MQTT] Received RAW:', payload);
         onDataMessage({ raw_hr: payload.val });
+      } else if (topic === MQTT_TOPIC_ALERT) {
+        console.log('[MQTT] Received ALERT:', payload);
+        onDataMessage({ alert: payload.alert, deviceId: payload.deviceId });
       }
     } catch (err) {
       console.error('[MQTT] Invalid JSON:', message.toString());

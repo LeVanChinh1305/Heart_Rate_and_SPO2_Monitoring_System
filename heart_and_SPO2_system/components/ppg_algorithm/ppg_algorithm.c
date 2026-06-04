@@ -2,6 +2,8 @@
 #include <string.h>
 #include <math.h>
 #include "esp_log.h"
+#include <stdio.h>
+#include "my_mqtt.h"
 
 
 typedef struct {
@@ -96,6 +98,11 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         if (stabilization_counter % 100 == 0) {
             ESP_LOGW("PPG_ALGO", "Đang ổn định bộ lọc... %.1f/2.0 giây",
                      stabilization_counter / 100.0f);
+            if (mqtt_is_connected()) {
+                char drift_msg[128];
+                snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đang bắt đầu đo, vui lòng giữ yên trong giây lát...");
+                mqtt_publish_alert(drift_msg);
+            }
         }
         return false;
     }
@@ -142,6 +149,11 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
                                  - (float)buffer_ir[start_index]) / ir_dc * 100.0f;
         if (dc_drift_pct > 2.0f) {
             ESP_LOGW("PPG_ALGO", "DC drift %.1f%% — giữ ngón tay thật yên!", dc_drift_pct);
+            if (mqtt_is_connected()) {
+                char drift_msg[64];
+                snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Thiết bị lỏng, vui lòng giữ nghiêm");
+                mqtt_publish_alert(drift_msg);
+            }
         }
     }
 
@@ -155,6 +167,11 @@ bool ppg_algorithm_process_sample(uint32_t red_sample, uint32_t ir_sample, ppg_r
         ESP_LOGW("PPG_ALGO",
                  "PI thấp: IR=%.2f%% RED=%.2f%% — nhấn ngón tay chặt hơn!",
                  pi_ir * 100.0f, pi_red * 100.0f);
+        if (mqtt_is_connected()) {
+            char drift_msg[64];
+            snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Thiết bị lỏng, vui lòng giữ nghiêm");
+            mqtt_publish_alert(drift_msg);
+        }
         result->valid = false;
         goto do_window_shift; // Bỏ qua tính toán, vẫn dịch cửa sổ
     }

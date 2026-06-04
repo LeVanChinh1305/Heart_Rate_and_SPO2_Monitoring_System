@@ -35,8 +35,8 @@ html, body, #root {
 }
 
 .container {
-  width: 100%;
-  max-width: 800px; /* Made wider for the dashboard */
+  width: 90%;
+  max-width: none;
   min-width: 320px;
   padding: 1rem;
   margin: 0 auto;

@@ -8,6 +8,7 @@
 #define MQTT_TOPIC_DATA "chinh/health_data"
 #define MQTT_TOPIC_RAW "chinh/health_raw"
 #define MQTT_TOPIC_CONTROL "chinh/control"
+#define MQTT_TOPIC_ALERT "chinh/alert"
 #define MQTT_URI "mqtt://broker.hivemq.com:1883/"
 
 extern volatile float g_heart_rate_max_threshold;
@@ -24,6 +25,8 @@ esp_err_t mqtt_start_init(void);
 esp_err_t mqtt_pulish_data(float bpm, float spo2, float temp); 
 
 esp_err_t mqtt_publish_raw_single(int32_t raw_sample);
+
+esp_err_t mqtt_publish_alert(const char* alert_message);
 
 // hàm nhận dữ liệu điều khiển từ server 
 bool mqtt_is_connected(void);

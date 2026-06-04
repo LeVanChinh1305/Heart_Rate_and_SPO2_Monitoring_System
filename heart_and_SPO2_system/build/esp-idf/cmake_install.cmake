@@ -564,6 +564,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/my_mqtt/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/ppg_algorithm/cmake_install.cmake")
 endif()
 
@@ -580,16 +590,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/WIFI/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/button1/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("D:/projects/Heart_Rate_and_SPO2_Monitoring_System/heart_and_SPO2_system/build/esp-idf/my_mqtt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

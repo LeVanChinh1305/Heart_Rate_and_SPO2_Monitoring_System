@@ -10,6 +10,7 @@ const HomePage = ({ user }) => {
   const [thresholds, setThresholds] = useState({ hrMax: 140, spo2Min: 92 });
   const [powerSaving, setPowerSaving] = useState(false);
   const [wsConnected, setWsConnected] = useState(false);
+  const [alerts, setAlerts] = useState([]);
   const wsRef = useRef(null);
 
   // Connect to WebSocket on mount
@@ -26,8 +27,18 @@ const HomePage = ({ user }) => {
       try {
         const incoming = JSON.parse(event.data);
         
+        // Handle incoming alert
+        if (incoming.alert !== undefined) {
+          const newAlert = {
+            id: Date.now() + Math.random(),
+            time: new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+            deviceId: incoming.deviceId || 'ESP32C6',
+            message: incoming.alert
+          };
+          setAlerts(prev => [newAlert, ...prev].slice(0, 10));
+        }
         // Handle raw heart rate data from chinh/health_raw topic
-        if (incoming.raw_hr !== undefined) {
+        else if (incoming.raw_hr !== undefined) {
           const rawPoint = {
             time: new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
             value: parseInt(incoming.raw_hr) || 0
@@ -124,7 +135,10 @@ const HomePage = ({ user }) => {
   };
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ display: 'flex', width: '100%', gap: '1.5rem', flexWrap: 'nowrap', alignItems: 'flex-start' }}>
+      
+      {/* Main Content (Left) */}
+      <div style={{ flex: '1', minWidth: '0' }}>
 
       {/* Connection Status */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
@@ -255,6 +269,39 @@ const HomePage = ({ user }) => {
           </div>
         </div>
       )}
+      </div>
+
+      {/* Notifications Panel (Right) */}
+      <div style={{ width: '320px', flexShrink: 0, position: 'sticky', top: '1.5rem' }}>
+        <div className="card" style={{ padding: '1.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
+          <h3 style={{ color: '#ff9800', marginBottom: '1rem', borderBottom: '1px solid #eee', paddingBottom: '0.5rem', textAlign: 'left' }}>
+            🔔 Thông báo gần đây
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', overflowY: 'auto' }}>
+            {alerts.length === 0 ? (
+              <p style={{ color: 'var(--text-light)', fontStyle: 'italic', fontSize: '0.9rem', textAlign: 'left' }}>Chưa có thông báo nào.</p>
+            ) : (
+              alerts.map(alert => (
+                <div key={alert.id} style={{ 
+                  background: 'rgba(255, 152, 0, 0.1)', 
+                  borderLeft: '4px solid #ff9800',
+                  padding: '0.75rem',
+                  borderRadius: '4px',
+                  fontSize: '0.9rem',
+                  textAlign: 'left'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem', fontSize: '0.8rem', color: 'var(--text-light)' }}>
+                    <span style={{ fontWeight: 'bold' }}>{alert.deviceId}</span>
+                    <span>{alert.time}</span>
+                  </div>
+                  <div style={{ color: 'var(--text-color)' }}>{alert.message}</div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

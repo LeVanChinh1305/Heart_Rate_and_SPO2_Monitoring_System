@@ -3,7 +3,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-
+ 
 static const char *TAG = "MLX90614_DRIVER";
 
 static esp_err_t mlx90614_read_reg_16(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr, uint16_t *out_data)
@@ -18,12 +18,6 @@ static esp_err_t mlx90614_read_reg_16(i2c_master_dev_handle_t dev_handle, uint8_
         // việc xử lý hiển thị lỗi sẽ để các hàm API bên ngoài đảm nhận.
         return err;
     }
-    ESP_LOGI(TAG,
-         "REG=0x%02X RX=%02X %02X %02X",
-         reg_addr,
-         rx_buffer[0],
-         rx_buffer[1],
-         rx_buffer[2]);
 
     // SMBus truyền byte thấp trước (Data Low), sau đó tới byte cao (Data High).
     // Byte thứ 3 (rx_buffer[2]) là PEC (Packet Error Code - CRC8) ta có thể bỏ qua ở khoảng cách ngắn.
@@ -103,11 +97,6 @@ esp_err_t mlx90614_read_object(i2c_master_dev_handle_t dev_handle, float *object
     esp_err_t err = mlx90614_read_reg_16(dev_handle, MLX90614_RAM_TOBJ1, &raw_data);
     if (err != ESP_OK) {
         return err;
-    }
-    if(raw_data & 0x8000)
-    {
-        ESP_LOGE(TAG, "TOBJ1 Error Flag");
-        return ESP_FAIL;
     }
 
     // Thực hiện chuyển đổi toán học tương tự từ giá trị thô sang độ C

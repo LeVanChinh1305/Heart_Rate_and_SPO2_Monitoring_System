@@ -56,6 +56,13 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                     ESP_LOGW(TAG, "Yêu cầu từ Web: Hệ thống sẽ Khởi động lại sau 1 giây...");
                     vTaskDelay(pdMS_TO_TICKS(1000));
                     esp_restart();
+
+                    if (mqtt_is_connected()) {
+                        char drift_msg[64];
+                        snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Thiết bị khởi động lại");
+                        mqtt_publish_alert(drift_msg);
+                    } 
+
                 }
                 
                 // 2. Lệnh Ngủ sâu (DEEP SLEEP)
@@ -70,6 +77,13 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                     
                     ESP_LOGI(TAG, "Thiết bị bắt đầu ngủ sâu!");
                     esp_deep_sleep_start();
+
+                    if (mqtt_is_connected()) {
+                        char drift_msg[64];
+                        snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Thiết bị đang ngủ sâu");
+                        mqtt_publish_alert(drift_msg);
+                    } 
+
                 }
                 
                 // 3. Lệnh thay đổi ngưỡng nhịp tim (SET_HR_LIMIT:xxx)
@@ -79,8 +93,20 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         if (val >= 40.0f && val <= 200.0f) {
                             g_heart_rate_max_threshold = val;
                             ESP_LOGI(TAG, "Cập nhật thành công ngưỡng nhịp tim tối đa mới: %.1f bpm", g_heart_rate_max_threshold);
+
+                            if (mqtt_is_connected()) {
+                                char drift_msg[64];
+                                snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã cập nhật ngưỡng nhịp tim tối đa mới: %.1f bpm", g_heart_rate_max_threshold);
+                                mqtt_publish_alert(drift_msg);
+                            } 
+
                         } else {
                             ESP_LOGE(TAG, "Ngưỡng không hợp lệ! (Dải chuẩn: 40 - 200)");
+                            if (mqtt_is_connected()) {
+                                char drift_msg[64];
+                                snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Ngưỡng không hợp lệ! (Dải chuẩn: 40 - 200)");
+                                mqtt_publish_alert(drift_msg);
+                            } 
                         }
                     }
                 }
@@ -91,8 +117,22 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         if (val >= 50.0f && val <= 100.0f) {
                             spo2_min_threshold = val;
                             ESP_LOGI(TAG, "Cập nhật thành công ngưỡng nồng độ spo2 min mới: %.1f ", spo2_min_threshold);
+
+                            if (mqtt_is_connected()) {
+                                char drift_msg[64];
+                                snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã cập nhật ngưỡng nồng độ spo2 min mới: %.1f ", spo2_min_threshold);
+                                mqtt_publish_alert(drift_msg);
+                            } 
+
                         } else {
                             ESP_LOGE(TAG, "Ngưỡng không hợp lệ! (Dải chuẩn: 50 - 100)");
+
+                            if (mqtt_is_connected()) {
+                                char drift_msg[64];
+                                snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Ngưỡng không hợp lệ! (Dải chuẩn: 50 - 100)");
+                                mqtt_publish_alert(drift_msg);
+                            } 
+
                         }
                     }
                 }
@@ -105,6 +145,13 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         xEventGroupSetBits(g_device_event_group, BIT_STATUS_WEARING);
                         ESP_LOGI(TAG, "Lệnh Web: Đã đồng bộ chuyển mạch sang chế độ ĐANG ĐEO");
                     }
+
+                    if (mqtt_is_connected()) {
+                        char drift_msg[64];
+                        snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã đồng bộ chuyển mạch sang chế độ ĐANG ĐEO");
+                        mqtt_publish_alert(drift_msg);
+                    } 
+
                 }
 
                 //  Lệnh Dừng theo dõi từ Web (STOP)
@@ -115,6 +162,13 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         xEventGroupSetBits(g_device_event_group, BIT_STATUS_NOT_WEARING);
                         ESP_LOGW(TAG, "Lệnh Web: Đã đồng bộ chuyển mạch sang chế độ THÁO MÁY");
                     }
+
+                    if (mqtt_is_connected()) {
+                        char drift_msg[64];
+                        snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã đồng bộ chuyển mạch sang chế độ THÁO MÁY");
+                        mqtt_publish_alert(drift_msg);
+                    } 
+
                 }
                 
             }
@@ -192,24 +246,40 @@ esp_err_t mqtt_publish_raw_single(int32_t raw_sample) {
         return ESP_ERR_INVALID_STATE;
     }
 
+    // Biến lưu trạng thái bộ lọc DC (bắt buộc dùng static)
+    static float s_w = 0.0f;
+
     if (g_device_event_group != NULL) {
         EventBits_t bits = xEventGroupGetBits(g_device_event_group);
         if (!(bits & BIT_STATUS_WEARING)) {
+            // Khi tháo máy: Xóa bộ nhớ bộ lọc về 0 để chuẩn bị cho lần đeo kế tiếp
+            s_w = 0.0f; 
+            
+            // Tùy chọn: Nếu muốn in một đường thẳng 0 lên MQTT khi tháo máy, hãy bỏ comment 4 dòng dưới:
+            // char payload[64];
+            // int len = snprintf(payload, sizeof(payload), "{\"deviceId\":\"ESP32C6_01\",\"val\":0}");
+            // esp_mqtt_client_publish(s_client, MQTT_TOPIC_RAW, payload, len, 0, 0);
+            
             return ESP_ERR_INVALID_STATE; // Đang tháo máy thì không gửi dữ liệu sinh hiệu
         }
     }
 
-    // --- THUẬT TOÁN LỌC DC REMOVAL FILTER (Hệ số alpha = 0.95 đến 0.99) ---
-    static float s_w = 0.0f;
-    float alpha = 0.95f;
+    // --- THUẬT TOÁN LỌC DC REMOVAL FILTER (Chuẩn toán học IIR High-pass) ---
+    // Hệ số alpha quyết định tần số cắt (Cut-off frequency). 
+    // Thường dùng: 0.95 cho tần số lấy mẫu thấp (50Hz), hoặc 0.99 cho tần số cao (100Hz - 400Hz).
+    const float alpha = 0.95f; 
     
-    float current_w = raw_sample + alpha * s_w;
-    int32_t filtered_val = (int32_t)(current_w - s_w);
-    s_w = current_w; // Lưu lại cho mẫu kế tiếp
+    float current_w = (float)raw_sample + (alpha * s_w); 
+    
+    // Kết quả sau lọc là hiệu giữa tín hiệu trung gian hiện tại và tín hiệu trung gian trước đó
+    int32_t filtered_val = (int32_t)(current_w - s_w); 
+    
+    // Lưu lại giá trị cho mẫu kế tiếp
+    s_w = current_w; 
     // ---------------------------------------------------------------------
 
     char payload[64];
-    // Gửi giá trị sau lọc (lúc này dao động cực đẹp quanh trục số 0, ví dụ: -150, -20, 50, 200...)
+    // Gửi giá trị sau lọc (Dao động đối xứng cực đẹp quanh trục số 0, ví dụ: -150, 20, 180...)
     int len = snprintf(payload, sizeof(payload), 
                        "{\"deviceId\":\"ESP32C6_01\",\"val\":%ld}", 
                        (long)filtered_val);
@@ -219,6 +289,25 @@ esp_err_t mqtt_publish_raw_single(int32_t raw_sample) {
     if (msg_id < 0) {
         return ESP_FAIL;
     }
+    return ESP_OK;
+}
+
+esp_err_t mqtt_publish_alert(const char *alert_message){
+    if (!s_is_connected || s_client == NULL) {
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    char payload[128];
+    int len = snprintf(payload, sizeof(payload), 
+                       "{\"deviceId\":\"ESP32C6_01\",\"alert\":\"%s\"}", 
+                       alert_message);
+
+    int msg_id = esp_mqtt_client_publish(s_client, MQTT_TOPIC_ALERT, payload, len, 1, 0);
+    
+    if (msg_id < 0) {
+        return ESP_FAIL;
+    }
+    ESP_LOGW(TAG, "Đã gửi cảnh báo lên Web [ID:%d]: %s", msg_id, alert_message);
     return ESP_OK;
 }
 

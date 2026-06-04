@@ -43,7 +43,7 @@ const MainLayout = ({ children, user, onLogout, onNavigate, currentView }) => {
   };
 
   return (
-    <div className="container" style={{ maxWidth: currentView === 'admin' ? '1000px' : '800px' }}>
+    <div className="container">
       <header className="main-header">
         <h2 style={{ cursor: 'pointer' }} onClick={() => handleNavigate('home')}>Heart & SpO2 Monitor</h2>
         
