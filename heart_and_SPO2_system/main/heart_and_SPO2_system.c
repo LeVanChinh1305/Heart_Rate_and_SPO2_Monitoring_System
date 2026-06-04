@@ -49,6 +49,9 @@ static health_data_t g_health_data = {0}; // Biến cấu trúc toàn cục lưu
 static SemaphoreHandle_t g_data_mutex = NULL; // Mutex bảo vệ truy cập đồng thời vào g_health_data giữa các Task 
 static TaskHandle_t max30102_task_handle = NULL; // Lưu handle của Task đọc cảm biến MAX30102
 SemaphoreHandle_t i2c_bus_mutex = NULL; // Mutex bảo vệ Bus I2C dùng chung
+bool status_measure = false; 
+bool status_active = false;
+
 
 static void IRAM_ATTR max30102_gpio_isr_handler(void* arg) 
 {        
@@ -109,6 +112,10 @@ void max30102_processing_task(void *pvParameters)
                 ESP_LOGW(TAG, "Timeout ngắt! Cảm biến không nhận diện bề mặt tiếp xúc. Tự động chuyển sang chế độ THÁO MÁY.");
                 xEventGroupClearBits(g_device_event_group, BIT_STATUS_WEARING);
                 xEventGroupSetBits(g_device_event_group, BIT_STATUS_NOT_WEARING);
+                status_measure = false; 
+                if (mqtt_is_connected()) {
+                    mqtt_publish_status(status_active, status_measure); 
+                }
             }
 
             vTaskDelay(pdMS_TO_TICKS(100)); // Delay nhỏ giảm tải CPU khi đang ở trạng thái nghỉ
@@ -330,9 +337,12 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "Đang khởi tạo toàn bộ hệ thống...");
 
+    status_active = true;
+    status_measure = false;
+
     // [BƯỚC 1]: Khởi tạo dịch vụ ngắt cứng hệ thống GPIO ISR Service đầu tiên
     gpio_install_isr_service(0);
-
+ 
     // [BƯỚC 2]: Khởi tạo Driver Nút bấm vật lý (Tạo g_device_event_group bên trong trước mọi thứ)
     button1_hardware_init(); 
 

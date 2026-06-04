@@ -11,6 +11,8 @@ static esp_mqtt_client_handle_t s_client = NULL;
 static bool s_is_connected = false;
 volatile float g_heart_rate_max_threshold = 140.0f;
 volatile float spo2_min_threshold = 92.0f; 
+extern bool status_measure;
+extern bool status_active;
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data){
     // void *handler_args (Dữ liệu tùy biến của người dùng) Lấy từ tham số cuối cùng của hàm esp_mqtt_register_events()
@@ -95,7 +97,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                             ESP_LOGI(TAG, "Cập nhật thành công ngưỡng nhịp tim tối đa mới: %.1f bpm", g_heart_rate_max_threshold);
 
                             if (mqtt_is_connected()) {
-                                char drift_msg[64];
+                                char drift_msg[128];
                                 snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã cập nhật ngưỡng nhịp tim tối đa mới: %.1f bpm", g_heart_rate_max_threshold);
                                 mqtt_publish_alert(drift_msg);
                             } 
@@ -103,7 +105,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         } else {
                             ESP_LOGE(TAG, "Ngưỡng không hợp lệ! (Dải chuẩn: 40 - 200)");
                             if (mqtt_is_connected()) {
-                                char drift_msg[64];
+                                char drift_msg[128];
                                 snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Ngưỡng không hợp lệ! (Dải chuẩn: 40 - 200)");
                                 mqtt_publish_alert(drift_msg);
                             } 
@@ -119,7 +121,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                             ESP_LOGI(TAG, "Cập nhật thành công ngưỡng nồng độ spo2 min mới: %.1f ", spo2_min_threshold);
 
                             if (mqtt_is_connected()) {
-                                char drift_msg[64];
+                                char drift_msg[128];
                                 snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã cập nhật ngưỡng nồng độ spo2 min mới: %.1f ", spo2_min_threshold);
                                 mqtt_publish_alert(drift_msg);
                             } 
@@ -128,7 +130,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                             ESP_LOGE(TAG, "Ngưỡng không hợp lệ! (Dải chuẩn: 50 - 100)");
 
                             if (mqtt_is_connected()) {
-                                char drift_msg[64];
+                                char drift_msg[128];
                                 snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Ngưỡng không hợp lệ! (Dải chuẩn: 50 - 100)");
                                 mqtt_publish_alert(drift_msg);
                             } 
@@ -147,11 +149,12 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                     }
 
                     if (mqtt_is_connected()) {
-                        char drift_msg[64];
+                        char drift_msg[128];
                         snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã đồng bộ chuyển mạch sang chế độ ĐANG ĐEO");
                         mqtt_publish_alert(drift_msg);
                     } 
-
+                    
+                    status_measure = true;
                 }
 
                 //  Lệnh Dừng theo dõi từ Web (STOP)
@@ -164,11 +167,11 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                     }
 
                     if (mqtt_is_connected()) {
-                        char drift_msg[64];
+                        char drift_msg[128];
                         snprintf(drift_msg, sizeof(drift_msg), "Thông báo : Đã đồng bộ chuyển mạch sang chế độ THÁO MÁY");
                         mqtt_publish_alert(drift_msg);
                     } 
-
+                    status_measure = false;
                 }
                 
             }
@@ -308,6 +311,24 @@ esp_err_t mqtt_publish_alert(const char *alert_message){
         return ESP_FAIL;
     }
     ESP_LOGW(TAG, "Đã gửi cảnh báo lên Web [ID:%d]: %s", msg_id, alert_message);
+    return ESP_OK;
+}
+
+esp_err_t mqtt_publish_status(bool status_active, bool status_measure){
+    if (!s_is_connected || s_client == NULL) {
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    char payload[64];
+    int len = snprintf(payload, sizeof(payload), 
+                       "{\"deviceId\":\"ESP32C6_01\",\"active\":%s,\"measure\":%s}", 
+                       status_active ? "true" : "false", 
+                       status_measure ? "true" : "false");
+
+    int msg_id = esp_mqtt_client_publish(s_client, MQTT_TOPIC_STATUS, payload, len, 0, 0);
+    if (msg_id < 0) {
+        return ESP_FAIL;
+    }
     return ESP_OK;
 }
 

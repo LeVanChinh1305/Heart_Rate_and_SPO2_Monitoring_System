@@ -160,11 +160,11 @@ $<TARGET_FILE:idf::wifi_provisioning>
 $<TARGET_FILE:__idf_json>
 $<TARGET_FILE:idf::MAX30102>
 $<TARGET_FILE:idf::button1>
-$<TARGET_FILE:idf::my_mqtt>
+$<TARGET_FILE:__idf_my_mqtt>
 $<TARGET_FILE:__idf_mqtt>
 $<TARGET_FILE:__idf_button1>
+$<TARGET_FILE:idf::my_mqtt>
 $<TARGET_FILE:idf::ppg_algorithm>
-$<TARGET_FILE:__idf_my_mqtt>
 $<TARGET_FILE:idf::MLX90614>
 $<TARGET_FILE:idf::ST7735>
 $<TARGET_FILE:idf::WIFI>
